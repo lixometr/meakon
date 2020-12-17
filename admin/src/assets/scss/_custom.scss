@@ -1,0 +1,49 @@
+// Here you can add other styles
+.modal-close {
+  position: absolute;
+  font-size: 40px;
+  right: 10px;
+  top: 10px;
+  z-index: 30;
+  width: 40px;
+  height: 40px;
+  line-height: 0;
+  padding: 0;
+
+  span {
+    display: block;
+    transform: translateY(-3px);
+  }
+}
+
+.vm--container {
+  z-index: 9999 !important;
+}
+
+.vm--modal {
+  top: 0 !important;
+}
+
+.card-header {
+  background: lighten($light, 2);
+  font-weight: bold;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.ghost {
+  background-color: var(--light);
+}
+
+.vue-select-error {
+  .vs__dropdown-toggle {
+    border: 1px solid #e55353;
+
+  }
+}

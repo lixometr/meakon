@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Federo';
+    src: url('Federov2.ttf');
+    src: local('Federov2'), local('Federov2'),
+        url('Federo-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Federov2.ttf') format('ttf'),
+        url('Federov2.ttf') format('ttf'),
+        url('Federov2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family: "NotoSans";
+    font-weight: 400;
+    font-style: normal;
+    src: 
+        url("NotoSans-Regular.ttf") format("ttf"),
+        url("NotoSans-Regular.ttf") format("ttf");
+    font-display: swap;
+}
+
+@font-face{
+    font-family: "NotoSans";
+    font-weight: 600;
+    font-style: normal;
+    src: 
+        url("NotoSans-Bold.ttf") format("ttf"),
+        url("NotoSans-Bold.ttf") format("ttf");
+    font-display: swap;
+}
+
+@font-face{
+    font-family: "NotoSans";
+    font-weight: 700;
+    font-style: normal;
+    font-style: italic;
+    src: 
+        url("NotoSans-BoldItalic.ttf") format("ttf"),
+        url("NotoSans-BoldItalic.ttf") format("ttf");
+    font-display: swap;
+}
