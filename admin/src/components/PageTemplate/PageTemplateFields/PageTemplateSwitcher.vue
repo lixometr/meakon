@@ -1,4 +1,4 @@
-<template>
+w<template>
   <div>
     <Label label="Значение по умолчанию">
       <CInputCheckbox

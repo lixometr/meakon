@@ -2,7 +2,7 @@
   <div>
     <!-- mobileMenu -->
     <header class="header">
-      <div class="mlogo"><img src="assets/img/mobile_logo.png" alt="" /></div>
+      <div class="mlogo"><img src="/assets/img/mobile_logo.png" alt="" /></div>
       <div class="mswaper">
         <div class="switcher2">
           <div class="center">
@@ -23,30 +23,86 @@
       <nav class="menu">
         <div class="menu__brand"></div>
         <ul class="menu__list">
-          <li class="menu__item">
-            <a href="products.html" class="menu__link" target="">Продукция</a>
-          </li>
-          <li class="menu__item">
-            <a href="about.html" class="menu__link" target="">О компании</a>
-          </li>
-          <li class="menu__item">
-            <a href="contacts.html" class="menu__link" target="">Контакты</a>
+          <li class="menu__item" v-for="(itm, idx) in values.menu" :key="idx">
+            <nuxt-link :to="itm.url || '#'" class="menu__link">{{
+              itm.name
+            }}</nuxt-link>
           </li>
 
           <li class="menu__item">
-            <a href="tel:+78009998877" class="tel__link">+7 800 999 88 77</a>
+            <a :href="'tel:' + values.phone" class="tel__link">{{
+              values.phone
+            }}</a>
           </li>
         </ul>
       </nav>
     </header>
-
     <section class="hero"></section>
     <!-- //mobileMenu -->
+    <!-- fix меню -->
+    <header class="offer">
+      <div class="container-fluid">
+        <div class="row offer_place">
+          <!-- logo + switcher -->
+          <div class="col-lg-4 col-md-12 top_menu">
+            <!-- logo -->
+            <nuxt-link class="logo" to="/"
+              ><AppImage :img="values.logo"
+            /></nuxt-link>
+            <!-- //logo -->
+            <!-- switcher -->
+            <div class="switcher">
+              <div class="center">
+                <span class="lang">RU</span>
+                <input type="checkbox" id="cbx" style="display: none" />
+                <label for="cbx" class="toggle"><span></span></label>
+                <span class="lang">ENG</span>
+              </div>
+            </div>
+            <!-- //switcher -->
+          </div>
+          <!-- logo + switcher -->
+
+          <!-- Nav header-->
+          <div class="col-lg-8 col-md-12 navi">
+            <nav>
+              <nuxt-link
+                class="nav_item"
+                :to="itm.url || '#'"
+                v-for="(itm, idx) in values.menu"
+                :key="idx"
+                >{{ itm.name }}</nuxt-link
+              >
+
+              <!-- Telephone -->
+              <a :href="'tel:' + values.phone"></a>
+              <!-- //Telephone -->
+            </nav>
+          </div>
+          <!-- //Nav header-->
+        </div>
+      </div>
+    </header>
+    <!-- //fix меню -->
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      values: {},
+    };
+  },
+  async fetch() {
+    try {
+      const { values } = await this.$api.$get("widgetByName", {
+        name: "header",
+      });
+      this.values = values;
+    } catch (err) {}
+  },
+};
 </script>
 
 <style lang="scss" >

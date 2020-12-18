@@ -7,7 +7,7 @@ class UrlBuilder {
         this.path = {
             category: '/category/',
             product: '/product/',
-            page: '/page/',
+            page: '/p/',
             search: '/search/',
             cart: '/cart/',
             search: '/search/',

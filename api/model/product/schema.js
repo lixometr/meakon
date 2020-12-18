@@ -123,9 +123,9 @@ const ProductSchema = new Schema({
         ref: "Attribute",
         type: Schema.Types.ObjectId
       },
-      show: {
+      show_in_preview: {
         type: Boolean,
-        default: true
+        default: false
       },
       value: [
         {
@@ -140,10 +140,10 @@ const ProductSchema = new Schema({
     type: String,
     default: 'simple'
   },
-  date: {
-    type: [DateItem],
-    default: () => []
-  },
+  // date: {
+  //   type: [DateItem],
+  //   default: () => []
+  // },
   // Модификации продукта (одинаковые продукты, но с разными атрибутами)
   product_variations: [
     ProductVariation
@@ -151,10 +151,7 @@ const ProductSchema = new Schema({
   price: [RegionPrice],
   old_price: [RegionPrice],
   cnt: Number,
-  cnt_border: {
-    type: Number,
-    default: 2
-  },
+ 
   booked_cnt: {
     type: Number,
     default: 0

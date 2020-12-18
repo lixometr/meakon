@@ -2,15 +2,31 @@
   <footer>
     <div class="container-fluid">
       <div class="col-12 footer_info">
-        <span>© 2020 Meakon. Все права защищены.</span>
-        <span>Разработано в <a href="#">Stebnev-Studio</a></span>
+        <span v-html="values.leftText"></span>
+        <span v-html="values.rightText"></span>
       </div>
     </div>
   </footer>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      values: {},
+    };
+  },
+  async fetch() {
+    try {
+      const { values } = await this.$api.$get("widgetByName", {
+        name: "footer",
+      });
+      this.values = values;
+    } catch (err) {
+      this.$error(err)
+    }
+  },
+};
 </script>
 
 <style lang="scss" >

@@ -1,4 +1,4 @@
-export default ({ slug }) => ({
+export default ({ slug } = {}) => ({
   head() {
     return {
       title: this.page.seo && this.page.seo.title,

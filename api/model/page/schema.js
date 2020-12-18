@@ -5,6 +5,10 @@ const pageSchema = new Schema({
   name: String,
   slug: String,
   values: {},
+  is_published: {
+    type: Boolean,
+    default: true
+  },
   template: {
     ref: "PageTemplate",
     type: Schema.Types.ObjectId

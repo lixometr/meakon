@@ -1,8 +1,8 @@
-// const Footer = require("./items/Footer");
-
-// const Header = require('./items/Header')
+const footer = require("./items/footer");
+// 
+const header = require('./items/header')
 
 module.exports = {
-    // footer: Footer,
-    // header: Header,
+    footer,
+    header,
 }

@@ -1,15 +1,16 @@
 const WidgetModification = require("../modification");
 
-module.exports = class ProductSidebar extends WidgetModification {
+module.exports = class Header extends WidgetModification {
     constructor(...args) {
         super(...args)
         this.schema = {
-           
-            items: [
+            logo: {},
+            logo_mob: {},
+            phone: '',
+            menu: [
                 {
-                    title: '',
-                    sub_title: '',
-                    description: ''
+                    name: '',
+                    url: '',
                 }
             ]
         }

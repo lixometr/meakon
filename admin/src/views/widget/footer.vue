@@ -5,94 +5,17 @@
       <CCardBody>
         <EditComponent
           c="AInput"
-          v="logo"
-          label="Логотип"
+          v="leftText"
+          label="Текст слева"
           :changeValue.sync="values"
           :schema="schema"
         />
-        <EditComponent
-          c="EditImage"
-          v="bg_image"
-          label="Изображение на фоне"
-          :changeValue.sync="values"
-          :schema="schema"
-        />
-      </CCardBody>
-    </CCard>
-    <CCard>
-      <CCardHeader>Меню 1</CCardHeader>
-      <CCardBody>
         <EditComponent
           c="AInput"
-          v="menu1.title"
-          label="Заголовок меню"
+          v="rightText"
+          label="Текст справа"
           :changeValue.sync="values"
           :schema="schema"
-        />
-        <EditComponent
-          c="EditMultiplyer"
-          v="menu1.items"
-          :items="menuItems"
-          label="Ссылки в меню"
-          :changeValue.sync="values"
-          :schema="schema"
-        />
-      </CCardBody>
-    </CCard>
-    <CCard>
-      <CCardHeader>Menu 2</CCardHeader>
-      <CCardBody>
-        <EditComponent
-          c="AInput"
-          v="menu2.title"
-          label="Заголовок меню"
-          :changeValue.sync="values"
-          :schema="schema"
-        />
-        <EditComponent
-          c="EditMultiplyer"
-          v="menu2.items"
-          :items="menuItems"
-          label="Ссылки в меню"
-          :changeValue.sync="values"
-          :schema="schema"
-        />
-      </CCardBody>
-    </CCard>
-    <CCard>
-      <CCardHeader>Menu 3</CCardHeader>
-      <CCardBody>
-        <EditComponent
-          c="AInput"
-          v="menu3.title"
-          label="Заголовок меню"
-          :changeValue.sync="values"
-          :schema="schema"
-        />
-        <EditComponent
-          c="EditMultiplyer"
-          v="menu3.items"
-          :items="menuItems"
-          label="Ссылки в меню"
-          :changeValue.sync="values"
-          :schema="schema"
-        />
-      </CCardBody>
-    </CCard>
-    <CCard>
-      <CCardHeader>Копирайт</CCardHeader>
-      <CCardBody>
-         <EditComponent
-          c="AInput"
-          v="copyright1"
-          label="Копирайт 1"
-          :changeValue.sync="values"
-        />
-         <EditComponent
-          c="AInput"
-          v="copyright2"
-          label="Копирайт 2"
-          :changeValue.sync="values"
         />
       </CCardBody>
     </CCard>
@@ -122,31 +45,15 @@ export default {
     this.$loading.stop();
   },
   computed: {
-    menuItems() {
-      return [
-        {
-          c: "AInput",
-          v: "title",
-          label: "Заголовок",
-        },
-        {
-          c: "AInput",
-          v: "url",
-          label: "Ссылка",
-        },
-       
-        {
-          c: "EditImage",
-          v: "icon",
-          label: "Иконка",
-        },
-      ];
-    },
    
   },
   methods: {
     async save() {
-      return this.$api.put("widgetByName", { name: "footer" }, {values: this.values});
+      return this.$api.put(
+        "widgetByName",
+        { name: "footer" },
+        { values: this.values }
+      );
     },
     async fetchItem() {
       try {

@@ -11,5 +11,5 @@ export default {
 };
 </script>
 
-<style lang="scss" e>
+<style lang="scss" >
 </style>

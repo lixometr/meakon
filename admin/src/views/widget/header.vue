@@ -4,19 +4,27 @@
       <!-- <CCardHeader></CCardHeader> -->
       <CCardBody>
         <EditComponent
-          c="AInput"
+          c="EditImage"
           v="logo"
           label="Логотип"
           :changeValue.sync="values"
           :schema="schema"
         />
         <EditComponent
-          c="AInput"
+          c="EditImage"
           v="logo_mob"
-          label="Логотип на мобильном"
+          label="Логотип (моб)"
           :changeValue.sync="values"
           :schema="schema"
         />
+        <EditComponent
+          c="AInput"
+          v="phone"
+          label="Телефон"
+          :changeValue.sync="values"
+          :schema="schema"
+        />
+
         <EditComponent
           c="EditMultiplyer"
           v="menu"
@@ -27,7 +35,6 @@
         />
       </CCardBody>
     </CCard>
-   
   </div>
 </template>
 
@@ -66,20 +73,16 @@ export default {
           v: "url",
           label: "Url",
         },
-       
-        {
-          c: "ACheckbox",
-        
-          v: "show_categories",
-          label: "Выводить категории?",
-        },
       ];
     },
-   
   },
   methods: {
     async save() {
-      return this.$api.put("widgetByName", { name: "header" }, {values: this.values});
+      return this.$api.put(
+        "widgetByName",
+        { name: "header" },
+        { values: this.values }
+      );
     },
     async fetchItem() {
       try {

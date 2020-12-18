@@ -25,7 +25,15 @@
           v-model="data.slug"
           @input="noSlug = false"
         />
-        <PageTemplateSelect :class="{'vue-select-error': $v.data.template.$error}" label="Шаблон" class="mb-3" v-model="templateId" />
+        <Label label="Опубликовать?" class="mb-3">
+          <CInputCheckbox custom :checked.sync="data.is_published" />
+        </Label>
+        <PageTemplateSelect
+          :class="{ 'vue-select-error': $v.data.template.$error }"
+          label="Шаблон"
+          class="mb-3"
+          v-model="templateId"
+        />
       </CCardBody>
     </CCard>
     <CCard>
@@ -69,8 +77,8 @@ export default {
         required,
       },
       template: {
-        required
-      }
+        required,
+      },
     },
   },
   data() {

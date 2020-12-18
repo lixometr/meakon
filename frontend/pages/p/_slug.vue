@@ -1,9 +1,9 @@
 <template>
   <div>
-    <PageTemplateDefiner :template="template" :value="value" />
+    <PageTemplateDefiner :template="template" :value="page" />
   </div>
 </template>
-<script>
+<script> 
 import PageMixin from "@/mixins/PageMixin.js";
 export default {
   mixins: [PageMixin()],

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Home from "@/components/PageTemplates/Home"
+import Templates from "@/components/PageTemplates";
 export default {
   props: {
     template: {
@@ -15,13 +15,14 @@ export default {
     },
   },
   components: {
-    Home
+    ...Templates,
   },
   computed: {
     comp() {
       if (this.template.slug === "main") {
         return "";
       }
+
       let name = this.template.slug;
       return name;
     },

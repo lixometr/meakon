@@ -9,45 +9,6 @@
         </video>
       </div>
 
-      <!-- fix меню -->
-      <div class="container-fluid">
-        <div class="row offer_place">
-          <!-- logo + switcher -->
-          <div class="col-lg-4 col-md-12 top_menu">
-            <!-- logo -->
-            <a class="logo" href="index.html"
-              ><img src="assets/img/logo/logo.png"
-            /></a>
-            <!-- //logo -->
-            <!-- switcher -->
-            <div class="switcher">
-              <div class="center">
-                <span class="lang">RU</span>
-                <input type="checkbox" id="cbx" style="display: none" />
-                <label for="cbx" class="toggle"><span></span></label>
-                <span class="lang">ENG</span>
-              </div>
-            </div>
-            <!-- //switcher -->
-          </div>
-          <!-- logo + switcher -->
-
-          <!-- Nav header-->
-          <div class="col-lg-8 col-md-12 navi">
-            <nav>
-              <a class="nav_item" href="products.html">Продукция</a>
-              <a class="nav_item" href="about.html">О компании</a>
-              <a class="nav_item" href="contacts.html">Контакты</a>
-              <!-- Telephone -->
-              <a href="tel:+7 800 999 88 77">+7 800 999 88 77</a>
-              <!-- //Telephone -->
-            </nav>
-          </div>
-          <!-- //Nav header-->
-        </div>
-      </div>
-      <!-- //fix меню -->
-
       <div class="container-fluid">
         <div class="row">
           <div class="col-1 d-sm-none d-md-block"></div>
@@ -138,98 +99,98 @@
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide card card-shadow">
-                    <img src="/assets/img/slider/im2.png" />
-                    <p>Скальпели</p>
-                    <a class="podrobnee_btn" href="#">
-                      <div class="btn_wrapper">
-                        <button class="learn-more">
-                          <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
-                          </span>
-                          <span class="button-text">Подробнее</span>
-                        </button>
-                      </div>
-                    </a>
-                  </div>
-                </a>
+
+                <div class="swiper-slide card card-shadow">
+                  <img src="assets/img/slider/im2.png" />
+                  <p>Скальпели</p>
+                  <a class="podrobnee_btn" href="#">
+                    <div class="btn_wrapper">
+                      <button class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                          <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Подробнее</span>
+                      </button>
+                    </div>
+                  </a>
+                </div>
+
                 <!-- //card -->
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide card card-shadow">
-                    <img src="/assets/img/slider/im1.jpg" />
-                    <p>Скальпели</p>
 
-                    <a class="podrobnee_btn" href="#">
-                      <div class="btn_wrapper">
-                        <button class="learn-more">
-                          <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
-                          </span>
-                          <span class="button-text">Подробнее</span>
-                        </button>
-                      </div>
-                    </a>
-                  </div>
-                </a>
+                <div class="swiper-slide card card-shadow">
+                  <img src="assets/img/slider/im1.jpg" />
+                  <p>Скальпели</p>
+
+                  <a class="podrobnee_btn" href="#">
+                    <div class="btn_wrapper">
+                      <button class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                          <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Подробнее</span>
+                      </button>
+                    </div>
+                  </a>
+                </div>
+
                 <!-- //card -->
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide card card-shadow">
-                    <img src="assets/img/slider/im1.jpg" />
-                    <p>Скальпели</p>
 
-                    <a class="podrobnee_btn" href="#">
-                      <div class="btn_wrapper">
-                        <button class="learn-more">
-                          <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
-                          </span>
-                          <span class="button-text">Подробнее</span>
-                        </button>
-                      </div>
-                    </a>
-                  </div>
-                </a>
+                <div class="swiper-slide card card-shadow">
+                  <img src="assets/img/slider/im1.jpg" />
+                  <p>Скальпели</p>
+
+                  <a class="podrobnee_btn" href="#">
+                    <div class="btn_wrapper">
+                      <button class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                          <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Подробнее</span>
+                      </button>
+                    </div>
+                  </a>
+                </div>
+
                 <!-- //card -->
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide card card-shadow">
-                    <img src="assets/img/slider/im1.jpg" />
-                    <p>Скальпели</p>
 
-                    <a class="podrobnee_btn" href="#">
-                      <div class="btn_wrapper">
-                        <button class="learn-more">
-                          <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
-                          </span>
-                          <span class="button-text">Подробнее</span>
-                        </button>
-                      </div>
-                    </a>
-                  </div>
-                </a>
+                <div class="swiper-slide card card-shadow">
+                  <img src="assets/img/slider/im1.jpg" />
+                  <p>Скальпели</p>
+
+                  <a class="podrobnee_btn" href="#">
+                    <div class="btn_wrapper">
+                      <button class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                          <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Подробнее</span>
+                      </button>
+                    </div>
+                  </a>
+                </div>
+
                 <!-- //card -->
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide card card-shadow">
-                    <img src="assets/img/slider/im1.jpg" />
-                    <p>Скальпели</p>
 
-                    <a class="podrobnee_btn" href="#">
-                      <div class="btn_wrapper">
-                        <button class="learn-more">
-                          <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
-                          </span>
-                          <span class="button-text">Подробнее</span>
-                        </button>
-                      </div>
-                    </a>
-                  </div>
-                </a>
+                <div class="swiper-slide card card-shadow">
+                  <img src="assets/img/slider/im1.jpg" />
+                  <p>Скальпели</p>
+
+                  <a class="podrobnee_btn" href="#">
+                    <div class="btn_wrapper">
+                      <button class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                          <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Подробнее</span>
+                      </button>
+                    </div>
+                  </a>
+                </div>
+
                 <!-- //card -->
               </div>
               <!-- Add Arrows -->
@@ -237,8 +198,6 @@
               <div class="swiper-button-prev"></div>
             </div>
             <!-- //swiper -->
-
-            <!-- Initialize Swiper -->
           </div>
         </div>
       </div>

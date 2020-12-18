@@ -42,6 +42,12 @@ export default {
   data() {
     return {
       settings: [
+        {
+          name: "Главная страница",
+          type: 'custom',
+          slug: 'mainPage',
+          component: ''
+        }
         // {
         //   name: "Каталог",
         //   type: "checkbox",
