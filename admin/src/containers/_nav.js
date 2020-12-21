@@ -68,12 +68,12 @@ export default async () => {
 
         //   ]
         // },
-        {
-          _name: 'CSidebarNavItem',
-          name: 'Заказы',
-          to: '/orders',
-          icon: 'cil-basket',
-        },
+        // {
+        //   _name: 'CSidebarNavItem',
+        //   name: 'Заказы',
+        //   to: '/orders',
+        //   icon: 'cil-basket',
+        // },
 
         {
           _name: 'CSidebarNavItem',
@@ -91,20 +91,20 @@ export default async () => {
         // },
         ...sections,
 
-        {
-          _name: 'CSidebarNavItem',
-          name: 'Уведомления',
-          to: '/notys',
-          icon: 'cil-bell',
-        },
+        // {
+        //   _name: 'CSidebarNavItem',
+        //   name: 'Уведомления',
+        //   to: '/notys',
+        //   icon: 'cil-bell',
+        // },
 
 
-        {
-          _name: 'CSidebarNavItem',
-          name: 'Пользователи',
-          to: '/users',
-          icon: 'cil-user',
-        },
+        // {
+        //   _name: 'CSidebarNavItem',
+        //   name: 'Пользователи',
+        //   to: '/users',
+        //   icon: 'cil-user',
+        // },
 
         {
           _name: "CSidebarNavDropdown",

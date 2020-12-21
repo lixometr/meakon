@@ -31,7 +31,7 @@ const config = {
   mongo: {
     url: process.env.MONGO_DB_URI || 'mongodb://localhost/' + globalConfig.dbName
   },
-  adminEmail: 'client@lootchampion.com',
+  adminEmail: globalConfig.adminEmail,
   perPage: 20,
   JWT_SECRET: 'jwt_very_secret_key',
   JWT_ADMIN_SECRET: 'jwt_very_secret_key',

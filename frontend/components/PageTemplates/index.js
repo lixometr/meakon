@@ -1,6 +1,6 @@
-import about from "./about"
-import home from "./home"
-import contact from "./contact"
+import about from "./about.vue"
+import home from "./home.vue"
+import contact from "./contact.vue"
 export default {
     about,
     home,
