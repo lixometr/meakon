@@ -18,7 +18,7 @@ export default async ({ app, $axios, store }, inject) => {
         baseUrl = 'https://api.lootchampion.com'
     }
     if (process.server) {
-        baseUrl = 'http://localhost:8080'
+         baseUrl = 'http://localhost:8080'
     }
     // console.log('hey', process.env.NODE_ENV)
     inject('api', new Api(ApiRoutes({ baseUrl }), $axios, {}))
