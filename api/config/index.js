@@ -3,6 +3,7 @@ const errorCodes = require('./errorCodes')
 let globalConfig
 
 if (process.env.NODE_ENV === 'production') {
+  console.log('prod')
   globalConfig = require('../../common/config/config.production')
 } else {
   globalConfig = require('../../common/config/config.development')
