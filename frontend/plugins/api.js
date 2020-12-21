@@ -1,6 +1,6 @@
 import Api from "../../common/api_routes/api"
 import ApiRoutes from "../../common/api_routes/api_routes"
-
+import globalConfig from "@/helpers/globalConfig"
 export default async ({ app, $axios, store }, inject) => {
     // store.commit('user/initToken')
     $axios.interceptors.request.use(config => {
@@ -13,12 +13,10 @@ export default async ({ app, $axios, store }, inject) => {
         }, config.params)
         return config
     })
-    let baseUrl = 'http://localhost:8080'
-    if (process.env.NODE_ENV === 'production') {
-        baseUrl = 'https://api.lootchampion.com'
-    }
+    let baseUrl = globalConfig.api.baseUrl
+
     if (process.server) {
-         baseUrl = 'http://localhost:8080'
+        baseUrl = 'http://localhost:8080'
     }
     // console.log('hey', process.env.NODE_ENV)
     inject('api', new Api(ApiRoutes({ baseUrl }), $axios, {}))
