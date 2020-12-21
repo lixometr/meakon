@@ -1,2 +1,2 @@
-cd frontend/ && npm run build && pm2 restart frontend && pm2 restart backend && cd ../admin && npm run build
-#pm2 restart backend && cd ../admin && npm run build
+cd frontend/ && npm run build && pm2 restart frontend && pm2 restart api && cd ../admin && npm run build
+#pm2 restart api && cd ../admin && npm run build
