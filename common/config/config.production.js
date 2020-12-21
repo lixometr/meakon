@@ -1,7 +1,7 @@
 module.exports = {
     dbName: 'meakon',
     "api": {
-        "baseUrl": "http:/api.meakon-med.com",
+        "baseUrl": "http://api.meakon-med.com",
         "baseName": "api.meakon-med.com"
     },
     "frontend": {
