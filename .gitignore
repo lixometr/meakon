@@ -3,6 +3,7 @@ uploads
 ### Node template
 # Logs
 verstka
+admin
 /logs
 *.log
 npm-debug.log*
