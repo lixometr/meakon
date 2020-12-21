@@ -1,11 +1,23 @@
 <template>
   <div id="aboutPage">
-    <div class="row">
-      <div class="col-12">
-        <PageBreadcrumbs :items="[{ name: value.name, link: '' }]" />
-        <img class="about_offer_img" src="/assets/img/img_main2.png" alt="" />
+    <!-- header -->
+    <header class="offer">
+      <!-- fix меню -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <PageBreadcrumbs :items="[{ name: value.name, link: '' }]" />
+
+            <img
+              class="about_offer_img"
+              src="/assets/img/img_main2.png"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
-    </div>
+      <!-- //fix меню -->
+    </header>
 
     <!-- section о компании -->
     <section class="med_about">
@@ -14,7 +26,7 @@
           <!-- Навигация -->
           <div class="col-lg-1 col-md-1">
             <div class="left_nav">
-              <img src="assets/img/section.png" />
+              <img src="/assets/img/section.png" />
               <span>Meakon</span>
             </div>
           </div>
@@ -79,7 +91,7 @@
                 <ul>
                   <li class="cifra">120</li>
                   <li class="line">
-                    <img src="assets/img/change_lang.png" alt="" />
+                    <img src="/assets/img/change_lang.png" alt="" />
                   </li>
                   <li class="cifra_desc">
                     Описание цифренного показателя в две строки
@@ -93,7 +105,7 @@
                 <ul>
                   <li class="cifra">20</li>
                   <li class="line">
-                    <img src="assets/img/change_lang.png" alt="" />
+                    <img src="/assets/img/change_lang.png" alt="" />
                   </li>
                   <li class="cifra_desc">
                     Описание цифренного показателя в две строки
@@ -107,7 +119,7 @@
                 <ul>
                   <li class="cifra">32</li>
                   <li class="line">
-                    <img src="assets/img/change_lang.png" alt="" />
+                    <img src="/assets/img/change_lang.png" alt="" />
                   </li>
                   <li class="cifra_desc">
                     Описание цифренного показателя в две строки
@@ -130,7 +142,7 @@
           <!-- Навигация -->
           <div class="col-lg-1 col-md-1 col-sm-1">
             <div class="left_nav">
-              <img src="assets/img/section_black.png" />
+              <img src="/assets/img/section_black.png" />
               <span>принципы</span>
             </div>
           </div>
@@ -201,7 +213,7 @@
           <!-- Навигация -->
           <div class="col-lg-1 col-md-1 d-sm-none d-md-none d-lg-block">
             <div class="left_nav">
-              <img src="assets/img/section_black.png" />
+              <img src="/assets/img/section_black.png" />
               <span>команды</span>
             </div>
           </div>
@@ -210,98 +222,110 @@
           <!-- Описание блока -->
           <div class="col-lg-10 col-md-12 col-sm-12 docs">
             <!-- Swiper -->
-            <div class="swiper-container swiper_docs">
+            <swiper class="swiper_docs" :options="swiperOptions">
+              <swiper-slide class="doc" v-for="(num, idx) in 5" :key="idx">
+                <div class="box" v-if="idx & 1 === 1"></div>
+                <div class="doc_image">
+                  <img src="/assets/img/doctors/d3.png" />
+                </div>
+                <div class="description_title">
+                  <p>Гришечкина Александра Константиновна</p>
+                  <a href="">должность</a>
+                  <div class="doc_info">
+                    <hr />
+                    <span
+                      >Дополнительное информация про врача, какие-то факты, на
+                      несколько строк. Информация про врача</span
+                    >
+                  </div>
+                </div>
+              </swiper-slide>
+              <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
+            <!-- <div class="swiper-container swiper_docs">
               <div class="swiper-wrapper">
-                <!-- card -->
+                
 
                 <div class="swiper-slide doc">
-                  <img src="assets/img/doctors/d3.png" />
-                  <p>Гришечкина Александра Константиновна</p>
-                  <a href="#">должность</a>
+                  <div class="doc_image">
+                    <img src="/assets/img/doctors/d3.png" />
+                  </div>
+                  <div class="description_title">
+                    <p>Гришечкина Александра Константиновна</p>
+                    <a href="">должность</a>
+                    <div class="doc_info">
+                      <hr />
+                      <span
+                        >Дополнительное информация про врача, какие-то факты, на
+                        несколько строк. Информация про врача</span
+                      >
+                    </div>
+                  </div>
                 </div>
-
-                <!-- //card -->
-                <!-- card -->
-
-                <div class="swiper-slide doc">
-                  <div class="box"></div>
-                  <img src="assets/img/doctors/d3.png" />
-                  <div class="box2"></div>
-                  <p>Гришечкина Александра Константиновна</p>
-                  <a href="#">должность</a>
-                  <hr />
-                  <p class="doc_info">
-                    Дополнительное информация про врача, какие-то факты, на
-                    несколько строк. Информация про врача
-                  </p>
-                </div>
-
-                <!-- //card -->
-                <!-- card -->
-
-                <div class="swiper-slide doc">
-                  <img src="assets/img/doctors/d3.png" />
-                  <p>Гришечкина Александра Константиновна</p>
-                  <a href="#">должность</a>
-                </div>
-
-                <!-- //card -->
-                <!-- card -->
 
                 <div class="swiper-slide doc">
                   <div class="box"></div>
-                  <img src="assets/img/doctors/d3.png" />
+                  <div class="doc_image">
+                    <img src="/assets/img/doctors/d3.png" />
+                  </div>
                   <div class="box2"></div>
-                  <p>Гришечкина Александра Константиновна</p>
-                  <a href="#">должность</a>
-                  <hr />
-                  <p class="doc_info">
-                    Дополнительное информация про врача, какие-то факты, на
-                    несколько строк. Информация про врача
-                  </p>
+                  <div class="description_title">
+                    <p>Гришечкина Александра Константиновна</p>
+                    <a href="">должность</a>
+                    <div class="doc_info">
+                      <hr />
+                      <span
+                        >Дополнительное информация про врача, какие-то факты, на
+                        несколько строк. Информация про врача</span
+                      >
+                    </div>
+                  </div>
                 </div>
 
-                <!-- //card -->
+
+                <div class="swiper-slide doc">
+                  <div class="doc_image">
+                    <img src="/assets/img/doctors/d3.png" />
+                  </div>
+                  <div class="description_title">
+                    <p>Гришечкина Александра Константиновна</p>
+                    <a href="">должность</a>
+                    <div class="doc_info">
+                      <hr />
+                      <span
+                        >Дополнительное информация про врача, какие-то факты, на
+                        несколько строк. Информация про врача</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+               
+                <div class="swiper-slide doc">
+                  <div class="box"></div>
+                  <div class="doc_image">
+                    <img src="/assets/img/doctors/d3.png" />
+                  </div>
+                  <div class="box2"></div>
+                  <div class="description_title">
+                    <p>Гришечкина Александра Константиновна</p>
+                    <a href="">должность</a>
+                    <div class="doc_info">
+                      <hr />
+                      <span
+                        >Дополнительное информация про врача, какие-то факты, на
+                        несколько строк. Информация про врача</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+           
               </div>
-              <!-- Add Arrows -->
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
-            </div>
-            <!-- //swiper -->
-
-            <!-- Initialize Swiper -->
-            <script>
-              var swiper = new Swiper(".swiper_docs", {
-                loop: true,
-                autoplay: {
-                  delay: 6000,
-                },
-                navigation: {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                },
-                spaceBetween: 5,
-                // init: false,
-                pagination: {
-                  el: ".swiper-pagination",
-                  clickable: true,
-                },
-                breakpoints: {
-                  320: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                  },
-                  768: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                  },
-                  1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 60,
-                  },
-                },
-              });
-            </script>
+            </div> -->
           </div>
           <!-- //Описание блока -->
         </div>
@@ -316,7 +340,7 @@
           <!-- Навигация -->
           <div class="col-lg-1 col-md-1 col-sm-1">
             <div class="left_nav">
-              <img src="assets/img/section.png" />
+              <img src="/assets/img/section.png" />
               <span>партнеры</span>
             </div>
           </div>
@@ -336,44 +360,34 @@
             <div class="swiper-container swiper-banks">
               <div class="swiper-wrapper">
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide banks">
-                    <img src="assets/img/slider_3/apt.png" />
-                    <a href="#">&nbsp;</a>
-                  </div>
-                </a>
+                <div class="swiper-slide banks">
+                  <img src="/assets/img/slider_3/apt.png" />
+                  <a href="#">&nbsp;</a>
+                </div>
                 <!-- //card -->
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide banks">
-                    <img src="assets/img/slider_3/apt2.png" />
-                    <a href="#">&nbsp;</a>
-                  </div>
-                </a>
+                <div class="swiper-slide banks">
+                  <img src="/assets/img/slider_3/apt2.png" />
+                  <a href="#">&nbsp;</a>
+                </div>
                 <!-- //card -->
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide banks">
-                    <img src="assets/img/slider_3/apt3.png" />
-                    <a href="#">&nbsp;</a>
-                  </div>
-                </a>
+                <div class="swiper-slide banks">
+                  <img src="/assets/img/slider_3/apt3.png" />
+                  <a href="#">&nbsp;</a>
+                </div>
                 <!-- //card -->
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide banks">
-                    <img src="assets/img/slider_3/apt4.png" />
-                    <a href="#">&nbsp;</a>
-                  </div>
-                </a>
+                <div class="swiper-slide banks">
+                  <img src="/assets/img/slider_3/apt4.png" />
+                  <a href="#">&nbsp;</a>
+                </div>
                 <!-- //card -->
                 <!-- card -->
-                <a href="#skalp">
-                  <div class="swiper-slide banks">
-                    <img src="assets/img/slider_3/apt5.png" />
-                    <a href="#">&nbsp;</a>
-                  </div>
-                </a>
+                <div class="swiper-slide banks">
+                  <img src="/assets/img/slider_3/apt5.png" />
+                  <a href="#">&nbsp;</a>
+                </div>
                 <!-- //card -->
               </div>
               <!-- Add Arrows -->
@@ -383,38 +397,6 @@
             <!-- //swiper -->
 
             <!-- Initialize Swiper -->
-            <script>
-              var swiper = new Swiper(".swiper-banks", {
-                loop: true,
-                autoplay: {
-                  delay: 5000,
-                },
-                navigation: {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                },
-                spaceBetween: 5,
-                // init: false,
-                pagination: {
-                  el: ".swiper-pagination",
-                  clickable: true,
-                },
-                breakpoints: {
-                  320: {
-                    slidesPerView: 1,
-                    spaceBetween: 40,
-                  },
-                  668: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                  },
-                  1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 30,
-                  },
-                },
-              });
-            </script>
           </div>
         </div>
       </div>
@@ -451,41 +433,75 @@ import PageTemplateMixin from "@/mixins/PageTemplateMixin";
 
 export default {
   mixins: [PageTemplateMixin],
+  computed: {
+    swiperOptions() {
+      return {
+        loop: true,
+        autoplay: {
+          delay: 6000,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        spaceBetween: 5,
+        // init: false,
+        // pagination: {
+        //   el: ".swiper-pagination",
+        //   clickable: true,
+        // },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        },
+      };
+    },
+  },
   mounted() {
-    new Swiper(".swiper_docs", {
-      loop: true,
-      autoplay: {
-        delay: 6000,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      spaceBetween: 5,
-      // init: false,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 40,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 60,
-        },
-      },
-    });
+    // new Swiper(".swiper_docs", {
+    //   loop: true,
+    //   autoplay: {
+    //     delay: 6000,
+    //   },
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    //   },
+    //   spaceBetween: 5,
+    //   // init: false,
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //   },
+    //   breakpoints: {
+    //     320: {
+    //       slidesPerView: 1,
+    //       spaceBetween: 10,
+    //     },
+    //     768: {
+    //       slidesPerView: 2,
+    //       spaceBetween: 40,
+    //     },
+    //     1024: {
+    //       slidesPerView: 4,
+    //       spaceBetween: 50,
+    //     },
+    //   },
+    // });
     new Swiper(".swiper-banks", {
       loop: true,
       autoplay: {
-        delay: 5000,
+        delay: 8000,
       },
       navigation: {
         nextEl: ".swiper-button-next",

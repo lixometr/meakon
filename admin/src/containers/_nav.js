@@ -46,10 +46,10 @@ export default async () => {
               name: "Метки",
               to: "/labels"
             },
-            {
-              name: "Купоны",
-              to: "/promocodes"
-            },
+            // {
+            //   name: "Купоны",
+            //   to: "/promocodes"
+            // },
           ]
         },
         // {

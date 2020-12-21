@@ -18,7 +18,6 @@ export default async ({ app, $axios, store }, inject) => {
         baseUrl = 'https://api.lootchampion.com'
     }
     if (process.server) {
-        console.log('this is server')
         baseUrl = 'http://localhost:8080'
     }
     // console.log('hey', process.env.NODE_ENV)

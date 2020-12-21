@@ -1,15 +1,15 @@
 module.exports = {
     dbName: 'meakon',
     "api": {
-        "baseUrl": "https://api.cms.com",
-        "baseName": "api.ms.com"
+        "baseUrl": "https:/api.meakon-med.com",
+        "baseName": "api.meakon-med.com"
     },
     "frontend": {
-        "baseUrl": "https://cms.com",
-        "baseName": "cms.com"
+        "baseUrl": "https://meakon-med.com",
+        "baseName": "meakon-med.com"
     },
     "admin": {
-        "baseUrl": "https://admin.cms.com",
-        "baseName": "admin.cms.com"
+        "baseUrl": "https://adminmeakonst.meakon-med.com",
+        "baseName": "adminmeakonst.cms.com"
     }
 }
