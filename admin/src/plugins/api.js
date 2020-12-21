@@ -8,10 +8,8 @@ instance.interceptors.request.use(config => {
     return config
 }
 );
-let globalConfig = require('../../../common/config/config.development')
-if (process.env.NODE_ENV === 'production') {
-    globalConfig = require('../../../common/config/config.production')
-}
+import globalConfig from "@/helpers/globalConfig"
+
 const baseUrl = globalConfig.api.baseUrl
 console.log('hey', process.env.NODE_ENV)
 export default new Api(ApiRoutes({ baseUrl }), instance)
