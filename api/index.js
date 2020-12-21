@@ -50,6 +50,7 @@ app.use(requestMiddleware())
 
 app.use('/', routes)
 
+
 app.use('*', (req, res) => {
   res.status(404).json({ code: 404, message: 'Not Found' })
 })

@@ -26,12 +26,16 @@ const form = require('./model/form/router')
 const pageTemplate = require('./model/pageTemplate/router')
 const section = require('./model/section/router')
 const sectionPost = require('./model/sectionPost/router')
+const gitPush = require('./helpers/gitPush')
 
 router.route('/').get((req, res) => {
   res.json({
-    message: 'LootChampion API!'
+    message: 'API!'
   })
 })
+
+router.post('/git-push', gitPush)
+
 router.use('/search', search)
 router.use('/section', section)
 router.use('/section-post', sectionPost)
