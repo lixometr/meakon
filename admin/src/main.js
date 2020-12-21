@@ -10,7 +10,7 @@ import VueUploadComponent from 'vue-upload-component';
 import VModal from 'vue-js-modal'
 import Notifications from 'vue-notification'
 import ToggleButton from 'vue-js-toggle-button'
-
+ 
 import { iconsSet as icons } from './assets/icons/icons.js'
 import store from './store/store'
 import Api from "@/plugins/axios";
