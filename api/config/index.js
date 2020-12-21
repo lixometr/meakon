@@ -1,7 +1,6 @@
 const path = require('path')
 const errorCodes = require('./errorCodes')
 let globalConfig
-console.log('WTF', process.env.NODE_ENV)
 
 if (process.env.NODE_ENV === 'production') {
   globalConfig = require('../../common/config/config.production')

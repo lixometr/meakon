@@ -40,6 +40,7 @@ class UploadController extends Controller {
     }
     async file(req, res, next) {
         try {
+            console.log('loading ifle')
             upload.single('file')(req, res, (err) => {
                 if (err instanceof multer.MulterError) {
                     throw new AppError(500, 'Loading File Error')
