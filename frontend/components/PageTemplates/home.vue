@@ -308,7 +308,7 @@
               <!-- text2 -->
               <div>
                 <AText
-                :text="getLangValue('blok_anonsa_kompanii.tekst_anonsa_kompanii_2', 'en_ukazhite_kratkii_tekst_o_kompanii_2')"
+                :text="getLangValue('blok_anonsa_kompanii.tekst_anonsa_kompanii_2', 'blok_anonsa_kompanii.en_ukazhite_kratkii_tekst_o_kompanii_2')"
               />
               </div>
               <!-- //text2 -->

@@ -1,11 +1,10 @@
 module.exports = {
-    category: '/category/',
+    category: '/catalog/',
     product: '/product/',
     page: '/p/',
     search: '/search/',
     cart: '/cart/',
     search: '/search/',
-    blog: '/blog/',
     profile: '/profile/',
     checkout: '/checkout/'
 }
