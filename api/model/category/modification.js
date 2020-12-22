@@ -16,16 +16,9 @@ module.exports = class CategoryModification extends Modification {
         return {
             _id: this.item._id,
             name: this.item.name,
+            name_en: this.item.name_en,
             image: this.item.image,
-            image_person: this.item.image_person,
-            image_text: this.item.image_text,
-            image_bg: this.item.image_bg,
-            is_soon: this.item.is_soon,
-            soon_color1: this.item.soon_color1,
-            soon_color2: this.item.soon_color2,
-            is_new: this.item.is_new,
-            new_color1: this.item.new_color1,
-            new_color2: this.item.new_color2,
+
             slug: this.item.slug,
             parent: this.item.parent,
             created_at: this.item.created_at,

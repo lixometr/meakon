@@ -132,10 +132,10 @@ export default {
           key: "price",
           label: "Цена",
         },
-        {
-          key: "old_price",
-          label: "Старая цена",
-        },
+        // {
+        //   key: "old_price",
+        //   label: "Старая цена",
+        // },
         {
           key: "category",
           label: "Категории",

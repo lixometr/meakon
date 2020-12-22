@@ -37,11 +37,12 @@ export default {
       { rel: "stylesheet", href: "/assets/fonts/fonts.css", },
       { rel: "stylesheet", href: "/assets/css/main.css", },
       { rel: "stylesheet", href: "/assets/css/media.css", },
+      { rel: "icon", href: "/favicon.png", type: "image/png" }
 
 
     ]
   },
-  
+
 
   /*
  ** Global CSS

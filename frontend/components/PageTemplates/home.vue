@@ -38,7 +38,21 @@
             </nuxt-link>
           </div>
         </div>
-        <div class="rounded"><img src="/assets/img/rounded.png" /></div>
+        <div class="rounded">
+          <div class="round"></div>
+          <svg viewBox="0 0 100 70" width="100px">
+            <path
+              d="M35,35m-23,0a23,23 0 1,1 46,0a23,23 0 1,1 -46,0"
+              fill="none"
+              id="tophalf"
+            />
+            <text style="font: initial">
+              <textPath xlink:href="#tophalf" startOffset="0%">
+                {{ getLangValue("dop_elementi.listaite_vniz") }}
+              </textPath>
+            </text>
+          </svg>
+        </div>
       </div>
     </header>
     <!-- //header -->
@@ -246,7 +260,6 @@
                   )
                 }}</span>
               </li>
-          
             </ul>
           </div>
           <!-- //Описание блока -->
@@ -264,7 +277,10 @@
             <!--  <img src="assets/img/img_main.png" alt=""> -->
             <div class="wrapper2">
               <video class="mainscreen-video2" autoplay="" muted="" loop="">
-                <source :src="getValue('blok_anonsa_kompanii.video_prezentatsiya')" type="video/mp4" />
+                <source
+                  :src="getValue('blok_anonsa_kompanii.video_prezentatsiya')"
+                  type="video/mp4"
+                />
               </video>
             </div>
           </div>
@@ -282,7 +298,7 @@
             <i class="nav-fill">&nbsp;</i>
             <div class="left_nav">
               <img src="/assets/img/section.png" />
-              <span>{{getLangValue('dop_elementi.meakon')}}</span>
+              <span>{{ getLangValue("dop_elementi.meakon") }}</span>
             </div>
           </div>
           <!-- //Навигация -->
@@ -290,9 +306,10 @@
           <!-- Описание блока -->
           <div class="col-lg-3 col-sm-12">
             <h2>
-              {{ getLangValue("blok_anonsa_kompanii.zagolovok_anonsa_kompanii") }}
+              {{
+                getLangValue("blok_anonsa_kompanii.zagolovok_anonsa_kompanii")
+              }}
             </h2>
-          
           </div>
           <!-- //Описание блока -->
 
@@ -301,21 +318,30 @@
             <div class="about_text">
               <!-- text1 -->
               <AText
-                :text="getLangValue('blok_anonsa_kompanii.tekst_anonsa_kompanii')"
+                :text="
+                  getLangValue('blok_anonsa_kompanii.tekst_anonsa_kompanii')
+                "
               />
               <!-- //text1 -->
 
               <!-- text2 -->
               <div>
                 <AText
-                :text="getLangValue('blok_anonsa_kompanii.tekst_anonsa_kompanii_2', 'blok_anonsa_kompanii.en_ukazhite_kratkii_tekst_o_kompanii_2')"
-              />
+                  :text="
+                    getLangValue(
+                      'blok_anonsa_kompanii.tekst_anonsa_kompanii_2',
+                      'blok_anonsa_kompanii.en_ukazhite_kratkii_tekst_o_kompanii_2'
+                    )
+                  "
+                />
               </div>
               <!-- //text2 -->
 
               <nuxt-link
                 class="podrobnee_btn"
-                :to="getValue('blok_anonsa_kompanii.ssilka_knopki_anonsa') || '#'"
+                :to="
+                  getValue('blok_anonsa_kompanii.ssilka_knopki_anonsa') || '#'
+                "
               >
                 <div class="btn_wrapper">
                   <button class="learn-more">

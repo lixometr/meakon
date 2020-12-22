@@ -1,5 +1,18 @@
 {
     "goToCatalog": "Перейти в каталог",
     "categoriesItems": "Категории товаров",
-    "catalogView": "Вид каталога"
+    "catalogView": "Вид каталога",
+    "contact": {
+        "address": "Адрес",
+        "phone": "Телефон",
+        "workTime": "Режим работы",
+        "warehouse": "Адрес склада"
+    },
+    "price": "Цена",
+    "getPrice": "Запросить цену",
+    "skuLong": "номер регистрационного удостоверения",
+    "description": "Описание",
+    "characteristics":"Характеристики",
+    "similarItems": "Похожие товары",
+    "recommend": "Рекомендуем"
 }

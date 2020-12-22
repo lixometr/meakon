@@ -1,6 +1,16 @@
 {
     "goToCatalog": "Visit catalog",
-    "categoriesItems": "Items categories"
-
-
+    "categoriesItems": "Items categories",
+    "catalogView": "Catalog view",
+    "contact": {
+        "address": "Address",
+        "phone": "Phone",
+        "workTime": "Time table",
+        "warehouse": "Warehouse address"
+    },
+    "price": "Price",
+    "getPrice": "Get Price",
+    "skuLong": "SKU",
+    "description": "Description",
+    "characteristics": "Characteristics"
 }

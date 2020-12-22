@@ -33,10 +33,10 @@
             <div class="contact_info">
               <ul>
                 <li>
-                  <span>Адрес: </span><b>{{ getLangValue("adres") }}</b>
+                  <span>{{$t('contact.address')}}: </span><b>{{ getLangValue("adres") }}</b>
                 </li>
                 <li>
-                  <span>Телефон: </span
+                  <span>{{$t('contact.phone')}}: </span
                   ><b>
                     <span v-for="(item, idx) in getValue('telefoni')" :key="idx"
                       >{{ item.telefon }}<br
@@ -48,11 +48,11 @@
                   <span>E-mail: </span><b>{{ getValue("email") }}</b>
                 </li>
                 <li>
-                  <span>Режим работы: </span
+                  <span>{{$t('contact.workTime')}}: </span
                   ><b>{{ getLangValue("rezhim_raboti") }}</b>
                 </li>
                 <li>
-                  <span>Адрес склада: </span>
+                  <span>{{$t('warehouse')}}: </span>
                   <b>
                     <span
                       v-for="(item, idx) in getValue('adresa_skladov')"

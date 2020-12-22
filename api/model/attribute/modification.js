@@ -9,6 +9,7 @@ module.exports = class AttributeModification extends Modification {
         return {
             _id: this.item._id,
             name: this.item.name,
+            name_en: this.item.name_en,
             slug: this.item.slug,
         }
     }

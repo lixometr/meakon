@@ -18,12 +18,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    view: String,
   },
   data() {
-    return {
-      // list grid
-      view: "list",
-    };
+    return {};
   },
 };
 </script>

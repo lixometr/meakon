@@ -185,7 +185,44 @@ a:hover {
 	position: absolute;
 	bottom: 40px;
 	left: 3.5%;
+	
+	animation: 10s linear 0s normal none infinite running rot;
+	-webkit-animation: 10s linear 0s normal none infinite running rot;
+	width: 100px;
 }
+.round {
+	background-image: url('/assets/img/section.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 50px;
+	height: 28px;
+	position: absolute;
+	top: 20px;
+	z-index: 9;
+	right: 40px;
+}
+textPath {
+	color: #73869F;
+	font-family: 'Federo';
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 header nav {
 	display: flex;
 	flex-direction: row;
@@ -1661,6 +1698,7 @@ span{
 	color: #00294C;
 }
 .learn-more:focus,
+a:focus,
 button:focus {
 	outline: none!important;
 }
@@ -2266,6 +2304,7 @@ color: #009CDB;
           transform: translateY(-50%);
   font-size: 50px;
 }
+ 
 @media only screen and (min-width: 320px) {
   .inner-text {
     padding-left: 15px;
@@ -3750,8 +3789,120 @@ button.learn-more .button-text {
 .similar_products button .button-text {
 	color: white!important;
 }
-.offer_info button.learn-more .button-text {
-	color: white;
+.offer_info button.learn-more .button-text,
+.med_rashodniki button.learn-more .button-text,
+.about_text button.learn-more .button-text{
+	color: white!important;
+}
+.offer_info {
+	width: 80%;
+} 
+#index section:not(:last-child) {
+	margin-left: 0;
+}
+#index .btn_wrapper {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+#index .swiper-container {
+	margin-left: 0;
+}
+#index section .card{
+max-width: 98%!important;
+}
+.wrapper2 {
+	margin-left: 0;
+}
+.product_filter_view {
+	padding-right: 0;
+}
+.product { 
+	padding-right: 15px;
+
+	button.learn-more .button-text {
+		color: white!important;
+
+	}
+}
+.filter_tabs ul:not(:last-child) {
+	min-width: unset;
+	width: 100%;
+}
+.product .product_button {
+    margin-top: 20px;
+    width: 100%;
+
+}
+.product_filter_view {
+	margin: 0;
+	padding-right: 15px;
+}
+.product_filter_view span {
+	margin-right: unset;
+}
+details[open] {
+	top:-65px;
+} 
+details {
+    top: -65px!important;
+}
+.product_card,
+.product_tabs {
+	padding: 0 5px;
+}
+.similar_products button.learn-more .circle .icon.arrow::before { 
+	right: 5px;
+}
+.product_card__desc ul li {
+	display: grid;
+	grid-template-columns: repeat(2, 115%);
+}
+.about_offer_img {
+	margin: 0 auto;
+	margin-top: 90px;
+	height: auto;
+	width: 100%;
+}
+.med_work {
+	margin: 0!important;
+	padding: 0 15px;
+	width: 100%;
+}
+#aboutPage .med_work {
+	padding-left: 5px;
+}
+.commrads {
+    width: 100%;
+}
+#aboutPage .swiper-container {
+	padding-left: 0;
+	margin-right: 0;
+}
+#aboutPage .swiper-button-prev {
+	top: 35px;
+}
+#aboutPage .swiper-button-next {
+	bottom: 15px;
+}
+.commrads {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+#aboutPage .med_banks .swiper-container {
+    padding-top: 15px !important;
+    padding-left: 7px !important;
+}
+.preFooter button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0;
+    width: 1.125rem;
+    height: 7px;
+    background: none;
+}
+.preFooter .leaves {
+	display: none;
 }
 }
 

@@ -101,8 +101,9 @@ class ProductFacade extends Facade {
     }
 
     async findInSublimeCategories(catId, finder) {
-        const category = await categoryFacade.findById(catId)
+        const category = await categoryFacade.findById(catId) 
         let catItems = []
+        if(!category) return []
         if (category.parent) {
             catItems = [category]
         } else {
@@ -130,10 +131,10 @@ class ProductFacade extends Facade {
     async findSimilarProductsBySlug(slug, { nowPage, perPage }) {
         const product = await this.findBySlug(slug)
         if (!product) throw new AppError(404)
-        const catId = product.primary_category
-        let items = await this.findByCategoryId(catId, { nowPage, perPage })
-        items = items.filter(item => item._id.toString() !== product._id.toString())
-        return items
+        let catId = product.category[0] && product.category[0].slug
+        let result = await this.findByCategoryId(catId, { nowPage, perPage })
+        result.items = result.items.filter(item => item._id.toString() !== product._id.toString())
+        return result
     }
 
 

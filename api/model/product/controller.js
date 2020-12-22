@@ -10,7 +10,7 @@ class ProductController extends Controller {
     constructor(...args) {
         super(...args)
     }
-    
+
 
     /**
      * 
@@ -22,11 +22,8 @@ class ProductController extends Controller {
             const category = await categoryFacade.findBySlug(req.params[0])
             if (!category) throw new AppError(400)
             let result;
-            if (date) {
-                result = await this.facade.findByCategoryIdAndDateWithPagination(category._id, date, req.request.region._id, { nowPage: req.query.page, perPage: req.query.per_page, })
-            } else {
-                result = await this.facade.findByCategoryId(category._id, { nowPage: req.query.page, perPage: req.query.per_page, })
-            }
+
+            result = await this.facade.findByCategoryId(category._id, { nowPage: req.query.page, perPage: req.query.per_page, })
             const toSend = result
             toSend.items = await this.initItems(toSend.items, { req })
             res.json(toSend)
@@ -38,9 +35,9 @@ class ProductController extends Controller {
 
     async getSimilarProductsBySlug(req, res, next) {
         try {
-            const products = await this.facade.findSimilarProductsBySlug(req.params.slug, req.request.language.id)
-            let instanceProducts = await this.initItems(products, {req})
-            res.json(instanceProducts)
+            const result = await this.facade.findSimilarProductsBySlug(req.params.slug, { nowPage: req.query.page, perPage: req.query.per_page })
+            result.items = await this.initItems(result.items, { req })
+            res.json(result)
         } catch (err) {
             next(err)
         }
