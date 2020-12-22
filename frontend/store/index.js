@@ -8,16 +8,14 @@ export const getters = {
   head(state) {
     return state.head
   },
-  passwordLength(state) {
-    return state.passwordLength
-  },
+ 
   pageTitle(state) {
     return (name, type) => {
       return name
     }
   },
   currency(state, getters) {
-    return getters['region/activeRegion'].currency
+    return 'руб.'
   },
 
 
