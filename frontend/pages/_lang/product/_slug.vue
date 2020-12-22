@@ -63,13 +63,29 @@ export default {
         },
         { name: "keywords", content: this.langSeo.keywords },
       ],
+      link: [
+        {
+          rel: "stylesheet",
+          href: "/assets/js/magnific/magnific-popup.css",
+        },
+      ],
+      script: [
+        {
+          type: "text/javascript",
+          src: "/assets/js/magnific/jquery.magnific-popup.min.js",
+          defer: true,
+          callback: () => (this.isReady = true),
+        },
+      ],
     };
   },
   data() {
     return {
       view: "list",
+      isReady: false,
     };
   },
+  mounted() {},
   async asyncData({ $api, error, params }) {
     try {
       const product = await $api.$get("product", { slug: params.slug });
@@ -100,6 +116,34 @@ export default {
       }));
       breadcrumbs.push({ name: this.name, link: "" });
       return breadcrumbs;
+    },
+  },
+  methods: {
+    initScripts() {
+      $(".popup-gallery").magnificPopup({
+        delegate: "a",
+        type: "image",
+        tLoading: "Loading image #%curr%...",
+        mainClass: "mfp-img-mobile",
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0, 1], // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+          titleSrc: function (item) {
+            return item.el.attr("title") + "<small>Некий текст</small>";
+          },
+        },
+      });
+    },
+  },
+  watch: {
+    isReady() {
+      if (this.isReady) {
+        this.initScripts();
+      }
     },
   },
 };

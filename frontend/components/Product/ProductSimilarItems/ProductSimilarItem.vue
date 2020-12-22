@@ -15,9 +15,9 @@
           {{ attr.value.map((itm) => $langValue(itm, "name")).join(" ") }}
         </div>
       </div>
-      <div class="product_price">{{ price }} {{ currency }}</div>
+      <div class="product_price" v-if="price">{{ price }} {{ currency }}</div>
       <div class="product_button">
-        <a class="podrobnee_btn" href="#">
+        <nuxt-link class="podrobnee_btn" :to="$url.product(item.slug)">
           <div class="btn_wrapper">
             <button class="learn-more">
               <span class="circle" aria-hidden="true">
@@ -26,7 +26,7 @@
               <span class="button-text">{{ $t("goToCatalog") }}</span>
             </button>
           </div>
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </div>

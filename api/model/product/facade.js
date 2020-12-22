@@ -131,7 +131,7 @@ class ProductFacade extends Facade {
     async findSimilarProductsBySlug(slug, { nowPage, perPage }) {
         const product = await this.findBySlug(slug)
         if (!product) throw new AppError(404)
-        let catId = product.category[0] && product.category[0].slug
+        let catId = product.category[0] 
         let result = await this.findByCategoryId(catId, { nowPage, perPage })
         result.items = result.items.filter(item => item._id.toString() !== product._id.toString())
         return result
