@@ -12,8 +12,22 @@
         />
         <EditComponent
           c="AInput"
+          v="leftText_en"
+          label="EN Текст слева"
+          :changeValue.sync="values"
+          :schema="schema"
+        />
+        <EditComponent
+          c="AInput"
           v="rightText"
           label="Текст справа"
+          :changeValue.sync="values"
+          :schema="schema"
+        />
+        <EditComponent
+          c="AInput"
+          v="rightText_en"
+          label="EN Текст справа"
           :changeValue.sync="values"
           :schema="schema"
         />

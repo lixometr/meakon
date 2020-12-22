@@ -2,8 +2,8 @@
   <footer>
     <div class="container-fluid">
       <div class="col-12 footer_info">
-        <span v-html="values.leftText"></span>
-        <span v-html="values.rightText"></span>
+        <span v-html="$langValue(values, 'leftText')"></span>
+        <span v-html="$langValue(values, 'rightText')"></span>
       </div>
     </div>
   </footer>

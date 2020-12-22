@@ -5,7 +5,9 @@ module.exports = class Footer extends WidgetModification {
         super(...args)
         this.schema = {
             leftText: '',
+            leftText_en: '',
             rightText: '',
+            rightText_en: '',
 
         }
     }

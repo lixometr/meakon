@@ -19,7 +19,7 @@
         <ul class="menu__list">
           <li class="menu__item" v-for="(itm, idx) in values.menu" :key="idx">
             <nuxt-link :to="itm.url || '#'" class="menu__link">{{
-              itm.name
+              $langValue(values, `menu.[${idx}].name`)
             }}</nuxt-link>
           </li>
 
@@ -56,11 +56,10 @@
                 :to="itm.url || '#'"
                 v-for="(itm, idx) in values.menu"
                 :key="idx"
-                >{{ itm.name }}</nuxt-link
+                >{{ $langValue(values, `menu.[${idx}].name`) }}</nuxt-link
               >
-
               <!-- Telephone -->
-              <a :href="'tel:' + values.phone"></a>
+              <a :href="'tel:' + values.phone">{{$langValue(values, 'phone')}}</a>
               <!-- //Telephone -->
             </nav>
           </div>

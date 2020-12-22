@@ -24,6 +24,13 @@
           :changeValue.sync="values"
           :schema="schema"
         />
+        <EditComponent
+          c="AInput"
+          v="phone_en"
+          label="EN Телефон"
+          :changeValue.sync="values"
+          :schema="schema"
+        />
 
         <EditComponent
           c="EditMultiplyer"
@@ -67,6 +74,11 @@ export default {
           c: "AInput",
           v: "name",
           label: "Название",
+        },
+        {
+          c: "AInput",
+          v: "name_en",
+          label: "EN Название",
         },
         {
           c: "AInput",

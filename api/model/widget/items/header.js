@@ -7,9 +7,11 @@ module.exports = class Header extends WidgetModification {
             logo: {},
             logo_mob: {},
             phone: '',
+            phone_en: '',
             menu: [
                 {
                     name: '',
+                    name_en: '',
                     url: '',
                 }
             ]
