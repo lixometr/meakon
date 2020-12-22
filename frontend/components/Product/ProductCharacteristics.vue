@@ -19,8 +19,7 @@ export default {
   computed: {
     attributes() {
       const attributes = this.product.attributes || [];
-      const filtered = attributes.filter((attr) => !!attr.show_in_preview);
-      return filtered;
+      return attributes;
     },
   },
 };
