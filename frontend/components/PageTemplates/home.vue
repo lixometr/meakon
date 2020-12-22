@@ -264,7 +264,7 @@
             <!--  <img src="assets/img/img_main.png" alt=""> -->
             <div class="wrapper2">
               <video class="mainscreen-video2" autoplay="" muted="" loop="">
-                <source src="/assets/video/vid.mp4" type="video/mp4" />
+                <source :src="getValue('blok_anonsa_kompanii.video_prezentatsiya')" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -307,13 +307,9 @@
 
               <!-- text2 -->
               <div>
-                <p>
-                  H7 Headline Сайт рыбатекст поможет дизайнеру,<br />
-                  верстальщику, вебмастеру сгенерировать несколько абзацев более
-                  менее осмысленного текста рыбы на русском языке, а начинающему
-                  оратору отточить навык публичных выступлений в домашних
-                  условиях.
-                </p>
+                <AText
+                :text="getLangValue('blok_anonsa_kompanii.tekst_anonsa_kompanii_2', 'en_ukazhite_kratkii_tekst_o_kompanii_2')"
+              />
               </div>
               <!-- //text2 -->
 

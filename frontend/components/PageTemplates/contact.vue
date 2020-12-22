@@ -1,6 +1,6 @@
 <template>
   <div id="contacts">
-    <PageBreadcrumbs :items="[{ name: value.name, link: '' }]" />
+    <PageBreadcrumbs :items="[{ name: $langValue(value, 'name'), link: '' }]" />
 
     <!-- section о компании -->
 
@@ -11,7 +11,7 @@
           <div class="col-lg-1 col-md-1 col-sm-12">
             <div class="left_nav">
               <img src="/assets/img/section.png" />
-              <span>Контакты</span>
+              <span>{{getLangValue('dop_polya.tekst_kontakti')}}</span>
             </div>
           </div>
           <!-- //Навигация -->
@@ -19,7 +19,7 @@
           <!-- Описание блока -->
           <div class="col-lg-3 col-md-3 col-sm-12">
             <h2>
-              {{ getValue("zagolovok_stranitsi_kontaktov") }}
+              {{ getLangValue("zagolovok_stranitsi_kontaktov") }}
             </h2>
             <!-- <p class="d-none">
               H7 Headline Сайт рыбатекст поможет дизайнеру, верстальщику,
@@ -33,7 +33,7 @@
             <div class="contact_info">
               <ul>
                 <li>
-                  <span>Адрес: </span><b>{{ getValue("adres") }}</b>
+                  <span>Адрес: </span><b>{{ getLangValue("adres") }}</b>
                 </li>
                 <li>
                   <span>Телефон: </span
@@ -49,7 +49,7 @@
                 </li>
                 <li>
                   <span>Режим работы: </span
-                  ><b>{{ getValue("rezhim_raboti") }}</b>
+                  ><b>{{ getLangValue("rezhim_raboti") }}</b>
                 </li>
                 <li>
                   <span>Адрес склада: </span>
@@ -58,7 +58,7 @@
                       v-for="(item, idx) in getValue('adresa_skladov')"
                       :key="idx"
                     >
-                      {{ item.adres_sklada }}<br
+                      {{ getLangValue(`adresa_skladov[${idx}].adres_sklada`) }}<br
                     /></span>
                   </b>
                 </li>
@@ -75,7 +75,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-8 col-sm-12">
-            <h3>{{ getValue("forma_obratnoi_svyazi.zagolovok_formi") }}</h3>
+            <h3>{{ getLangValue("forma_obratnoi_svyazi.zagolovok_formi") }}</h3>
           </div>
           <div class="col-lg-4 col-sm-12 btn-center">
             <nuxt-link
@@ -88,7 +88,7 @@
                     <span class="icon arrow"></span>
                   </span>
                   <span class="button-text">{{
-                    getValue("forma_obratnoi_svyazi.tekst_knopki")
+                    getLangValue("forma_obratnoi_svyazi.tekst_knopki")
                   }}</span>
                 </button>
               </div>

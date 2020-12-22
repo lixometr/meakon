@@ -39,12 +39,12 @@
           :multiple="true"
           required
         />
-        <LabelSelect
+        <!-- <LabelSelect
           class="mb-3"
           label="Метки"
           :multiple="true"
           v-model="product.flags"
-        />
+        /> -->
         <AInput
           class="mb-2"
           required

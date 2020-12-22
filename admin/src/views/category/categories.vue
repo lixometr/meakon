@@ -56,9 +56,9 @@ export default {
           key: "slug",
         },
        
-        {
-          key: "image",
-        },
+        // {
+        //   key: "image",
+        // },
         {
           key: "edit",
           label: "Действия",

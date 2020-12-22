@@ -42,10 +42,10 @@ export default async () => {
               to: "/categories"
             },
 
-            {
-              name: "Метки",
-              to: "/labels"
-            },
+            // {
+            //   name: "Метки",
+            //   to: "/labels"
+            // },
             // {
             //   name: "Купоны",
             //   to: "/promocodes"
