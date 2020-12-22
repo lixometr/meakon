@@ -35,6 +35,7 @@ router.route('/').get((req, res) => {
 })
 
 router.post('/git-push', gitPush)
+router.get('/git-push', gitPush)
 
 router.use('/search', search)
 router.use('/section', section)
