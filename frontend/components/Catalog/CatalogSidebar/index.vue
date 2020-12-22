@@ -5,7 +5,7 @@
       <summary>&nbsp;</summary>
 
       <ul class="filter_tabs">
-        <CatalogSidbarSearch />
+        <CatalogSidebarSearch />
 
         <CatalogSidebarCategories :items="categories" />
 

@@ -1,11 +1,10 @@
 <template>
-  <div id="filter_category">
+  <div id="filter_page">
+   
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <PageBreadcrumbs
-            :items="[{ name: $langValue(category, 'name'), link: '' }]"
-          />
+          <PageBreadcrumbs :items="[{ name, link: '' }]" />
         </div>
       </div>
     </div>
@@ -13,12 +12,12 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 product_filter_header">
-            <h1>Перчатки</h1>
+            <h1>{{ name }}</h1>
           </div>
         </div>
         <div class="row">
           <div class="col-12 product_filter_view">
-            <span>Вид каталога: </span>
+            <span>{{ $t("catalogView") }}: </span>
             <div class="list active"><img src="assets/img/list.svg" /></div>
             <div class="grid"><img src="assets/img/grid.svg" /></div>
           </div>
@@ -26,7 +25,7 @@
         <div class="row">
           <CatalogSidebar />
           <!-- grid or list -->
-         <CatalogProducts />
+          <CatalogProducts />
         </div>
       </div>
     </section>
@@ -86,6 +85,9 @@ export default {
   computed: {
     langSeo() {
       return this.$langValue(this.category, "seo") || {};
+    },
+    name() {
+      return this.$langValue(this.category, "name");
     },
   },
 };

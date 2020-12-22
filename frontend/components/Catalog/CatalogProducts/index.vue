@@ -13,15 +13,17 @@
 
 <script>
 export default {
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       // list grid
       view: "list",
     };
-  },
-  items: {
-    type: Array,
-    default: () => [],
   },
 };
 </script>
