@@ -10,7 +10,7 @@ export const state = () => ({
             name: "Английский"
         }
     ],
-    language: 'ru'
+    language: ''
 })
 
 export const getters = {
@@ -41,6 +41,10 @@ export const mutations = {
 
     },
     
+    changeLanguage(state, slug) {
+        state.language = slug
+        
+    }
 }
 
 export const actions = {
@@ -74,17 +78,11 @@ export const actions = {
                     return
                 }
             }
-            let definedLanguage;
-         
-            if (definedLanguage && definedLanguage.language) {
-                commit('setLanguage', definedLanguage.language)
+            
 
-                return true
-            }
-
-            const defaultLanguageId = this.getters['settings/item']('language')
-            const defaultLanguage = this.getters['language/languages'].find(reg => reg._id === defaultLanguageId) || {}
-            commit('setLanguage', defaultLanguage.slug)
+            // const defaultLanguageId = this.getters['settings/item']('language')
+            // const defaultLanguage = this.getters['language/languages'].find(reg => reg._id === defaultLanguageId) || {}
+            commit('setLanguage', 'ru')
 
             // commit('initLanguage')
         } catch (err) {
@@ -94,5 +92,8 @@ export const actions = {
     setLanguage({ commit }, id) {
         commit('setLanguage', id)
         // this.$router.push(this.$languagePath(this.$router))
+    },
+    changeLanguage({commit}, slug) {
+        commit('changeLanguage', slug)
     }
 }

@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 const Image = require('../Image')
 const pageSchema = new Schema({
   name: String,
+  name_en: String,
   slug: String,
   values: {},
   is_published: {
@@ -14,9 +15,14 @@ const pageSchema = new Schema({
     type: Schema.Types.ObjectId
   },
   seo: {
-    title: '',
-    description: '',
-    keywords: ''
+    title: String,
+    description: String,
+    keywords: String
+  },
+  seo_en: {
+    title: String,
+    description: String,
+    keywords: String
   },
 
   created_at: {

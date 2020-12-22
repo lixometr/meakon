@@ -41,6 +41,7 @@ export default {
 
     ]
   },
+  
 
   /*
  ** Global CSS
@@ -64,7 +65,9 @@ export default {
 
   ],
   router: {
-    scrollToTop: true
+    scrollToTop: true,
+    middleware: ['language'],
+
   },
   scrollToTop: true,
   // Auto import components (https://go.nuxtjs.dev/config-components)

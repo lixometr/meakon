@@ -20,6 +20,11 @@
         />
         <AInput
           class="mb-3"
+a          label="EN Заголовок"
+          v-model="data.name_en"
+        />
+        <AInput
+          class="mb-3"
           label="Slug"
           :isValid="$v.data.slug.$error ? false : undefined"
           v-model="data.slug"
@@ -47,6 +52,8 @@
       </CCardBody>
     </CCard>
     <SeoEdit v-model="data" />
+    <SeoEdit v-model="data" keyProp="seo_en" label="EN Seo"/>
+
     <BtnSave @click="save"> Сохранить </BtnSave>
     <CButton color="danger" class="mb-2" @click="onDelete">Удалить</CButton>
   </div>

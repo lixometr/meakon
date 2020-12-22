@@ -12,8 +12,9 @@
     <CCard>
       <CCardHeader>Тексты</CCardHeader>
       <CCardBody>
-        <AInput class="mb-5" label="Название" v-model="attribute.name" />
-        <AInput class="mb-5" label="Slug" v-model="attribute.slug" />
+        <AInput class="mb-3" label="Название" v-model="attribute.name" />
+        <AInput class="mb-3" label="EN Название" v-model="attribute.name_en" />
+        <AInput class="mb-3" label="Slug" v-model="attribute.slug" />
       </CCardBody>
     </CCard>
  

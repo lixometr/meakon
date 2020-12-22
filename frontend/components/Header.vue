@@ -3,15 +3,9 @@
     <!-- mobileMenu -->
     <header class="header">
       <div class="mlogo"><img src="/assets/img/mobile_logo.png" alt="" /></div>
+
       <div class="mswaper">
-        <div class="switcher2">
-          <div class="center">
-            <span class="lang2">RU</span>
-            <input type="checkbox" id="cbx2" style="display: none" />
-            <label for="cbx2" class="toggle2"><span></span></label>
-            <span class="lang2">ENG</span>
-          </div>
-        </div>
+        <ChangeLanguageMobile />
       </div>
 
       <div class="burger">
@@ -50,16 +44,7 @@
               ><AppImage :img="values.logo"
             /></nuxt-link>
             <!-- //logo -->
-            <!-- switcher -->
-            <div class="switcher">
-              <div class="center">
-                <span class="lang">RU</span>
-                <input type="checkbox" id="cbx" style="display: none" />
-                <label for="cbx" class="toggle"><span></span></label>
-                <span class="lang">ENG</span>
-              </div>
-            </div>
-            <!-- //switcher -->
+            <ChangeLanguage />
           </div>
           <!-- logo + switcher -->
 
@@ -102,6 +87,9 @@ export default {
       this.values = values;
     } catch (err) {}
   },
+
+  methods: {},
+  
 };
 </script>
 

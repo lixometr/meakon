@@ -11,11 +11,12 @@ export default {
     },
   },
   data() {
-      return {
-
-      }
+    return {};
   },
   computed: {
+    language() {
+      return this.$store.getters["language/language"];
+    },
     values() {
       return this.value.values || {};
     },
@@ -23,9 +24,17 @@ export default {
       return this.value.values || {};
     },
     setBlock() {
-        return path => {
-
+      return (path) => {};
+    },
+    getLangValue() {
+      return (ru, en) => {
+        if (!en) {
+          const arr = ru.split(".");
+          arr[arr.length - 1] = "en_" + arr[arr.length - 1];
+          en = arr.join('.')
         }
+        return this.language === "en" ? this.getValue(en) : this.getValue(ru);
+      };
     },
     getValue() {
       return (path) => {

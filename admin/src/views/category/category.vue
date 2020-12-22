@@ -13,6 +13,7 @@
       <CCardHeader>Тексты</CCardHeader>
       <CCardBody>
         <AInput class="mb-3" label="Название" v-model="category.name" />
+        <AInput class="mb-3" label="EN Название" v-model="category.name_en" />
         <AInput label="Slug" v-model="category.slug" @input="noSlug = false" />
       </CCardBody>
     </CCard>
@@ -27,53 +28,16 @@
       </CCardBody>
     </CCard>
 
-    <CCard>
+    <!-- <CCard>
       <CCardHeader>Изображения</CCardHeader>
 
       <CCardBody>
         <EditImage class="mb-5" label="Иконка" v-model="category.image" />
-        <EditImage
-          class="mb-5"
-          label="Изображение персонажа"
-          v-model="category.image_person"
-        />
-        <EditImage
-          class="mb-5"
-          label="Изображение текста"
-          v-model="category.image_text"
-        />
-        <EditImage label="Фоновое изображение" v-model="category.image_bg" />
       </CCardBody>
-    </CCard>
-    <CCard>
-      <CCardHeader>Метка soon</CCardHeader>
-      <CCardBody>
-        <Label class="mb-5" label="Вывдить метку?">
-          <CInputCheckbox custom :checked.sync="category.is_soon" />
-        </Label>
-        <Label label="Цвет метки 1">
-          <AppColorPicker class="mb-5" v-model="category.soon_color1" />
-        </Label>
-        <Label label="Цвет метки 2">
-          <AppColorPicker v-model="category.soon_color2" />
-        </Label>
-      </CCardBody>
-    </CCard>
-    <CCard>
-      <CCardHeader>Метка new</CCardHeader>
-      <CCardBody>
-        <Label class="mb-5" label="Вывдить метку?">
-          <CInputCheckbox custom :checked.sync="category.is_new" />
-        </Label>
-        <Label label="Цвет метки 1">
-          <AppColorPicker class="mb-5" v-model="category.new_color1" />
-        </Label>
-        <Label label="Цвет метки 2">
-          <AppColorPicker v-model="category.new_color2" />
-        </Label>
-      </CCardBody>
-    </CCard>
+    </CCard> -->
+
     <SeoEdit v-model="category" />
+    <SeoEdit v-model="product" keyProp="seo_en" label="EN Seo" />
 
     <BtnSave @click="save">Сохранить</BtnSave>
     <CButton color="danger mb-3" @click="onDelete">Удалить</CButton>

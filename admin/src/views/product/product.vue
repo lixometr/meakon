@@ -20,8 +20,9 @@
     <CCard>
       <CCardBody>
         <AInput class="mb-3" required label="Название" v-model="product.name" />
+        <AInput class="mb-3" label="EN Название" v-model="product.name_en" />
         <AInput class="mb-3" label="Артикул" v-model="product.sku" />
-        <Label label="Тип товара" class="mb-3">
+        <!-- <Label label="Тип товара" class="mb-3">
           <v-select
             :multiple="false"
             v-model="product.product_type"
@@ -30,7 +31,7 @@
             :reduce="(item) => item.key"
             :searchable="false"
           />
-        </Label>
+        </Label> -->
         <CategorySelect
           class="mb-3"
           label="Категории"
@@ -57,19 +58,7 @@
         <Label class="mb-3" label="Опубликовать">
           <CInputCheckbox custom :checked.sync="product.is_published" />
         </Label>
-        <Label class="mb-3" label="Бонусный?">
-          <CInputCheckbox custom :checked.sync="product.is_bonus" />
-        </Label>
-        <Label class="mb-5" label="Вид" v-if="product.is_bonus">
-          <v-select
-            :multiple="false"
-            v-model="product.bonus_type"
-            :options="bonusTypes"
-            label="label"
-            :reduce="(item) => item.key"
-            :searchable="false"
-          />
-        </Label>
+
         <Label
           class="mb-5"
           label="Приоритет вывода (чем больше, тем товар первее)"
@@ -78,28 +67,29 @@
         </Label>
       </CCardBody>
     </CCard>
-    <ProductVariations
+    <!-- <ProductVariations
       v-if="product.product_type === 'variation'"
       class="mt-3"
       v-model="product.product_variations"
-    />
+    /> -->
     <CollapseCard :open="false" v-if="product.product_type === 'simple'">
       <div slot="header">Цена</div>
       <div>
-        <ProductPrice
+        <Label label="Цена"><NInput v-model="product.price"/></Label>
+        <!-- <ProductPrice
           :price="product.price"
           @update:price="$set(product, 'price', $event)"
           @update:oldPrice="$set(product, 'old_price', $event)"
           :oldPrice="product.old_price"
-        />
+        /> -->
       </div>
     </CollapseCard>
-    <CollapseCard :open="false" v-if="product.product_type === 'simple'">
+    <!-- <CollapseCard :open="false" v-if="product.product_type === 'simple'">
       <div slot="header">Опции</div>
       <div>
         <ProductOptions v-model="product.product_options" />
       </div>
-    </CollapseCard>
+    </CollapseCard> -->
     <CollapseCard :open="false">
       <div slot="header">Фото галерея</div>
       <div>
@@ -126,10 +116,21 @@
               v: 'title',
               label: 'Название вкладки',
             },
+
             {
               c: 'ATextArea',
               v: 'content',
               label: 'Текст',
+            },
+            {
+              c: 'AInput',
+              v: 'title_en',
+              label: 'EN Название вкладки',
+            },
+            {
+              c: 'ATextArea',
+              v: 'content_en',
+              label: 'EN Текст',
             },
           ]"
           :schema="{
@@ -137,6 +138,8 @@
               {
                 title: '',
                 content: '',
+                title_en: '',
+                content_en: '',
               },
             ],
           }"
@@ -150,11 +153,12 @@
         <ProductAttributes v-model="product.attributes" />
       </div>
     </CollapseCard>
-    <CollapseCard :open="false">
+    <!-- <CollapseCard :open="false">
       <div slot="header">Календарь</div>
       <ProductDate v-model="product.date" />
-    </CollapseCard>
+    </CollapseCard> -->
     <SeoEdit v-model="product" />
+    <SeoEdit v-model="product" keyProp="seo_en" label="EN Seo"/>
     <BtnSave @click="save">Сохранить</BtnSave>
     <CButton color="danger mt-2 mb-4" @click="onDelete">Удалить</CButton>
   </div>
@@ -175,7 +179,8 @@ import ProductPrice from "@/components/Product/ProductPrice";
 import ProductVariations from "@/components/Product/ProductVariations";
 import ProductDate from "@/components/Product/ProductDate";
 import ProductOptions from "@/components/Product/ProductOptions";
-
+const routes = require('../../../../common/routes/routes')
+import globalConfig from "@/helpers/globalConfig"
 export default {
   name: "Product",
   components: {
@@ -207,26 +212,25 @@ export default {
       return [
         {
           key: "uncommon",
-          label: 'Uncommon'
+          label: "Uncommon",
         },
         {
           key: "rare",
-          label: 'Rare'
+          label: "Rare",
         },
         {
           key: "epic",
-          label: 'Epic'
+          label: "Epic",
         },
         {
           key: "legendary",
-          label: 'Legendary'
+          label: "Legendary",
         },
-
-      ]
-    },  
+      ];
+    },
     productUrl() {
       return (
-        this.$store.getters.frontUrl + "/product/" + (this.product.slug || "")
+        globalConfig.frontend.baseUrl + routes.product + (this.product.slug || "")
       );
     },
     productTypes() {

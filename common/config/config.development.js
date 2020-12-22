@@ -1,5 +1,5 @@
 module.exports = {
-    dbName: 'cms',
+    dbName: 'meakon',
     adminEmail: 'admin@meakon-med.com',
     "api": {
         "baseUrl": "http://localhost:8080",

@@ -12,13 +12,13 @@ module.exports = class ProductModification extends Modification {
 
     async init() {
 
-        this.initDates()
+        // this.initDates()
         await this.populateFields()
-        await this.initVariations()
+        // await this.initVariations()
 
-        this.initPrice()
-        this.initProductOptions()
-        this.initFromPrice()
+        // this.initPrice()
+        // this.initProductOptions()
+        // this.initFromPrice()
     }
     initDates() {
         this.item.date = this.item.date.map(date => {

@@ -5,7 +5,10 @@
     <header class="offer">
       <div class="wrapper">
         <video class="mainscreen-video" autoplay="" muted="" loop="">
-          <source src="/assets/video/vid.mp4" type="video/mp4" />
+          <source
+            :src="getValue('blok_pervogo_ekrana.fonovoe_video_ofera')"
+            type="video/mp4"
+          />
         </video>
       </div>
 
@@ -15,13 +18,12 @@
 
           <div class="col-lg-11 col-md-12 col-sm-12 offer_info">
             <h1>
-              {{ getValue("blok_pervogo_ekrana.zagolovok_ofera") }}
-              <!-- Производим и реализуем <br />медицинские расходные материалы -->
+              {{ getLangValue("blok_pervogo_ekrana.zagolovok_ofera") }}
             </h1>
-            <p>{{ getValue("blok_pervogo_ekrana.podzagolovok_ofera") }}</p>
-            <a
+            <p>{{ getLangValue("blok_pervogo_ekrana.podzagolovok_ofera") }}</p>
+            <nuxt-link
               class="podrobnee_btn"
-              :href="getValue('blok_pervogo_ekrana.ssilka_knopki_ofera')"
+              :to="getValue('blok_pervogo_ekrana.ssilka_knopki_ofera') || '#'"
             >
               <div class="btn_wrapper">
                 <button class="learn-more">
@@ -29,14 +31,14 @@
                     <span class="icon arrow"></span>
                   </span>
                   <span class="button-text">{{
-                    getValue("blok_pervogo_ekrana.nazvanie_knopki_ofera")
+                    getLangValue("blok_pervogo_ekrana.nazvanie_knopki_ofera")
                   }}</span>
                 </button>
               </div>
-            </a>
+            </nuxt-link>
           </div>
         </div>
-        <div class="rounded"><img src="assets/img/rounded.png" /></div>
+        <div class="rounded"><img src="/assets/img/rounded.png" /></div>
       </div>
     </header>
     <!-- //header -->
@@ -50,7 +52,7 @@
             <i class="nav-fill">&nbsp;</i>
             <div class="left_nav">
               <img src="/assets/img/section.png" />
-              <span>Каталог</span>
+              <span>{{ getLangValue("dop_elementi.produktsiya") }}</span>
             </div>
           </div>
           <!-- //Навигация -->
@@ -59,23 +61,26 @@
           <div class="col-lg-3 col-md-11 col-sm-11">
             <h2>
               {{
-                getValue("blok_vivoda_tovarov.zagolovok_bloka_vivoda_tovarov")
+                getLangValue(
+                  "blok_vivoda_tovarov.zagolovok_bloka_vivoda_tovarov",
+                  "blok_vivoda_tovarov.en_zagolovok_bloka_vivoda_kategorii_tovarov"
+                )
               }}
             </h2>
             <p class="desc">
               {{
-                getValue(
+                getLangValue(
                   "blok_vivoda_tovarov.podzagolovok_bloka_vivoda_tovarov"
                 )
               }}
             </p>
 
-            <a
+            <nuxt-link
               class="podrobnee_btn"
-              :href="
+              :to="
                 getValue(
                   'blok_vivoda_tovarov.ssilka_na_knopke_v_bloke_vivoda_tovara'
-                )
+                ) || '#'
               "
             >
               <div class="btn_wrapper">
@@ -84,13 +89,13 @@
                     <span class="icon arrow"></span>
                   </span>
                   <span class="button-text">{{
-                    getValue(
+                    getLangValue(
                       "blok_vivoda_tovarov.nazvanie_knopki_v_bloke_vivoda_tovarov"
                     )
                   }}</span>
                 </button>
               </div>
-            </a>
+            </nuxt-link>
           </div>
           <!-- //Описание блока -->
 
@@ -213,16 +218,16 @@
             <i class="nav-fill">&nbsp;</i>
             <div class="left_nav">
               <img src="/assets/img/section.png" />
-              <span>Плюсы</span>
+              <span>{{ getLangValue("dop_elementi.plyusi") }}</span>
             </div>
           </div>
           <!-- //Навигация -->
 
           <!-- Описание блока -->
           <div class="col-sm-11 col-md-3 col-lg-3">
-            <h2>{{ getValue("blok_plyusov.zagolovok_bloka_plyusov") }}</h2>
+            <h2>{{ getLangValue("blok_plyusov.zagolovok_bloka_plyusov") }}</h2>
             <p class="desc">
-              {{ getValue("blok_plyusov.podzagolovok_bloka_plyusov") }}
+              {{ getLangValue("blok_plyusov.podzagolovok_bloka_plyusov") }}
             </p>
           </div>
           <!-- //Описание блока -->
@@ -235,29 +240,13 @@
                 v-for="(item, idx) in getValue('blok_plyusov.plyusi_kompanii')"
                 :key="idx"
               >
-                <span>{{ item.zagolovok_plyusa }}</span>
+                <span>{{
+                  getLangValue(
+                    `blok_plyusov.plyusi_kompanii[${idx}].zagolovok_plyusa`
+                  )
+                }}</span>
               </li>
-              <!-- <li>
-                <span>Удобное <br />расположение склада</span>
-              </li>
-              <li>
-                <span
-                  >Гибкий сервис<br />
-                  для клиента</span
-                >
-              </li>
-              <li>
-                <span>Удобное <br />расположение склада</span>
-              </li>
-              <li>
-                <span
-                  >Гибкий сервис<br />
-                  для клиента</span
-                >
-              </li>
-              <li>
-                <span>Удобное <br />расположение склада</span>
-              </li> -->
+          
             </ul>
           </div>
           <!-- //Описание блока -->
@@ -292,8 +281,8 @@
           <div class="col-1">
             <i class="nav-fill">&nbsp;</i>
             <div class="left_nav">
-              <img src="assets/img/section.png" />
-              <span>Meakon</span>
+              <img src="/assets/img/section.png" />
+              <span>{{getLangValue('dop_elementi.meakon')}}</span>
             </div>
           </div>
           <!-- //Навигация -->
@@ -301,12 +290,9 @@
           <!-- Описание блока -->
           <div class="col-lg-3 col-sm-12">
             <h2>
-              {{ getValue("blok_anonsa_kompanii.zagolovok_anonsa_kompanii") }}
+              {{ getLangValue("blok_anonsa_kompanii.zagolovok_anonsa_kompanii") }}
             </h2>
-            <p class="d-none">
-              H7 Headline Сайт рыбатекст поможет дизайнеру, верстальщику,
-              вебмастеру сгенерировать несколько абзацев более менее
-            </p>
+          
           </div>
           <!-- //Описание блока -->
 
@@ -315,7 +301,7 @@
             <div class="about_text">
               <!-- text1 -->
               <AText
-                :text="getValue('blok_anonsa_kompanii.tekst_anonsa_kompanii')"
+                :text="getLangValue('blok_anonsa_kompanii.tekst_anonsa_kompanii')"
               />
               <!-- //text1 -->
 
@@ -331,9 +317,9 @@
               </div>
               <!-- //text2 -->
 
-              <a
+              <nuxt-link
                 class="podrobnee_btn"
-                :href="getValue('blok_anonsa_kompanii.ssilka_knopki_anonsa')"
+                :to="getValue('blok_anonsa_kompanii.ssilka_knopki_anonsa') || '#'"
               >
                 <div class="btn_wrapper">
                   <button class="learn-more">
@@ -341,11 +327,11 @@
                       <span class="icon arrow"></span>
                     </span>
                     <span class="button-text">{{
-                      getValue("blok_anonsa_kompanii.tekst_knopki_anonsa")
+                      getLangValue("blok_anonsa_kompanii.tekst_knopki_anonsa")
                     }}</span>
                   </button>
                 </div>
-              </a>
+              </nuxt-link>
             </div>
           </div>
           <!-- //текст о компании -->

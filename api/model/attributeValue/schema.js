@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const attributeValueSchema = new Schema({
   name: String,
+  name_en: String,
   slug: String,
   attributeId: {
     index: true,

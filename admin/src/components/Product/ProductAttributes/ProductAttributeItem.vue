@@ -12,10 +12,10 @@
         @input="changeName($event)"
       />
     </Label>
-    <Label class="mb-3" label="Показывать на странице товара">
+    <Label class="mb-3" label="Показывать на странице вывода товаров?">
       <CInputCheckbox
         custom
-        :checked="item.show"
+        :checked="item.show_in_preview"
         @update:checked="changeShow($event)"
       />
     </Label>
@@ -48,8 +48,8 @@ export default {
     removeAttr() {
       this.$emit('delete')
     },
-    changeShow(show) {
-      const newItem = { ...this.item, show };
+    changeShow(show_in_preview) {
+      const newItem = { ...this.item, show_in_preview };
       this.$emit("input", newItem);
     },
     changeName(name) {

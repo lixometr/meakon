@@ -80,28 +80,24 @@ const ProductVariation = new Schema({
 })
 const ProductSchema = new Schema({
   name: String,
+  name_en: String,
   slug: {
     type: String,
-    unique: true,
+    // unique: true,
     index: true,
   },
   is_published: {
     type: Boolean,
     default: true
   },
-  is_bonus: {
-    type: Boolean,
-    default: false
-  },
-  // uncommon rare epic legendary
-  bonus_type: {
-    type: String
-  },
+  
   // status: Number,
   description: [
     {
       title: String,
-      content: String
+      title_en: String,
+      content: String,
+      content_en: String
     }
   ],
   flags: [
@@ -140,16 +136,13 @@ const ProductSchema = new Schema({
     type: String,
     default: 'simple'
   },
-  // date: {
-  //   type: [DateItem],
-  //   default: () => []
-  // },
+
   // Модификации продукта (одинаковые продукты, но с разными атрибутами)
-  product_variations: [
-    ProductVariation
-  ],
-  price: [RegionPrice],
-  old_price: [RegionPrice],
+  // product_variations: [
+  //   ProductVariation
+  // ],
+  price: Number,
+  old_price: Number,
   cnt: Number,
  
   booked_cnt: {
@@ -168,8 +161,13 @@ const ProductSchema = new Schema({
       ref: "Category"
     }
   ],
-  product_options: [ProductOption],
+  // product_options: [ProductOption],
   seo: {
+    title: String,
+    description: String,
+    keywords: String
+  },
+  seo_en: {
     title: String,
     description: String,
     keywords: String

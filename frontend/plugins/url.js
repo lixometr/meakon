@@ -1,55 +1,44 @@
 import _ from "lodash"
-const makePath = (path) => {
-    return path
-}
+const routes = require('../../common/routes/routes')
+
 class UrlBuilder {
     constructor(app) {
-        this.path = {
-            category: '/category/',
-            product: '/product/',
-            page: '/p/',
-            search: '/search/',
-            cart: '/cart/',
-            search: '/search/',
-            blog: '/blog/',
-            profile: '/profile/',
-            checkout: '/checkout/'
-
-        }
+        this.path = routes
+        this.makePath = (...args) => app.languagePath(...args)
         // this.app = app;
     }
     category(slug) {
-        return makePath(this.path.category + slug)
+        return this.makePath(this.path.category + slug)
     }
     product(slug) {
-        return makePath(this.path.product + slug)
+        return this.makePath(this.path.product + slug)
     }
     page(slug) {
-        return makePath(this.path.page + slug)
+        return this.makePath(this.path.page + slug)
     }
     account(slug) {
-        return makePath(this.path.account + slug)
+        return this.makePath(this.path.account + slug)
     }
     cart(slug) {
-        return makePath(this.path.cart)
+        return this.makePath(this.path.cart)
     }
     search(slug) {
-        return makePath(this.path.search + slug)
+        return this.makePath(this.path.search + slug)
     }
     blog(slug) {
-        return makePath(this.path.blog + slug)
+        return this.makePath(this.path.blog + slug)
     }
-    makePath(path) {
-        return makePath(path)
+    langPath(path) {
+        return this.makePath(path)
     }
     profile(slug) {
-        return makePath(this.path.profile + slug)
+        return this.makePath(this.path.profile + slug)
     }
     calendar(slug) {
-        return makePath(this.path.calendar)
+        return this.makePath(this.path.calendar)
     }
     checkout(slug) {
-        return makePath(this.path.checkout)
+        return this.makePath(this.path.checkout)
 
     }
 
