@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{ $store.getters["filters/slugFilters"] }}
     <CatalogFiltersPrice
       :value="price"
       @input="updatePrice"
