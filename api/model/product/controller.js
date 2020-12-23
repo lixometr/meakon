@@ -18,15 +18,20 @@ class ProductController extends Controller {
      */
     async getProductsByCategorySlug(req, res, next) {
         try {
-            const date = req.query.date
+            let filters = req.query.filters || '{}'
             const category = await categoryFacade.findBySlug(req.params[0])
             if (!category) throw new AppError(400)
             let result;
-
-            result = await this.facade.findByCategoryId(category._id, { nowPage: req.query.page, perPage: req.query.per_page, })
-            const toSend = result
-            toSend.items = await this.initItems(toSend.items, { req })
-            res.json(toSend)
+            try {
+                filters = JSON.parse(filters)
+            } catch(err) {
+                console.log(filters)
+                throw new AppError(400)
+            }
+            result = await this.facade.findByCategoryIdWithFilter(category._id, filters, { nowPage: req.query.page, perPage: req.query.per_page, })
+            result.items = await this.initItems(result.items, { req })
+            //filters { price: [min, max], attributes: [ { name: { slug: '', name: "" }, value: [ {name: '',} ] } ] }
+            res.json(result)
         }
         catch (err) {
             next(err)

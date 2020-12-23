@@ -50,7 +50,6 @@ class CategoryController extends Controller {
      * }
      */
     async getChildrenAll(req, res, next) {
-        // return res.json({noexist: true})
         try {
             const category = await this.facade.findBySlug(req.params[0])
             if (!category) throw new AppError(404)
@@ -69,7 +68,7 @@ class CategoryController extends Controller {
             }
             const cloned = _.cloneDeep(result)
 
-            const translatedCategories = initRecursive(cloned)
+            const translatedCategories = await initRecursive(cloned)
             res.json(translatedCategories)
         } catch (err) {
             next(err)

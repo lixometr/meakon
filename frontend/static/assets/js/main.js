@@ -103,3 +103,87 @@ $('.checkbox-other input').focusout(function(){
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function($) {
+  // Клик по ссылке "Закрыть".
+  $('.popup-close').click(function() {
+    $(this).parents('.popup-fade').fadeOut();
+    return false;
+  });        
+ 
+  // Закрытие по клавише Esc.
+  $(document).keydown(function(e) {
+    if (e.keyCode === 27) {
+      e.stopPropagation();
+      $('.popup-fade').fadeOut();
+    }
+  });
+  
+  // Клик по фону, но не по окну.
+  $('.popup-fade').click(function(e) {
+    if ($(e.target).closest('.popup').length == 0) {
+      $(this).fadeOut();          
+    }
+  }); 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//модалка
+$('.js-open-modal').click(function(event) {
+   event.preventDefault();
+   
+   var modalName = $(this).attr('data-modal');
+   var modal = $('.js-modal[data-modal="' + modalName + '"]');
+   
+   modal.addClass('is-show');
+   $('.js-modal-overlay').addClass('is-show')
+});
+
+$('.js-modal-close').click(function() {
+   $(this).parent('.js-modal').removeClass('is-show');
+   $('.js-modal-overlay').removeClass('is-show');
+});
+   
+$('.js-modal-overlay').click(function() {
+   $('.js-modal.is-show').removeClass('is-show');
+   $(this).removeClass('is-show');
+})
+
+
+
+
+
+
+
+
+ 

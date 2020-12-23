@@ -52,7 +52,7 @@
                   ><b>{{ getLangValue("rezhim_raboti") }}</b>
                 </li>
                 <li>
-                  <span>{{$t('warehouse')}}: </span>
+                  <span>{{$t('contact.warehouse')}}: </span>
                   <b>
                     <span
                       v-for="(item, idx) in getValue('adresa_skladov')"

@@ -7,7 +7,7 @@
       <ul class="filter_tabs">
         <CatalogSidebarSearch />
 
-        <CatalogSidebarCategories :items="categories" />
+        <CatalogSidebarCategories />
 
         <CatalogFilters :items="filterItems" />
       </ul>
@@ -17,7 +17,12 @@
 
 <script>
 export default {
-  props: {},
+  props: {
+    // filters: {
+    //   type: Object,
+    //   default: () => ({})
+    // }
+  },
   computed: {
     filterItems() {},
     categories() {},

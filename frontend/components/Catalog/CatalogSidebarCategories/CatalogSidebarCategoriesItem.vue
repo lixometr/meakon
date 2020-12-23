@@ -7,8 +7,8 @@
         <ul class="filter_tab__subcat">
           <!-- <li><a href="#" class="active">Подкатегория 1</a></li> -->
           <li v-for="(subItem, idx) in item.children" :key="idx">
-            <nuxt-link :to="$url.category(subItem.slug)">{{
-              $langValue(subItem, "name")
+            <nuxt-link :to="$url.category(subItem.category.full_slug)" active-class="active">{{
+              $langValue(subItem.category, "name")
             }}</nuxt-link>
           </li>
         </ul>
@@ -16,7 +16,7 @@
     </template>
     <template v-else>
       <label class="not_sub" :for="thisId">
-        <nuxt-link :to="$url.category(item.slug)">{{ name }}</nuxt-link>
+        <nuxt-link :to="$url.category(item.category.full_slug)" active-class="active">{{ name }}</nuxt-link>
       </label>
     </template>
   </div>
@@ -25,11 +25,14 @@
 <script>
 export default {
   props: {
-    item: Object,
+    item: {
+      type: Object,
+      default: () => ({})
+    },
   },
   computed: {
     name() {
-      return this.$langValue(item, "name");
+      return this.$langValue(this.item.category, "name");
     },
     hasSub() {
       return this.item.children && this.item.children.length > 0;
@@ -41,5 +44,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 </style>

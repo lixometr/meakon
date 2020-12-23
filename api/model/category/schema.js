@@ -14,6 +14,12 @@ const categorySchema = new Schema({
     type: String,
     index: true,
   },
+  filter_attributes: [
+    {
+      ref: "Attribute",
+      type: Schema.Types.ObjectId
+    }
+  ],
 
   parent: {
     type: Schema.Types.ObjectId,

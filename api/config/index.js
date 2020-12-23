@@ -32,7 +32,7 @@ const config = {
     url: process.env.MONGO_DB_URI || 'mongodb://localhost/' + globalConfig.dbName
   },
   adminEmail: globalConfig.adminEmail,
-  perPage: 20,
+  perPage: 1,
   JWT_SECRET: 'jwt_very_secret_key',
   JWT_ADMIN_SECRET: 'jwt_very_secret_key',
   JWT_EXPIRES: 100 * 60 * 60 * 24,

@@ -9,6 +9,8 @@ module.exports = class CategoryModification extends Modification {
         }, '')
         this.item.full_slug = fullPath
         this.item.is_primary = !!this.item.parent
+        // await this.mongooseItem.populate('filter_attributes')
+        // this.item.filter_attributes = this.mongooseItem.filter_attributes
 
     }
 

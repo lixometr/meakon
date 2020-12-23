@@ -27,6 +27,16 @@
         />
       </CCardBody>
     </CCard>
+    <CCard>
+      <CCardHeader>Атрибуты для фильтрации</CCardHeader>
+      <CCardBody>
+        <AttributeSelect
+          label="Атрибуты"
+          v-model="category.filter_attributes"
+          :multiple="true"
+        />
+      </CCardBody>
+    </CCard>
 
     <!-- <CCard>
       <CCardHeader>Изображения</CCardHeader>
@@ -52,6 +62,7 @@ import CategorySelect from "@/components/CategorySelect";
 import EditImage from "@/components/EditImage";
 import AppColorPicker from "@/components/AppColorPicker";
 import cyrillicToTranslit from "cyrillic-to-translit-js";
+import AttributeSelect from "@/components/AttributeSelect"
 
 export default {
   components: {
@@ -61,6 +72,7 @@ export default {
     CategorySelect,
     EditImage,
     AppColorPicker,
+    AttributeSelect
   },
   props: {
     isNew: Boolean,

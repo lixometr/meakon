@@ -14,5 +14,7 @@
     "description": "Описание",
     "characteristics":"Характеристики",
     "similarItems": "Похожие товары",
-    "recommend": "Рекомендуем"
+    "recommend": "Рекомендуем",
+    "clearFilters": "Очистить все фильтры",
+    "searchPlaceholder": "Поиск по товару"
 }

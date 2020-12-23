@@ -21,37 +21,36 @@
               {{ getLangValue("blok_pervogo_ekrana.zagolovok_ofera") }}
             </h1>
             <p>{{ getLangValue("blok_pervogo_ekrana.podzagolovok_ofera") }}</p>
-            <nuxt-link
-              class="podrobnee_btn"
-              :to="getValue('blok_pervogo_ekrana.ssilka_knopki_ofera') || '#'"
-            >
-              <div class="btn_wrapper">
-                <button class="learn-more">
-                  <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
-                  </span>
-                  <span class="button-text">{{
+
+            <div class="Button_page">
+              <nuxt-link
+                class="more-button-wrap"
+                :to="getValue('blok_pervogo_ekrana.ssilka_knopki_ofera') || '#'"
+                data-main-index=""
+              >
+                <span class="more-button-background">
+                  <span class="more-button-ico"></span>
+                </span>
+                <span class="more-button-title"
+                  >{{
                     getLangValue("blok_pervogo_ekrana.nazvanie_knopki_ofera")
-                  }}</span>
-                </button>
-              </div>
-            </nuxt-link>
+                  }}
+                </span>
+              </nuxt-link>
+            </div>
           </div>
         </div>
+
         <div class="rounded">
-          <div class="round"></div>
-          <svg viewBox="0 0 100 70" width="100px">
-            <path
-              d="M35,35m-23,0a23,23 0 1,1 46,0a23,23 0 1,1 -46,0"
-              fill="none"
-              id="tophalf"
-            />
-            <text style="font: initial">
-              <textPath xlink:href="#tophalf" startOffset="0%">
-                {{ getLangValue("dop_elementi.listaite_vniz") }}
-              </textPath>
-            </text>
-          </svg>
+          <component
+            :is="'script'"
+            src="/assets/js/circletype.min.js"
+          ></component>
+
+          <img src="/assets/img/section.png" alt="" />
+          <div id="curved1">
+            {{ getLangValue("dop_elementi.listaite_vniz") }}
+          </div>
         </div>
       </div>
     </header>
@@ -400,9 +399,19 @@ export default {
         },
       },
     });
+    const circleType = new CircleType(document.getElementById("curved1"));
+  },
+  computed: {
+    circleScript() {
+      return ` console.log('10')
+            `;
+    },
   },
 };
 </script>
 
 <style lang="scss" >
+#curved1 {
+  word-spacing: 10px;
+}
 </style>
