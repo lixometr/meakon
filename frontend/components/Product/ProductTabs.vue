@@ -4,58 +4,26 @@
       <div class="row">
         <div class="col-lg-1 d-none d-md-block"></div>
         <div class="col-lg-11 col-sm-12">
-          <div class="tabs">
-            <input
-              type="radio"
-              name="tab-btn"
-              id="tab-btn-1"
-              value=""
-              checked
-            />
-            <label for="tab-btn-1">{{ $t("description") }}</label>
-            <input type="radio" name="tab-btn" id="tab-btn-2" value="" />
-            <label for="tab-btn-2">{{ $t("characteristics") }}</label>
-            <input type="radio" name="tab-btn" id="tab-btn-3" value="" />
-            <!-- <label for="tab-btn-3" style="display: none">Отзывы о товаре</label> -->
-
-            <div id="content-1">
-              <p>
-                Перчатки смотровые синтетические нестерильные неопудренные
-                текстурированные только на пальцах НИТРИЛОВЫЕ кобальт блю цвета;
-                материал - нитрил; назначение - смотровые диагностические;
-                коэффициент AQL (приемлемый уровень качества) - не более 1,5
-                (указано на упаковке) ; неанатомические (без разделения на
-                правую и левую руки); текстурированные только на пальцах;
-                перчатки смотровые синтетические нестерильные неопудренные
-                текстурированные только на пальцах НИТРИЛОВЫЕ кобальт блю цвета;
-                материал - нитрил; назначение - смотровые диагностические;
-                коэффициент AQL (приемлемый уровень качества) - не более 1,5
-                (указано на упаковке) ; неанатомические (без разделения на
-                правую и левую руки); текстурированные только на пальцах;
-              </p>
-            </div>
-            <div id="content-2">
-              <ProductCharacteristics :product="product"/>
-            </div>
-            <!-- <div id="content-3" style="display: none">
-              <div class="form_review">
-                <div class="form_review__title"><h3>Отставить отзыв</h3></div>
-                <div class="form_review__body">
-                  <input type="text" placeholder="Имя" />
-                  <input type="text" placeholder="E-mail" />
-                  <textarea
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="10"
-                    placeholder="Ваш отзыв"
-                  ></textarea>
-                </div>
-                <div class="form_review__footer">
-                  <button>отправить</button>
-                </div>
+          <div class="tabs-widget">
+            <div class="tabs-widget__header">
+              <div class="tabs-widget__item" v-for="(tab, idx) in tabs" :key="idx">
+                <a href="#tab-1-1" :class="{active: activeTab === idx}" @click.prevent="selectTab(idx)">{{$langValue(tab, 'title')}}</a>
               </div>
-            </div> -->
+              <div class="tabs-widget__item" v-if="showCharacteristics">
+                <a href="#tab-1-1" :class="{active: activeTab === tabs.length}" @click.prevent="selectTab(tabs.length)">{{$t('characteristics')}}</a>
+              </div>
+             
+            </div>
+            <div class="content">
+              <div class="item" :class="{active: activeTab === idx}" v-for="(tab, idx) in tabs" :key="idx">
+                <AText :text="$langValue(tab, 'content')"/>
+              </div>
+
+              <div class="item" :class="{active: activeTab === tabs.length}" v-if="showCharacteristics">
+                <ProductCharacteristics :product="product"/>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -71,6 +39,24 @@ export default {
       default: () => ({}),
     },
   },
+  data() {
+    return {
+      activeTab: 0
+    }
+  },
+  computed: {
+    showCharacteristics() {
+      return this.product.attributes.length > 0
+    },
+    tabs() {
+      return this.product.description || []
+    }
+  },
+  methods: {
+    selectTab(idx) {
+      this.activeTab = idx
+    }
+  }
 };
 </script>
 

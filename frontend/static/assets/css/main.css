@@ -1414,6 +1414,54 @@ details[open] summary:before {
 /*-------------------------------
 	 end 	  Фильтр
 --------------------------------*/
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  transition: opacity 400ms ease-in;
+  display: none;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  display: block;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+  background: #00d9ff;
+}
+
 /*-------------------------------
 		карточка товара
 --------------------------------*/
@@ -1628,39 +1676,65 @@ button:focus {
 /*-------------------------------
 			  табы
 --------------------------------*/
-.tabs {
-  width: 97%;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  z-index: 20;
-  margin-bottom: 150px;
-  margin-left: 45px;
+.product_tabs {
+  margin-bottom: 230px;
 }
 
-.tabs > input[type=radio] {
+.tabs-widget__item {
+  display: inline-flex;
+}
+
+.clearfix:before,
+.clearfix:after,
+.tabs-widget > .header:before,
+.tabs-widget > .header:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after,
+.tabs-widget > .header:after {
+  clear: both;
+}
+
+.tabs-widget {
+  position: relative;
+}
+
+.tabs-widget > .header {
+  background-color: #3f51b5;
+}
+
+.tabs-widget > .header a {
+  float: left;
+  padding: 10px 20px;
+  color: #ffffff;
+}
+
+.tabs-widget > .header a:focus,
+.tabs-widget > .header a:hover {
+  background-color: #32408f;
+}
+
+.tabs-widget > .content {
+  position: relative;
+}
+
+.tabs-widget > .content > .scroller {
   display: none;
 }
 
-.tabs > input[type=radio]:checked + label {
-  background: #EFF4F7;
-  box-shadow: inset -5px -5px 5px #FFFFFF, inset 5px 5px 5px #D1D9E6;
-  border-radius: 195px;
-  padding: 10px 30px;
-  position: relative;
-  z-index: 99;
-  border: 9px solid #EFF4F9;
+.tabs-widget > .content > .scroller:target + .item {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
 }
 
-.tabs > div {
-  /* скрыть контент по умолчанию */
-  display: none;
-  border: 1px solid #eee;
-  padding: 10px 15px;
-  border-radius: 4px;
-}
-
-#content-1, #content-2, #content-3 {
+.tabs-widget > .content .item.active {
   background-color: #fff;
   position: relative;
   top: -30px;
@@ -1670,31 +1744,20 @@ button:focus {
   line-height: 150%;
 }
 
-/* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
-#tab-btn-1:checked ~ #content-1,
-#tab-btn-2:checked ~ #content-2,
-#tab-btn-3:checked ~ #content-3 {
+.tabs-widget > .content > .item {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 20px;
+  display: none;
+  max-height: auto;
+}
+
+.tabs-widget > .content > .item.active {
   display: block;
+  z-index: 1;
 }
 
-#content-2 ol {
-  padding: 0;
-}
-#content-2 ol li {
-  display: grid;
-  grid-template-columns: repeat(2, 37%);
-  margin-bottom: 5px;
-  padding: 5px 0;
-}
-#content-2 ol li:nth-child(even) {
-  background-color: #EFF4F7;
-}
-#content-2 ol span {
-  color: #00294C;
-}
-
-.tabs > label {
-  display: inline-block;
+.tabs-widget__item a {
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -1713,44 +1776,133 @@ button:focus {
   box-shadow: -5px -5px 5px #FFFFFF, 5px 5px 5px #D1D9E6;
   border-radius: 95px;
   padding: 10px 30px;
+  position: relative;
+  z-index: 2;
 }
 
-.tabs > label:first-of-type {
-  margin-left: 50px;
+.tabs-widget__item .active {
+  background: #EFF4F7;
+  box-shadow: inset -5px -5px 5px #FFFFFF, inset 5px 5px 5px #D1D9E6;
+  border-radius: 195px;
+  padding: 10px 30px;
+  position: relative;
+  z-index: 99;
+  border: 9px solid #EFF4F9;
+}
+
+.item ol {
+  padding: 0;
+}
+.item ol li {
+  display: grid;
+  grid-template-columns: repeat(2, 37%);
+  margin-bottom: 5px;
+  padding: 5px 0;
+}
+.item ol li:nth-child(even) {
+  background-color: #EFF4F7;
+}
+.item ol span {
+  color: #00294C;
+}
+
+.form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.form .form_review__callback {
+  background: #73869F;
+  border-radius: 10px;
+  max-width: 510px;
+  padding: 60px 50px;
+  max-height: 650px;
+  position: sticky;
+  top: 120px;
+  width: 100%;
+}
+
+.form_review .form_review__comment:not(:last-child) {
+  border-bottom: 1px solid #73869F;
+}
+.form_review .form_review__comment {
+  max-width: 820px;
+  margin-right: 110px;
+  margin-bottom: 22px;
+}
+.form_review .form_review__comment h4 {
+  font-size: 20px;
+  line-height: 130%;
+  color: #00294C;
+  margin-bottom: 17px;
+}
+.form_review .form_review__comment p {
+  font-size: 16px;
+  line-height: 150%;
+  color: #73869F;
+  margin-bottom: 56px;
+}
+.form_review .form_review__comment .date {
+  margin-bottom: 20px;
 }
 
 .form_review__title h3 {
-  text-align: center;
-  margin-bottom: 50px;
+  font-size: 24px;
+  line-height: 80%;
+  color: #FFFFFF;
+  font-weight: normal;
+  margin-bottom: 20px;
+  max-width: 310px;
+}
+.form_review__title p {
+  font-size: 14px;
+  color: #B5C6DD;
+  margin-bottom: 38px;
+  max-width: 310px;
 }
 
+.form_review__body {
+  display: flex;
+  flex-direction: column;
+}
 .form_review__body input {
-  display: inline-block;
-  width: 49%;
-  padding: 5px 10px;
+  width: 100%;
+  padding: 12px 20px;
   border: none;
-  margin-bottom: 25px;
-  box-shadow: -5px -5px 5px #EFF4F7, 5px 5px 5px #D1D9E6;
-  color: #00294C !important;
+  margin-bottom: 15px;
+  color: white !important;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  font-size: 14px;
 }
 .form_review__body textarea {
-  width: 98.5%;
-  margin: 15px 0;
-  padding: 5px 10px;
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px 20px;
   border: none;
-  box-shadow: -5px -5px 5px #EFF4F7, 5px 5px 5px #D1D9E6;
-  color: #00294C !important;
+  color: white !important;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  max-height: 100px;
+  font-size: 14px;
 }
 
-.form_review__footer button {
+.form_review__footer .podrobnee_btn {
+  margin-top: 40px;
+}
+.form_review__footer .circle {
+  background: white !important;
+  box-shadow: 5px 5px 5px #677992, -5px -5px 5px #93A6BF !important;
+  border-radius: 50px !important;
+}
+.form_review__footer .circle .icon.arrow::before {
+  color: #73869F !important;
+}
+.form_review__footer .button-text {
+  color: white !important;
+}
+.form_review__footer button:hover .button-text {
   color: #00294C !important;
-  background: #EFF4F7;
-  box-shadow: -5px -5px 5px #FFFFFF, 5px 5px 5px #D1D9E6;
-  border-radius: 95px;
-  padding: 10px 40px;
-  display: block;
-  margin: 0 auto;
-  font-weight: bold;
 }
 
 /*-------------------------------
@@ -2932,6 +3084,11 @@ details {
   }
 }
 @media (min-width: 300px) and (max-width: 767px) {
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .header {
     display: block;
   }
