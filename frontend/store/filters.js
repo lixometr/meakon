@@ -15,23 +15,28 @@ export const getters = {
     attributes(state, getters) {
         return getters.items.attributes || []
     },
-    activeAttributes() {
+    activeAttributes(state, getters) {
         return getters.active.attributes || {}
     },
-    activePrice() {
+    activePrice(state, getters) {
         return getters.active.price || []
     },
     price(state, getters) {
         return getters.items.price || []
     },
     slugFilters(state, getters) {
-        return getters.objFilters.attributes.map(attr => {
+        const attributes = getters.objFilters.attributes.map(attr => {
             const value = attr.value.map(attrVal => attrVal.slug)
             return {
                 name: attr.name.slug,
                 value
             }
         })
+        const price = getters.objFilters.price
+        return {
+            attributes,
+            price
+        }
     },
     objFilters(state, getters) {
         const price = getters.activePrice
@@ -39,9 +44,9 @@ export const getters = {
         const attributes = getters.attributes
         // return activeAttributes
         const allAttributes = Object.keys(activeAttributes).map(attrId => {
-            const attrValues = activeAttributes[attrId]
+            const attrValues = activeAttributes[attrId] || []
             const allAttr = attributes.find(attr => attr.name._id === attrId)
-            const value = allAttr.value.filter(attrValue => attrValues.inludes(attrValue._id))
+            const value = allAttr.value.filter(attrValue => attrValues.includes(attrValue._id))
             return {
                 name: allAttr.name,
                 value
@@ -67,13 +72,21 @@ export const mutations = {
     setItems(state, items) {
         state.items = items
     },
-    init(state, { items }) {
+    setAttributesFromSlug(state, items) {
+
+    },
+    init(state, { items, active }) {
+        if (!active) active = {}
         this.commit('filters/setItems', items)
-        let price = items.price
+        let price = active.price || items.price
         this.commit('filters/setPrice', price)
+
+
     },
     clear(state) {
-        state.active = {}
+        const newValue = {}
+        newValue.price = [...state.items.price]
+        state.active = newValue
     }
 }
 export const actions = {

@@ -68,6 +68,8 @@ export default {
       const slug = params.pathMatch;
       const category = await $api.$get("category", { slug });
       if (!category) throw { statusCode: 404 };
+      const filters = store.getters['filters/active']
+      console.log('loading', filters)
       const products = await $api.$get(
         "categoryProducts",
         {
@@ -76,6 +78,7 @@ export default {
         {
           params: {
             page: query.page || 1,
+            filters
           },
         }
       );

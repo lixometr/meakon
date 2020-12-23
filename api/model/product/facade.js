@@ -5,6 +5,8 @@ const _ = require('lodash')
 const categoryFacade = require('../category/facade')
 const attributeFacade = require('../attribute/facade')
 const attributeValueFacade = require('../attributeValue/facade')
+const Modification = require('./modification')
+const { filter } = require('lodash')
 class ProductFacade extends Facade {
     constructor(...args) {
         super(...args)
@@ -86,18 +88,17 @@ class ProductFacade extends Facade {
         let items = await this.findInSublimeCategories(catId, finder)
         const category = await categoryFacade.findById(catId)
         let filterItems = category.filter_attributes || []
+        // items = await Modification.initItems(items, 'info', {})
         // const resolvers = filterItems.map(async itemId => {
         //     return await attributeFacade.findById(itemId)
         // })
         // filterItems = await Promise.all(resolvers)
         activeFilters = this.validateFilters(filterItems, activeFilters)
-        console.log(activeFilters)
-        items = await this.filterItems(items, filterItems)
+        items = await this.filterItems(items, activeFilters)
 
         let filters = {}
-        const prices = items.map(item => item.price).filter(price => price >= 0)
-        filters.price = [Math.min(...prices), Math.max(...prices)]
-        filters.attributes = await this.getFilters(items, filterItems)
+
+        filters = await this.getFilters(items, filterItems)
 
         const paginateItems = await this.paginate({ items, perPage, nowPage })
         return {
@@ -120,13 +121,14 @@ class ProductFacade extends Facade {
             attributes: activeAttributes
         }
     }
-    async getFilters(items, filterItems = []) {
+    async getFilters(items, filterItems = [], availableFilters) {
         let filters = []
         let filtersMap = {}
         items.map(item => {
             const attributes = item.attributes || []
             attributes.map(attr => {
-                filterItems.findIndex(attrId => attrId.toString() === attr.name.toString())
+                const canBe = filterItems.findIndex(attrId => attrId.toString() === attr.name.toString()) > -1
+                if(!canBe) return
                 if (!filtersMap[attr.name.toString()]) filtersMap[attr.name.toString()] = []
                 const attrValueArr = filtersMap[attr.name.toString()]
                 attr.value.map(attrValue => {
@@ -147,10 +149,13 @@ class ProductFacade extends Facade {
                 value
             }
         })
-        const initedFilters = await Promise.all(resolvers)
-        console.log('filters = ', initedFilters)
-
-        return initedFilters
+        const attributes = await Promise.all(resolvers)
+        const prices = items.map(item => item.price).filter(price => price >= 0)
+        const price = [Math.min(...prices), Math.max(...prices)]
+        return {
+            attributes,
+            price
+        }
     }
     async filterItems(items, activeFilters = { attributes: {}, price: [] }) {
         // []
@@ -174,13 +179,19 @@ class ProductFacade extends Facade {
             })
             return !results.includes(false)
         })
+        if (activePrice && activePrice.length > 0) {
+            console.log('have price', activePrice)
+            filtered = filtered.filter(item => {
+                const min = activePrice[0]
+                const max = activePrice[1]
+                console.log(min, 'and', item.price)
+                if ( item.price > max || item.price < min) return false
+                return true
+            })
+        }
+
         console.log('after filter attrs', filtered)
-        filtered = filtered.filter(item => {
-            const min = activePrice[0]
-            const max = activePrice[1]
-            if (item.price > max || item.price < min) return false
-            return true
-        })
+
         return filtered
     }
     async findByCategoryIdAndDateWithPagination(catId, date, region, { perPage, nowPage }) {

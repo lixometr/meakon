@@ -56,12 +56,17 @@ export default {
         to: max,
         onStart: updateInputs,
         onChange: updateInputs,
+        onFinish: (data) => {
+          vm.sendData([data.from, data.to]);
+        },
+        onUpdate(data) {
+          vm.sendData([data.from, data.to]);
+        },
       });
       instance = $range.data("ionRangeSlider");
       function updateInputs(data) {
         from = data.from;
         to = data.to;
-        vm.sendData([from, to]);
         $inputFrom.prop("value", from);
         $inputTo.prop("value", to);
       }

@@ -1,8 +1,11 @@
 <template>
   <div>
-    {{ $store.getters['filters/active'] }}
-    {{activeAttributes}}
-    <CatalogFiltersPrice :value="price" @input="updatePrice" />
+    {{ $store.getters["filters/slugFilters"] }}
+    <CatalogFiltersPrice
+      :value="price"
+      @input="updatePrice"
+      @apply="updatePage"
+    />
     <CatalogFiltersItem
       v-for="(item, idx) in attributes"
       :key="idx"
@@ -17,6 +20,7 @@
 </template>
 
 <script>
+import _ from "lodash";
 export default {
   props: {
     // items: {
@@ -25,7 +29,9 @@ export default {
     // },
   },
   data() {
-    return {};
+    return {
+      updatePage: _.throttle(this._updatePage, 300),
+    };
   },
   computed: {
     price() {
@@ -50,14 +56,24 @@ export default {
   methods: {
     // [ attrValId  ]
     onFilterChange(value, attrId) {
-      console.log('change!', value, attrId)
       this.$store.commit("filters/changeAttr", { name: attrId, value: value });
+      this.updatePage();
     },
     updatePrice(value) {
       this.$store.commit("filters/setPrice", value);
+      this.updatePage();
     },
-    updatePage() {
-      let query = { ...this.$route.query, page: 1 };
+    getFiltersQuery() {
+      const slugFilters = this.$store.getters["filters/slugFilters"];
+      let query = {};
+      query.price = slugFilters.price.join(",");
+      slugFilters.attributes.map((attr) => {
+        query[attr.name] = attr.value.join(",");
+      });
+      return query;
+    },
+    _updatePage() {
+      let query = { page: 1, ...this.getFiltersQuery() };
 
       this.$router.push({
         query,
@@ -65,6 +81,11 @@ export default {
     },
     clearFilters() {
       this.$store.dispatch("filters/clear");
+      let query = { page: 1 };
+
+      this.$router.push({
+        query,
+      });
     },
   },
 };
