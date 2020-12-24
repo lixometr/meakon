@@ -1064,6 +1064,11 @@ section .desc {
   transition: 1s;
 }
 
+.hide .range-slider,
+.hide .extra-controls {
+  display: none;
+}
+
 .hide li {
   display: none;
   transition: 0.5s;

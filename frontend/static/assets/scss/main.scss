@@ -1132,7 +1132,8 @@ z-index: 2;
 
 .show .arrow-top {     transform: rotate(-0deg); transition: 1s; }     
 .hide .arrow-top {     transform: rotate(-180deg); transition: 1s; }     
-
+.hide .range-slider,
+.hide .extra-controls {display: none;}
 
 .hide li {
 	display: none;
