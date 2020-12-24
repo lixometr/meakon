@@ -7,6 +7,7 @@ class SettingsController extends Controller {
     async findByName(req, res, next) {
         try {
             const item = await this.facade.findByName(req.params.name)
+            console.log('irm', item)
             if(!item) throw new AppError(404)
             res.json(item.value)
         } catch (err) {

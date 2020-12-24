@@ -14,6 +14,7 @@
         </label>
       </li>
     </ul>
+<!-- Сюда -->
   </ul>
 </template>
 

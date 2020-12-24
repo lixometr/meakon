@@ -1,7 +1,6 @@
 import api from "@/plugins/api"
 
 export default async () => {
-  console.log(10)
   
   const result = await api.get('sections', null, {
     params: {

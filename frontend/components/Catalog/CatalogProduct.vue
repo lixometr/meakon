@@ -2,7 +2,7 @@
   <div class="product_item">
     <AppImage :img="image" />
     <div class="product_title">
-      {{ name }}
+      <nuxt-link :to="$url.product(item.slug)">{{ name }}</nuxt-link>
     </div>
     <div class="product_size">
       <div

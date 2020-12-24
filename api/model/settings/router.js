@@ -3,6 +3,11 @@ const isAuthAdmin = require('../../middleware/isAuthAdmin')
 const Router = require('../../lib/router')
 const router = new Router(controller, {
   routes: {
+    ':/slug': {
+      get: {
+        
+      }
+    },
     '/:name': {
       get: {
         func: 'findByName'

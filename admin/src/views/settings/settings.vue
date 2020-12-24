@@ -38,6 +38,8 @@
 import SettingMenuItems from "@/components/Settings/SettingMenuItems";
 import EditImage from "@/components/EditImage";
 import LabelSelect from "@/components/LabelSelect";
+import PageSelect from "@/components/PageSelect";
+
 export default {
   data() {
     return {
@@ -46,7 +48,8 @@ export default {
           name: "Главная страница",
           type: 'custom',
           slug: 'mainPage',
-          component: ''
+          component: PageSelect,
+       
         }
         // {
         //   name: "Каталог",
@@ -105,6 +108,7 @@ export default {
     SettingMenuItems,
     EditImage,
     LabelSelect,
+    PageSelect
   },
   async created() {
     this.$loading.start();

@@ -4,7 +4,7 @@
     <div class="main-content">
       <Nuxt />
     </div>
-    <!-- <Modal /> -->
+    <Modal />
     <Footer />
   </div>
 </template>

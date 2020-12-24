@@ -15,7 +15,7 @@ class ProductController extends Controller {
 
     /**
      * 
-     * @param ?date=date
+     * @param ?filters=filters
      */
     async getProductsByCategorySlug(req, res, next) {
         try {

@@ -12,6 +12,5 @@ instance.interceptors.request.use(config => {
 );
 
 const baseUrl = globalConfig.api.baseUrl
-console.log('url is here', baseUrl, globalConfig)
 console.log('hey', process.env.NODE_ENV)
 export default new Api(ApiRoutes({ baseUrl }), instance)

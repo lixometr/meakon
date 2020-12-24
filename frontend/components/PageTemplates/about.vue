@@ -304,8 +304,9 @@
             </h3>
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12">
-            <nuxt-link
+            <a
               class="podrobnee_btn"
+              @click.prevent="openReviewModal"
               :to="
                 getValue('tochka_zakhvata_na_str_kompanii.ssilka_knopki_tz') ||
                 '#'
@@ -323,7 +324,7 @@
                   }}</span>
                 </button>
               </div>
-            </nuxt-link>
+            </a>
           </div>
         </div>
       </div>
@@ -401,6 +402,11 @@ export default {
           },
         },
       };
+    },
+  },
+  methods: {
+    openReviewModal() {
+      this.$modal.open("review");
     },
   },
   mounted() {
