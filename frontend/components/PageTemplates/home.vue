@@ -42,10 +42,7 @@
         </div>
 
         <div class="rounded">
-          <component
-            :is="'script'"
-            src="/assets/js/circletype.min.js"
-          ></component>
+         
 
           <img src="/assets/img/section.png" alt="" />
           <div id="curved1">
@@ -367,7 +364,7 @@
 import PageTemplateMixin from "@/mixins/PageTemplateMixin";
 export default {
   mixins: [PageTemplateMixin],
-  mounted() {
+  async mounted() {
     var swiper = new Swiper(".swiper-container", {
       slidesPerView: 4,
       loop: true,
@@ -399,6 +396,7 @@ export default {
         },
       },
     });
+    await this.$loadScript('/assets/js/circletype.min.js')
     const circleType = new CircleType(document.getElementById("curved1"));
   },
   computed: {

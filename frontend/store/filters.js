@@ -1,7 +1,7 @@
 export const state = () => ({
-    // [ attrId, attrId, attrId ] 
+    // { price: [], attributes: [ attrId, attrId, attrId ] }
     items: {},
-    // {price: [start, end], attributes: { attrId: [attrValueId] }}
+    // {price: [start, end], attributes: { 'attr-slug': ['attr-value-slug'] }}
     active: {}
 })
 
@@ -24,20 +24,7 @@ export const getters = {
     price(state, getters) {
         return getters.items.price || []
     },
-    slugFilters(state, getters) {
-        const attributes = getters.objFilters.attributes.map(attr => {
-            const value = attr.value.map(attrVal => attrVal.slug)
-            return {
-                name: attr.name.slug,
-                value
-            }
-        })
-        const price = getters.objFilters.price
-        return {
-            attributes,
-            price
-        }
-    },
+    
     objFilters(state, getters) {
         const price = getters.activePrice
         const activeAttributes = getters.activeAttributes
@@ -63,7 +50,6 @@ export const mutations = {
     changeAttr(state, { name, value }) {
         const newValue = Object.assign({}, { ...state.active })
         newValue.attributes = Object.assign({}, { ...newValue.attributes }, { [name]: value })
-        console.log('see', name, value)
         state.active = newValue
     },
     setPrice(state, price) {
@@ -75,11 +61,21 @@ export const mutations = {
     setAttributesFromSlug(state, items) {
 
     },
-    init(state, { items, active }) {
-        if (!active) active = {}
-        this.commit('filters/setItems', items)
-        let price = active.price || items.price
+    init(state, query) {
+        const active = { ...query }
+        delete active.page
+        let price = []
+        if (active.price) {
+            price = active.price.split(',')
+        }
+        delete active.price
         this.commit('filters/setPrice', price)
+        Object.keys(active).map(attrSlug => {
+            let value = active[attrSlug] || ''
+            if(!value) return
+            value = value.split(',').filter(item => !!item)
+            this.commit('filters/changeAttr', {name: attrSlug, value})
+        })
 
 
     },

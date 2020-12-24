@@ -20,7 +20,8 @@ export default {
       default: () => [0, 100],
     },
   },
-  mounted() {
+  async mounted() {
+    await this.$loadScript('https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js')
     this.initRange();
   },
   computed: {

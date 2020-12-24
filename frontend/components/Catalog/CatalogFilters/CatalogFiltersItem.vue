@@ -7,8 +7,8 @@
         <label class="checkbox-other">
           <input
             type="checkbox"
-            :checked="value.includes(attrValue._id)"
-            @change="onValueChange($event, attrValue._id)"
+            :checked="value.includes(attrValue.slug)"
+            @change="onValueChange($event, attrValue.slug)"
           />
           <span>{{ attrValue.name }}</span>
         </label>
@@ -47,16 +47,16 @@ export default {
     emitData(value) {
       this.$emit("input", value);
     },
-    onValueChange(e, attrValueId) {
+    onValueChange(e, attrValueSlug) {
       const active = e.target.checked;
       if (active) {
-        if (this.value.includes(attrValueId)) return;
-        const newValue = [...this.value, attrValueId];
+        if (this.value.includes(attrValueSlug)) return;
+        const newValue = [...this.value, attrValueSlug];
         this.emitData(newValue);
       } else {
-        console.log('here', this.value, attrValueId)
-        if (!this.value.includes(attrValueId)) return;
-        const newValue = this.value.filter((id) => id !== attrValueId);
+        console.log('here', this.value, attrValueSlug)
+        if (!this.value.includes(attrValueSlug)) return;
+        const newValue = this.value.filter((slug) => slug !== attrValueSlug);
         this.emitData(newValue);
       }
     },

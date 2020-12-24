@@ -6,6 +6,7 @@ const AppError = require('../../helpers/error');
 const Modification = require('./modification');
 const config = require('../../config');
 const _ = require('lodash');
+const CategoryModification = require('../category/modification')
 class ProductController extends Controller {
     constructor(...args) {
         super(...args)
@@ -19,19 +20,35 @@ class ProductController extends Controller {
     async getProductsByCategorySlug(req, res, next) {
         try {
             let filters = req.query.filters || '{}'
-            const category = await categoryFacade.findBySlug(req.params[0])
+            let category = await categoryFacade.findBySlug(req.params[0])
             if (!category) throw new AppError(400)
-            let result;
+            let items
+            category = await CategoryModification.initItem(category, 'full', { req })
+            let availabeFilters = category.filter_attributes
             try {
                 filters = JSON.parse(filters)
-            } catch(err) {
+            } catch (err) {
                 console.log(filters)
                 throw new AppError(400)
             }
-            result = await this.facade.findByCategoryIdWithFilter(category._id, filters, { nowPage: req.query.page, perPage: req.query.per_page, })
-            result.items = await this.initItems(result.items, { req })
+
+            filters = await this.facade.validateFilters(filters, availabeFilters)
+            items = await this.facade.findByCategoryId(category._id,)
+            items = await this.initItems(items, { req })
+            // console.log('filters here', filters)
+            // console.log('items', items)
+
+            const filtersToSend = await this.facade.getFilters(items, availabeFilters)
+            // console.log('filters to send', filtersToSend)
+            items = await this.facade.filterItems(items, filters)
+            // console.log('after filter', items)
+            const result = await this.facade.paginate({ items, nowPage: req.query.page, perPage: req.query.per_page, })
+
             //filters { price: [min, max], attributes: [ { name: { slug: '', name: "" }, value: [ {name: '',} ] } ] }
-            res.json(result)
+            res.json({
+                ...result,
+                filters: filtersToSend
+            })
         }
         catch (err) {
             next(err)

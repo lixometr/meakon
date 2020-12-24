@@ -64,6 +64,7 @@ export default {
     { src: "@/plugins/modal", },
     { src: "@/plugins/swiper", },
     { src: "@/plugins/language", },
+    { src: "@/plugins/load-script", mode: 'client'},
 
   ],
   router: {

@@ -7,6 +7,7 @@
 <script>
 import PageMixin from "@/mixins/PageMixin.js";
 export default {
+ 
   mixins: [PageMixin({ slug: "home" })],
 };
 </script>

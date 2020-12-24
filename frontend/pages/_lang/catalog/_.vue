@@ -47,13 +47,7 @@ export default {
             "https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css",
         },
       ],
-      script: [
-        {
-          type: "text/javascript",
-          src:
-            "https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js",
-        },
-      ],
+     
     };
   },
   data() {
@@ -68,8 +62,9 @@ export default {
       const slug = params.pathMatch;
       const category = await $api.$get("category", { slug });
       if (!category) throw { statusCode: 404 };
-      const filters = store.getters['filters/active']
-      console.log('loading', filters)
+      store.dispatch("filters/init", query);
+
+      const filters = store.getters["filters/active"];
       const products = await $api.$get(
         "categoryProducts",
         {
@@ -78,12 +73,12 @@ export default {
         {
           params: {
             page: query.page || 1,
-            filters
+            filters,
           },
         }
       );
       console.log(products);
-      store.dispatch("filters/init", { items: products.filters });
+      store.commit("filters/setItems", products.filters);
       const breadcrumbs = await $api.$get("categoryParents", { slug });
       breadcrumbs.pop();
       return {

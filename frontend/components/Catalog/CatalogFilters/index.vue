@@ -8,8 +8,8 @@
     <CatalogFiltersItem
       v-for="(item, idx) in attributes"
       :key="idx"
-      :value="activeAttributes[item.name._id]"
-      @input="onFilterChange($event, item.name._id)"
+      :value="activeAttributes[item.name.slug]"
+      @input="onFilterChange($event, item.name.slug)"
       :item="item"
     />
     <a class="filters_del" @click.prevent="clearFilters" href=""
@@ -54,8 +54,11 @@ export default {
   },
   methods: {
     // [ attrValId  ]
-    onFilterChange(value, attrId) {
-      this.$store.commit("filters/changeAttr", { name: attrId, value: value });
+    onFilterChange(value, attrSlug) {
+      this.$store.commit("filters/changeAttr", {
+        name: attrSlug,
+        value: value,
+      });
       this.updatePage();
     },
     updatePrice(value) {
@@ -63,11 +66,15 @@ export default {
       this.updatePage();
     },
     getFiltersQuery() {
-      const slugFilters = this.$store.getters["filters/slugFilters"];
+      const filters = this.$store.getters["filters/active"];
       let query = {};
-      query.price = slugFilters.price.join(",");
-      slugFilters.attributes.map((attr) => {
-        query[attr.name] = attr.value.join(",");
+      query.price = filters.price.join(",");
+      const attributes = filters.attributes || {};
+      Object.keys(attributes).map((attrSlug) => {
+        const attrValues = attributes[attrSlug];
+        console.log(attrValues)
+        if (!attrValues || !attrValues.length) return;
+        query[attrSlug] = attrValues.join(",");
       });
       return query;
     },

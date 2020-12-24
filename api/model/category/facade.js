@@ -59,7 +59,7 @@ class CategoryFacade extends Facade {
             if (!result) result = {}
             const children = await this.findChildrenById(startId)
             const cat = await this.findById(startId)
-            result.category = cat.toJSON()
+            result.category = cat
             result.children = children.map(child => ({ category: child, children: [] }))
             for (let i = 0; i < children.length; i++) {
                 const child = children[i]
