@@ -7,9 +7,9 @@
       <ul class="filter_tabs">
         <CatalogSidebarSearch />
 
-        <CatalogSidebarCategories />
+        <CatalogSidebarCategories  />
 
-        <CatalogFilters :items="filterItems" />
+        <CatalogFilters :items="filterItems" v-if="showFilters" />
       </ul>
     </details>
   </div>
@@ -18,6 +18,10 @@
 <script>
 export default {
   props: {
+    showFilters: {
+      type: Boolean,
+      default: true,
+    },
     // filters: {
     //   type: Object,
     //   default: () => ({})

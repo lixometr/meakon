@@ -945,7 +945,7 @@ section .desc {
   padding: 0;
 }
 
-.filter_tabs ul:not(:last-child) {
+.filter_tabs ul {
   padding: 20px 30px;
   background: #FFFFFF;
   border-radius: 10px;
@@ -1492,7 +1492,7 @@ details[open] summary:before {
   background-color: white;
   opacity: 0.8;
   z-index: 999;
-  display: none;
+  display: block;
   transition: 1s;
 }
 
@@ -1512,6 +1512,17 @@ details[open] summary:before {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+}
+
+.form_review_text {
+  font-size: 13px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.5);
+}
+.form_review_text b {
+  font-weight: normal;
+  color: white;
+  border-bottom: 1px solid white;
 }
 
 /*-------------------------------
@@ -2610,6 +2621,7 @@ button:hover .button-text {
 
 .burger--close {
   transform: rotate(180deg);
+  box-shadow: 5px 5px 10px #FFFFFF, -5px -5px 10px #D1D9E6;
 }
 
 .burger--close .burger__patty:nth-child(1) {
@@ -3135,10 +3147,6 @@ details {
     top: unset;
   }
 
-  .header {
-    display: none;
-  }
-
   footer .footer_info {
     /* display: flex; */
     /* justify-content: space-between; */
@@ -3239,6 +3247,10 @@ details {
 
 .mainscreen-video2 {
   width: 100%;
+}
+
+.form_review__footer .podrobnee_btn {
+  margin-top: 10px;
 }
 
 .switcher2 {
@@ -3529,6 +3541,29 @@ details {
     max-width: 2250px;
     width: 100%;
     height: auto;
+  }
+
+  nav a:last-child {
+    margin: 0;
+    border: none;
+  }
+
+  .menu__item {
+    color: #73869F !important;
+    margin-bottom: 15px;
+  }
+
+  .menu__link {
+    color: #73869F !important;
+  }
+
+  .menu__list.menu__list--active {
+    width: 100%;
+    float: none;
+    margin-left: 0px;
+    text-align: center;
+    background: #F2F4F8;
+    box-shadow: 3px 3px 4px #D1D9E6, -3px -3px 10px #FFFFFF;
   }
 
   #aboutPage .swiper-button-next::after, #aboutPage .swiper-button-prev::after {
@@ -4339,7 +4374,7 @@ details[open] summary {
   }
 
   .menu__brand, .menu__list {
-    height: 50vh;
+    height: 85vh;
   }
 
   .menu__link {
@@ -4350,7 +4385,19 @@ details[open] summary {
     padding: 5px 0;
   }
 }
-@media (min-width: 767px) and (max-width: 1100px) {
+@media (min-width: 769px) and (max-width: 1100px) {
+  .menu__brand, .menu__list {
+    height: 100vh;
+  }
+
+  .menu__list.menu__list--active {
+    margin-left: unset;
+  }
+
+  .header {
+    display: block;
+  }
+
   .med_why ul {
     margin-left: 0;
   }
@@ -4361,10 +4408,6 @@ details[open] summary {
 
   header nav {
     margin: 0 40px !important;
-  }
-
-  nav a:last-child {
-    margin-left: 60px;
   }
 
   .product_card__title {
@@ -4636,6 +4679,10 @@ details[open] summary {
 
   #aboutPage section {
     margin-left: 0;
+  }
+
+  .offer_place {
+    display: none;
   }
 }
 @media (min-width: 1100px) and (max-width: 1400px) {

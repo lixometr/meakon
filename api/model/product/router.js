@@ -2,6 +2,11 @@ const controller = require('./controller')
 const Router = require('../../lib/router')
 const router = new Router(controller, {
   routes: {
+    '/': {
+      get: {
+        middleware: [null]
+      }
+    },
     '/search/:text': {
       get: {
         middleware: [null],

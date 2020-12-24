@@ -400,10 +400,7 @@ export default {
     const circleType = new CircleType(document.getElementById("curved1"));
   },
   computed: {
-    circleScript() {
-      return ` console.log('10')
-            `;
-    },
+   
   },
 };
 </script>
