@@ -54,7 +54,7 @@
 export default {
   head() {
     return {
-      title: this.langSeo.title,
+      title: this.langSeo.title || this.name,
       meta: [
         {
           hid: "description",

@@ -5,8 +5,8 @@
         {{ name }}
       </h1>
     </div>
-    <div class="product_card__header">
-      <span>{{ $t("skuLong") }}: {{ sku }}</span>
+    <div class="product_card__header" >
+      <span v-if="sku">{{ $t("skuLong") }}: {{ sku }}</span>
     </div>
     <div class="product_card__desc">
       <div class="product_card__desc__column">

@@ -13,7 +13,15 @@ class Facade {
   }
   async search(text) {
     const items = await this.Model.find({
-      name: RegExp(text, 'ig')
+      $or: [
+        {
+          name: RegExp(text, 'ig')
+
+        },
+        {
+          name_en: RegExp(text, 'ig')
+        }
+      ]
     })
     return items
   }

@@ -90,9 +90,7 @@ export default {
       return [{ name: this.name, link: "" }];
     },
     langSeo() {
-      return this.$store.getters["language/language"] === "en"
-        ? this.$t("catalog.seo")
-        : this.$t("catalog.seo_en");
+      return this.$t('catalog.seo')
     },
     name() {
       return this.$t("catalogTitle");

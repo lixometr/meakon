@@ -25,5 +25,14 @@
         "name": "Your name",
         "title": "Title",
         "subTitle": "Fill the form, we will recall soon"
+    },
+    "catalogTitle": "Catalog",
+
+    "catalog": {
+        "seo": {
+            "title": "Catalog",
+            "description": "",
+            "keywords": ""
+        }
     }
 }

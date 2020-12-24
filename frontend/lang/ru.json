@@ -12,7 +12,7 @@
     "getPrice": "Запросить цену",
     "skuLong": "номер регистрационного удостоверения",
     "description": "Описание",
-    "characteristics":"Характеристики",
+    "characteristics": "Характеристики",
     "similarItems": "Похожие товары",
     "recommend": "Рекомендуем",
     "clearFilters": "Очистить все фильтры",
@@ -28,13 +28,10 @@
     },
     "catalogTitle": "Каталог",
     "catalog": {
-        "pageTitle": "",
         "seo": {
-            "title": "Каталог"
-        },
-        "seo_en": {
-
+            "title": "Каталог",
+            "description": "",
+            "keywords": ""
         }
-
     }
 }

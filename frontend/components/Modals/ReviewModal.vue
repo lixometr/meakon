@@ -3,7 +3,7 @@
     <div class="modal js-modal" data-modal="modal">
       <span class="close_button js-modal-close" @click="$emit('close')"></span>
 
-      <div class="form_review__callback">
+      <div class="form_review__callback" v-if="!isSubmit">
         <div class="form_review__title">
           <h3>{{ $t("form.title") }}</h3>
           <p>{{ $t("form.subTitle") }}</p>
@@ -34,6 +34,11 @@
           </a>
         </div>
       </div>
+      <div class="form_review__callback" v-if="isSubmit">
+        <div class="form_review__title thanks">
+          <h3>Отзыв отправлен. Спасибо!</h3>
+        </div>
+      </div>
     </div>
     <div class="overlay js-modal-overlay"></div>
   </div>
@@ -54,7 +59,6 @@ export default {
     async sendForm() {
       try {
         const result = await this.$api.$post("");
-
       } catch (err) {
         this.$error(err);
       }
