@@ -5,8 +5,8 @@
 
       <div class="form_review__callback" v-if="!isSubmit">
         <div class="form_review__title">
-          <h3>{{ $t("form.title") }}</h3>
-          <p>{{ $t("form.subTitle") }}</p>
+          <h3>{{ $t(`modal.${type}.title`) }}</h3>
+          <p>{{ $t(`modal.${type}.subTitle`) }}</p>
         </div>
         <div class="form_review__body">
           <input type="text" :placeholder="$t('form.name')" v-model="name" />
@@ -19,7 +19,9 @@
             rows="10"
             :placeholder="$t('form.message')"
             v-model="message"
+            v-if="showMessage"
           ></textarea>
+          <p class="form_review_text" v-html="$t('form.policy')"></p>
         </div>
         <div class="form_review__footer">
           <a class="podrobnee_btn" href="#" @click.prevent="submit">
@@ -28,7 +30,9 @@
                 <span class="circle" aria-hidden="true">
                   <span class="icon arrow"></span>
                 </span>
-                <span class="button-text">{{ $t("send") }}</span>
+                <span class="button-text">{{
+                  $t(`modal.${type}.btnText`)
+                }}</span>
               </button>
             </div>
           </a>
@@ -46,19 +50,45 @@
 
 <script>
 export default {
+  props: {
+    type: String,
+  },
   data() {
     return {
       name: "",
       phone: "",
       email: "",
       message: "",
+      isSubmit: false,
     };
   },
+  computed: {
+    showMessage() {
+      if(this.type === 'contact') return true
+      return false
+    },
+    showReview() {
+      // if(this.type === 'product') return true
+      return false
+
+    }
+  },
   methods: {
-    submit() {},
+    submit() {
+      this.sendForm();
+    },
     async sendForm() {
       try {
-        const result = await this.$api.$post("");
+        const result = await this.$api.$post("formContact", null, {
+          name: this.name,
+          phone: this.phone,
+          email: this.email,
+          message: this.message,
+          type: this.type,
+        });
+        if (result.ok) {
+          this.isSubmit = true;
+        }
       } catch (err) {
         this.$error(err);
       }

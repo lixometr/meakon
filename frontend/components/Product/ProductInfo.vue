@@ -15,7 +15,7 @@
         <div class="product_card__desc__column__special">
           <h2>{{ $t("getPrice") }}</h2>
 
-          <a class="podrobnee_btn" href="#">
+          <a class="podrobnee_btn" href="#" @click.prevent="openModal">
             <div class="btn_wrapper">
               <button class="learn-more">
                 <span class="circle" aria-hidden="true">
@@ -62,6 +62,15 @@ export default {
       return this.product.attributes;
     },
   },
+  methods: {
+    openModal() {
+      this.$modal.open('review', {
+        props: {
+          type: 'product'
+        }
+      })
+    }
+  }
 };
 </script>
 

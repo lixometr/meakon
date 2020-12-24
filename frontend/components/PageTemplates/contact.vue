@@ -78,9 +78,10 @@
             <h3>{{ getLangValue("forma_obratnoi_svyazi.zagolovok_formi") }}</h3>
           </div>
           <div class="col-lg-4 col-sm-12 btn-center">
-            <nuxt-link
+            <a
               class="podrobnee_btn"
-              :to="getValue('forma_obratnoi_svyazi.ssilka_knopki') || '#'"
+              :href="getValue('forma_obratnoi_svyazi.ssilka_knopki') || '#'"
+              @click.prevent="openModal"
             >
               <div class="btn_wrapper">
                 <button class="learn-more">
@@ -92,7 +93,7 @@
                   }}</span>
                 </button>
               </div>
-            </nuxt-link>
+            </a>
           </div>
         </div>
       </div>
@@ -106,6 +107,15 @@ import PageTemplateMixin from "@/mixins/PageTemplateMixin";
 
 export default {
   mixins: [PageTemplateMixin],
+  methods: {
+    openModal() {
+      this.$modal.open('review', {
+        props: {
+          type: 'contact'
+        }
+      })
+    }
+  }
 };
 </script>
 

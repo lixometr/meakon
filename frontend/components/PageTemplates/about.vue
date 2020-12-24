@@ -406,7 +406,11 @@ export default {
   },
   methods: {
     openReviewModal() {
-      this.$modal.open("review");
+      this.$modal.open("review", {
+        props: {
+          type: 'about'
+        }
+      });
     },
   },
   mounted() {
