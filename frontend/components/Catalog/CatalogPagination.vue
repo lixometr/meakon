@@ -1,5 +1,5 @@
 <template>
-  <section class="pagination">
+  <section class="pagination" v-if="totalPages > 0">
     <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item">

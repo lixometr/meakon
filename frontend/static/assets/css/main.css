@@ -940,21 +940,6 @@ section .desc {
   margin-bottom: 20px;
 }
 
-.show::before {
-  content: "";
-  padding: 17px;
-  color: red;
-  display: block;
-  margin: 0 auto;
-  top: -59px;
-  position: relative;
-  width: 40px;
-  height: 30px;
-  border-radius: 100%;
-  background-image: url("/assets/img/show.png");
-  z-index: -1;
-}
-
 .filter_tabs {
   margin: 0;
   padding: 0;
@@ -1032,10 +1017,12 @@ section .desc {
 
 .hide .ac-container {
   display: none;
+  transition: 0.5s;
 }
 
 .hide .filter_tab__subcat {
   display: none;
+  transition: 0.5s;
 }
 
 .show {
@@ -1043,27 +1030,53 @@ section .desc {
   z-index: 2;
 }
 
-.show::before {
-  content: "";
-  padding: 17px;
-  color: red;
-  display: block;
+.filter_tab__hide {
+  width: 29px;
+  height: 29px;
+  display: flex;
   margin: 0 auto;
-  bottom: 64px;
-  position: relative;
-  width: 50px;
-  height: 40px;
+  position: absolute;
+  bottom: -13px;
+  left: 45%;
+  z-index: 99;
+  background-position: center;
   border-radius: 100%;
-  background-image: url("/assets/img/show.png");
-  z-index: -1;
+  background: #E3E6EC;
+  box-shadow: -5px -2px 5px #FFFFFF, 3px 3px 5px #C9D4DC;
+}
+
+.arrow {
   cursor: pointer;
-  top: unset;
+  width: 29px;
+  height: 29px;
+  background-image: url("/assets/img/show.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.show .arrow-top {
+  transform: rotate(0deg);
+  transition: 1s;
+}
+
+.hide .arrow-top {
+  transform: rotate(-180deg);
+  transition: 1s;
+}
+
+.hide li {
+  display: none;
+  transition: 0.5s;
+}
+
+.filter_tabs ul:not(:last-child) {
+  position: relative;
 }
 
 .ac-container {
   width: 100%;
   min-width: 305px;
-  margin: 10px auto 30px auto;
+  margin: 10px auto 0px auto;
   text-align: left;
 }
 
@@ -2272,6 +2285,7 @@ button:hover .button-text {
 
 .filter_tab__subcat {
   margin-left: -40px;
+  margin-bottom: -10px !important;
 }
 
 .filters_del {
@@ -4106,6 +4120,7 @@ details[open] summary {
   .filter_tabs ul:not(:last-child) {
     min-width: unset;
     width: 100%;
+    position: relative;
   }
 
   .product .product_button {

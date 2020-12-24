@@ -1,5 +1,5 @@
 <template>
-  <ul class="filter_tabs__price show">
+  <ul class="filter_tabs__price" :class="{ show: show, hide: !show }">
     <h3>Цена</h3>
 
     <div class="range-slider">
@@ -8,6 +8,9 @@
     <div class="extra-controls">
       <input type="text" class="js-input-from" value="0" />
       <input type="text" class="js-input-to" value="0" />
+    </div>
+    <div class="filter_tab__hide" @click="toggleShow">
+      <div class="arrow arrow-top"></div>
     </div>
   </ul>
 </template>
@@ -20,8 +23,15 @@ export default {
       default: () => [0, 100],
     },
   },
+  data() {
+    return {
+      show: true,
+    };
+  },
   async mounted() {
-    await this.$loadScript('https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js')
+    await this.$loadScript(
+      "https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"
+    );
     this.initRange();
   },
   computed: {
@@ -33,6 +43,9 @@ export default {
     },
   },
   methods: {
+    toggleShow() {
+      this.show = !this.show;
+    },
     sendData(value) {
       this.$emit("input", value);
     },

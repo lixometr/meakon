@@ -1,5 +1,5 @@
 <template>
-  <ul class="filter_tabs__material show">
+  <ul class="filter_tabs__material" :class="{ show: show, hide: !show }">
     <h3>{{ name }}</h3>
     <ul class="filter_tab__subcat">
       <!-- <li></li> -->
@@ -14,7 +14,9 @@
         </label>
       </li>
     </ul>
-<!-- Сюда -->
+    <div class="filter_tab__hide" @click="toggleShow">
+      <div class="arrow arrow-top"></div>
+    </div>
   </ul>
 </template>
 
@@ -29,6 +31,11 @@ export default {
       type: Object,
       default: () => ({}),
     },
+  },
+  data() {
+    return {
+      show: true,
+    };
   },
   computed: {
     theId() {
@@ -45,6 +52,9 @@ export default {
     },
   },
   methods: {
+    toggleShow() {
+      this.show = !this.show;
+    },
     emitData(value) {
       this.$emit("input", value);
     },
@@ -55,7 +65,7 @@ export default {
         const newValue = [...this.value, attrValueSlug];
         this.emitData(newValue);
       } else {
-        console.log('here', this.value, attrValueSlug)
+        console.log("here", this.value, attrValueSlug);
         if (!this.value.includes(attrValueSlug)) return;
         const newValue = this.value.filter((slug) => slug !== attrValueSlug);
         this.emitData(newValue);

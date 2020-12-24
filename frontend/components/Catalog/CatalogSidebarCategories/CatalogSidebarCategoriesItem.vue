@@ -19,6 +19,7 @@
         <nuxt-link :to="$url.category(item.category.full_slug)" active-class="active">{{ name }}</nuxt-link>
       </label>
     </template>
+    
   </div>
 </template>
 
