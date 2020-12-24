@@ -158,6 +158,8 @@ $(document).ready(function($) {
 
 
 
+
+
 //модалка
 $('.js-open-modal').click(function(event) {
    event.preventDefault();
