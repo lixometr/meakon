@@ -1609,7 +1609,7 @@ border-radius: 6px;
    padding: 50px 40px; 
    z-index: 9999;
    background-color: #fff;
-   display: none;
+   display: block;
    border-radius: 10px;
    background: #73869F;
 }
@@ -1868,6 +1868,10 @@ button:focus {
 .mfp-with-zoom.mfp-removing .mfp-container, 
 .mfp-with-zoom.mfp-removing.mfp-bg {
 	opacity: 0;
+}
+
+.contact_info  a {
+	color: #00294C!important;
 }
 /*-------------------------------
 	//	карточка товара
@@ -2680,6 +2684,10 @@ color: #009CDB;
 	}
 	.product_title {
 		margin-top: 20px;	
+		a {
+			color: #00294C;
+			text-decoration: none;
+		}
 	}
 	.product_size {
 		margin-top: 20px;
@@ -2708,7 +2716,7 @@ color: #009CDB;
     grid-template-columns: repeat(1, auto);
     grid-column-gap: 0px;
     height: max-content;
-    margin-top: 5px;
+    // margin-top: 5px;
 
 	.product_item{
 		display: flex;
@@ -3699,9 +3707,7 @@ details {
 		grid-template-columns: repeat(2, 1fr);
 		font-size: 14px;
 	}
-	.contact_info a {
-		color: #00294C;
-	}
+
 	.med_contacts .contact_info li {
 		margin-bottom: 30px;
 	}
@@ -4685,6 +4691,129 @@ details[open] summary {
 .pagination nav .active a {
     color: #00294C !important;
     margin: 0;
+}
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
+	color: #FFF;
+	right: -25px;
+	text-align: right;
+	padding-right: 6px;
+	width: 100%;
+	top: -10px;
+}
+.product_card__images__min a:not(:last-child) {
+	display: block;
+	margin-bottom: 16px;
+}
+.breadthums {
+	display: none;
+}
+.tabs-widget__item a {
+	margin-left: 15px;
+	font-size: 15px;
+}
+.form_review .form_review__comment {
+	margin-right: 10px;
+}
+.form {
+	flex-wrap: wrap;
+}
+.form .form_review__callback {
+	max-width: unset;
+}
+.contact_info a{
+    color: #00294C;
+}
+.leaves {
+	display: none;
+}
+.js-open-modal {
+	position: unset;
+}
+.form_review__footer .button-text {
+    color: #00294C !important;
+}
+button.learn-more .button-text {
+	justify-content: center;
+}
+.med_about {
+	.col-md-5 {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+}
+.med_work {
+	.col-md-5 {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.col-md-6 {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 100%;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	h2{
+		max-width: 100%;
+	}
+}
+.about_text {
+	grid-template-columns: repeat(2, 100%);
+}
+#aboutPage .about_text_col3 {
+	grid-template-columns: 100%;
+}
+#aboutPage .med_work {
+	border-radius: unset;
+	width: 100%;
+	margin-left: 0;
+	padding-left: unset;
+}
+.box, .box2 {
+display: none;
+}
+#aboutPage .swiper-button-prev {
+	top: 42px;
+}
+#aboutPage .swiper-container {
+	padding-top: 50px;
+	padding-bottom: 250px;
+	padding-left: 0;
+	margin-right: 0;
+}
+.commrads .doc {
+	box-shadow: unset;
+}
+#aboutPage .swiper-button-next {
+bottom:207px;
+}
+.offer_place {
+	box-shadow:unset;
+}
+.med_banks {
+
+.col-md-5 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col-md-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+}
+#aboutPage section {
+	margin-left: 0;
+}
+.med_why {
+
 }
 
 }
