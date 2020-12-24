@@ -47,7 +47,6 @@ export default {
             "https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css",
         },
       ],
-     
     };
   },
   data() {
@@ -65,19 +64,23 @@ export default {
       store.dispatch("filters/init", query);
 
       const filters = store.getters["filters/active"];
-      const products = await $api.$get(
-        "categoryProducts",
-        {
-          slug,
-        },
-        {
-          params: {
-            page: query.page || 1,
-            filters,
+      let products;
+      if (query.search) {
+        products = await $api.$get("productsSearch", { text: query.search });
+      } else {
+        products = await $api.$get(
+          "categoryProducts",
+          {
+            slug,
           },
-        }
-      );
-      console.log(products);
+          {
+            params: {
+              page: query.page || 1,
+              filters,
+            },
+          }
+        );
+      }
       store.commit("filters/setItems", products.filters);
       const breadcrumbs = await $api.$get("categoryParents", { slug });
       breadcrumbs.pop();

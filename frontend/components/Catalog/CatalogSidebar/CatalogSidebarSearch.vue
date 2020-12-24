@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     search() {
-      if(!this.text) return
       this.$router.push({
         query: {
           search: this.text
