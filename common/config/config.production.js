@@ -1,7 +1,7 @@
 module.exports = {
     dbName: 'meakon',
     // adminEmail: 'info@meakon-med.com',
-    adminEmail: 'lixometr@gmail.com',
+    adminEmail: 'yariik0909@gmail.com',
     "api": {
         "baseUrl": "https://api.meakon-med.com",
         "baseName": "api.meakon-med.com"
