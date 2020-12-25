@@ -26,6 +26,7 @@ import PageFieldTab from './PageFieldTab.vue';
 import PageFieldFile from './PageFieldFile.vue';
 import PageFieldBlock from './PageFieldBlock.vue';
 import PageFieldGallery from './PageFieldGallery.vue';
+import PageFieldCategories from './PageFieldCategories.vue';
 export default {
   props: {
     value: null,
@@ -54,7 +55,8 @@ export default {
         block: PageFieldBlock,
         tab: PageFieldTab,
         file: PageFieldFile,
-        gallery: PageFieldGallery
+        gallery: PageFieldGallery,
+        categories: PageFieldCategories
 
       };
       return components[this.type];

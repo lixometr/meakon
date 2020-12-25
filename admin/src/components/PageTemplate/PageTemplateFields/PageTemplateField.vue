@@ -171,6 +171,10 @@ export default {
           label: "Повторитель",
           key: "repeater",
         },
+        {
+          label: "Категории",
+          key: "categories",
+        },
       ];
     },
   },

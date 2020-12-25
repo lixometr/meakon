@@ -35,7 +35,7 @@
                 <span class="more-button-ico"></span>
               </span>
               <span class="more-button-title">{{
-                $t(`modal.${type}.btnText`)
+                $t(`form.btnText`)
               }}</span>
             </a>
           </div>
@@ -43,7 +43,7 @@
       </div>
       <div class="form_review__callback" v-if="isSubmit">
         <div class="form_review__title thanks">
-          <h3>Отзыв отправлен. Спасибо!</h3>
+          <h3>{{$t(``)}}</h3>
         </div>
       </div>
     </div>

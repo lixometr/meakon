@@ -38,13 +38,12 @@
       </CCardBody>
     </CCard>
 
-    <!-- <CCard>
+    <CCard>
       <CCardHeader>Изображения</CCardHeader>
-
       <CCardBody>
-        <EditImage class="mb-5" label="Иконка" v-model="category.image" />
+        <EditImage label="Картинка" v-model="category.image" />
       </CCardBody>
-    </CCard> -->
+    </CCard>
 
     <SeoEdit v-model="category" />
     <SeoEdit v-model="product" keyProp="seo_en" label="EN Seo" />
@@ -62,7 +61,7 @@ import CategorySelect from "@/components/CategorySelect";
 import EditImage from "@/components/EditImage";
 import AppColorPicker from "@/components/AppColorPicker";
 import cyrillicToTranslit from "cyrillic-to-translit-js";
-import AttributeSelect from "@/components/AttributeSelect"
+import AttributeSelect from "@/components/AttributeSelect";
 
 export default {
   components: {
@@ -72,7 +71,7 @@ export default {
     CategorySelect,
     EditImage,
     AppColorPicker,
-    AttributeSelect
+    AttributeSelect,
   },
   props: {
     isNew: Boolean,

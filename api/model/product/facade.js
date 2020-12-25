@@ -16,7 +16,15 @@ class ProductFacade extends Facade {
     }
     async search(text) {
         return this.Model.find({
-            name: RegExp(text, 'ig'),
+            $or: [
+                {
+                    name: RegExp(text, 'ig')
+
+                },
+                {
+                    name_en: RegExp(text, 'ig')
+                }
+            ]
 
         })
     }

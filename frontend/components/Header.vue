@@ -82,7 +82,7 @@ export default {
     };
   },
   computed: {
-    showFilters() {
+    showFiltersBtn() {
       return this.$store.getters.showFiltersBtn
     }
   },

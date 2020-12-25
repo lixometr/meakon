@@ -15,7 +15,7 @@ const config = {
   mail: {
     login: 'test',
     password: 'test',
-    host: 'testhost'
+    host: 'meakon.com'
   },
   unitpay: {
     SECRET_KEY: process.env.UNITPAY_SECRET_KEY,

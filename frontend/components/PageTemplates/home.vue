@@ -17,6 +17,7 @@
           <div class="col-1 d-sm-none d-md-block"></div>
 
           <div class="col-lg-11 col-md-12 col-sm-12 offer_info">
+
             <h1>
               {{ getLangValue("blok_pervogo_ekrana.zagolovok_ofera") }}
             </h1>
@@ -113,100 +114,24 @@
             <!-- Swiper -->
             <div class="swiper-container">
               <div class="swiper-wrapper">
-                <!-- card -->
 
-                <div class="swiper-slide card card-shadow">
-                  <img src="assets/img/slider/im2.png" />
-                  <p>Скальпели</p>
+                <div class="swiper-slide card card-shadow" v-for="(item, idx) in getValue('blok_vivoda_tovarov.kategorii')" :key="idx">
+                  <AppImage :img="item.image" />
+                  <p>{{$langValue(item, 'name')}}</p>
                   <a class="podrobnee_btn" href="#">
                     <div class="btn_wrapper">
                       <button class="learn-more">
                         <span class="circle" aria-hidden="true">
                           <span class="icon arrow"></span>
                         </span>
-                        <span class="button-text">Подробнее</span>
+                        <span class="button-text">{{$t('more')}}</span>
                       </button>
                     </div>
                   </a>
                 </div>
 
-                <!-- //card -->
-                <!-- card -->
+               
 
-                <div class="swiper-slide card card-shadow">
-                  <img src="assets/img/slider/im1.jpg" />
-                  <p>Скальпели</p>
-
-                  <a class="podrobnee_btn" href="#">
-                    <div class="btn_wrapper">
-                      <button class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                          <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Подробнее</span>
-                      </button>
-                    </div>
-                  </a>
-                </div>
-
-                <!-- //card -->
-                <!-- card -->
-
-                <div class="swiper-slide card card-shadow">
-                  <img src="assets/img/slider/im1.jpg" />
-                  <p>Скальпели</p>
-
-                  <a class="podrobnee_btn" href="#">
-                    <div class="btn_wrapper">
-                      <button class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                          <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Подробнее</span>
-                      </button>
-                    </div>
-                  </a>
-                </div>
-
-                <!-- //card -->
-                <!-- card -->
-
-                <div class="swiper-slide card card-shadow">
-                  <img src="assets/img/slider/im1.jpg" />
-                  <p>Скальпели</p>
-
-                  <a class="podrobnee_btn" href="#">
-                    <div class="btn_wrapper">
-                      <button class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                          <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Подробнее</span>
-                      </button>
-                    </div>
-                  </a>
-                </div>
-
-                <!-- //card -->
-                <!-- card -->
-
-                <div class="swiper-slide card card-shadow">
-                  <img src="assets/img/slider/im1.jpg" />
-                  <p>Скальпели</p>
-
-                  <a class="podrobnee_btn" href="#">
-                    <div class="btn_wrapper">
-                      <button class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                          <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">Подробнее</span>
-                      </button>
-                    </div>
-                  </a>
-                </div>
-
-                <!-- //card -->
               </div>
               <!-- Add Arrows -->
               <div class="swiper-button-next"></div>
