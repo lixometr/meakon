@@ -3,7 +3,6 @@
     <!-- header -->
     <!-- header -->
     <header class="offer">
-      123
       <div class="wrapper">
         <video class="mainscreen-video" autoplay="" muted="" loop="">
           <source
