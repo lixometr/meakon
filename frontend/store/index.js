@@ -2,6 +2,7 @@ import _ from "lodash"
 export const state = () => ({
   isLoading: false,
   passwordLength: 4,
+  showFiltersBtn: true
 
 })
 export const getters = {
@@ -9,6 +10,10 @@ export const getters = {
     return state.head
   },
  
+  showFiltersBtn(state) {
+    return state.showFiltersBtn
+  },
+
   pageTitle(state) {
     return (name, type) => {
       return name

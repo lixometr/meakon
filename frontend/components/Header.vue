@@ -7,6 +7,7 @@
       <div class="mswaper">
         <ChangeLanguageMobile />
       </div>
+      <div class="filter_toggler" v-if="showFiltersBtn"></div>
 
       <div class="burger">
         <div class="burger__patty"></div>
@@ -59,7 +60,9 @@
                 >{{ $langValue(values, `menu.[${idx}].name`) }}</nuxt-link
               >
               <!-- Telephone -->
-              <a :href="'tel:' + values.phone">{{$langValue(values, 'phone')}}</a>
+              <a :href="'tel:' + values.phone">{{
+                $langValue(values, "phone")
+              }}</a>
               <!-- //Telephone -->
             </nav>
           </div>
@@ -78,6 +81,11 @@ export default {
       values: {},
     };
   },
+  computed: {
+    showFilters() {
+      return this.$store.getters.showFiltersBtn
+    }
+  },
   async fetch() {
     try {
       const { values } = await this.$api.$get("widgetByName", {
@@ -88,7 +96,6 @@ export default {
   },
 
   methods: {},
-  
 };
 </script>
 

@@ -956,6 +956,9 @@ position: relative;
 	 	end	Банки
 --------------------------------*/
 
+
+
+
 /*-------------------------------
 	 		О компании
 --------------------------------*/
@@ -1004,6 +1007,10 @@ position: relative;
 	}
 }
  
+
+.filter_tab__subcat {
+    background: none !important;
+}
 
  
 .filter_tabs {
@@ -1594,9 +1601,6 @@ border-radius: 6px;
 	 end 	  Фильтр
 --------------------------------*/
 
-
-
-
 // модалка 
 .link {
    padding: 10px 20px;
@@ -1612,14 +1616,23 @@ border-radius: 6px;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   max-width: 400px;
-   width: 400px; 
+   max-width: 510px;
+   width: 510px; 
    padding: 50px 40px; 
    z-index: 9999;
    background-color: #fff;
    display: block;
    border-radius: 10px;
    background: #73869F;
+}
+
+.form_review__title.thanks {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: -20px;
 }
 
 .modal.is-show,
@@ -3445,10 +3458,36 @@ details {
 	.burger__patty:nth-child(3) {
 		margin-left: 0;
 	}
-
+	 .product_filter_view {
+	 	display: none;
+	 }
+	 .filter_tabs {
+	 	margin-top: 20px;
+	 	position: fixed;
+	 	z-index: 99;
+	 	right: 0;
+	 	top: 70px;
+	 	background: #B5C7DD;
+	 	padding: 15px;
+	 }
 }
 
 @media (min-width: 768px) and (max-width: 1100px) {
+
+ .filter_tabs {
+	 	margin-top: 20px; 
+	 	position: fixed;
+	 	z-index: 99;
+	 	right: 0;
+	 	top: 70px;
+	 	background: #B5C7DD;
+	 	padding: 15px;
+	 }
+
+	.product_filter_view {
+		display: none;
+	}
+
 	details {
 		top: unset;
 	}
@@ -4312,15 +4351,27 @@ top:55%;
 #filter_page .products .product_filter_header h1 {
 	margin-bottom: 0;
 }
-details summary {
-	background-image: url('/assets/img/mobile_filter.png');
+.filter_toggler {
+	background-image: url("/assets/img/mobile_filter.png");
 	background-position: center;
 	background-repeat: no-repeat;
-	width:45px;
+	width: 50px;
 	height: 45px;
 	padding: 25px 0;
 	transition: 1s;
+	position: absolute;
+	right: 0;
+	cursor: pointer;
+	position: absolute;
+	z-index: 10;
+	right: 75px;
+	top: 22px;
 }
+
+.filter_hidden  {
+
+}
+
 .list, .grid {
 	grid-template-columns: 100%;
 }
@@ -4497,8 +4548,8 @@ details {
 .med_why ul {
 	margin-left: 0;
 }
-.js-open-modal {
-	position: static;
+.preFooter .js-open-modal {
+	 position: static;
 }
 .contact_info ul {
 	padding: 0;
@@ -4599,11 +4650,62 @@ details summary {
 .tel__link {
 	padding: 5px 0;
 }
-
+.hidden {
+	position: fixed;
+	right: -550px;
+	transition: 1s;
+}
+.showed {
+	position: fixed;
+	right: 0px;
+	transition: 1s;
+}
+#filter_page .products .product_filter_header h1 {
+	margin-bottom: 50px;
+}
+.filter_tabs {
+	overflow: scroll;
+	height: 85vh;
+}
 }
 
 
-@media (min-width: 769px) and (max-width:1100px) { 
+@media (min-width: 769px) and (max-width:992px) { 
+
+.list, .grid {
+    grid-template-columns: repeat(2,1fr)!important;
+    grid-gap: 30px;
+}
+#filter_page .products .product_filter_header h1 {
+	margin-bottom: 50px;
+}
+.hidden {
+	position: fixed;
+	right: -750px;
+	transition: 1s;
+}
+.showed {
+	position: fixed;
+	right: 0px;
+	transition: 1s;
+}
+
+.filter_toggler {
+	background-image: url("/assets/img/mobile_filter.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 50px;
+	height: 45px;
+	padding: 25px 0;
+	transition: 1s;
+	position: absolute;
+	right: 0;
+	cursor: pointer;
+	position: absolute;
+	z-index: 10;
+	right: 75px;
+	top: 22px;
+}
 .menu__brand, .menu__list {
     height: 100vh;
 }	
@@ -4619,6 +4721,7 @@ details summary {
 .breadthums {
 	top: 190px;
 }
+
 header nav {
     margin: 0 40px!important;
 }
@@ -4734,6 +4837,9 @@ details[open] summary {
 }
 .filter_tabs {
     margin-top: 0px;
+}
+.product_filter_header {
+	margin-bottom: 50px;
 }
 .pagination nav .active a {
     color: #00294C !important;
@@ -4865,6 +4971,39 @@ bottom:207px;
 .offer_place {
 	display: none;
 }
+.list .product_item img {
+    max-width: 100%;
+}
+.filter_tabs {
+	overflow: scroll;
+	height: 85vh;
+}
+
+}
+
+@media (min-width:992px ) and (max-width:1099px ) {
+	.showed, 
+	.hidden,
+	.filter_tabs  {
+		position: unset;
+		margin-top: 0;
+		padding: 0;
+	} 
+	.filter_tabs ul {
+		min-width: unset;
+	}
+	.filter_tabs {
+		background-color: unset;
+	}
+	.extra-controls {
+		display: flex;
+		justify-content: center;
+		grid-gap: 5px;
+	}
+	.product_size,
+	.product_made {
+		font-size: 13px;
+	}
 
 }
 
@@ -4873,6 +5012,9 @@ bottom:207px;
 		width: 100%;
 		max-width: 100%;
 		margin: 15px 0;
+	}
+	.filter_tabs ul {
+		min-width: unset;
 	}
 }
 

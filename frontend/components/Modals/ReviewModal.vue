@@ -24,18 +24,21 @@
           <p class="form_review_text" v-html="$t('form.policy')"></p>
         </div>
         <div class="form_review__footer">
-          <a class="podrobnee_btn" href="#" @click.prevent="submit">
-            <div class="btn_wrapper">
-              <button class="learn-more">
-                <span class="circle" aria-hidden="true">
-                  <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">{{
-                  $t(`modal.${type}.btnText`)
-                }}</span>
-              </button>
-            </div>
-          </a>
+          <div class="Button_page">
+            <a
+              class="more-button-wrap"
+              href="products_card.html"
+              data-main-index=""
+              @click.prevent="submit"
+            >
+              <span class="more-button-background">
+                <span class="more-button-ico"></span>
+              </span>
+              <span class="more-button-title">{{
+                $t(`modal.${type}.btnText`)
+              }}</span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="form_review__callback" v-if="isSubmit">
@@ -64,14 +67,13 @@ export default {
   },
   computed: {
     showMessage() {
-      if(this.type === 'contact') return true
-      return false
+      if (this.type === "contact") return true;
+      return false;
     },
     showReview() {
       // if(this.type === 'product') return true
-      return false
-
-    }
+      return false;
+    },
   },
   methods: {
     submit() {

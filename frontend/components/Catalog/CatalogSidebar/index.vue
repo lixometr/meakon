@@ -1,17 +1,12 @@
 <template>
-  <div class="col-lg-3 col-md-6 col-sm-12 filter">
-    <details open="">
-      <!-- <details open> -->
-      <summary>&nbsp;</summary>
-
-      <ul class="filter_tabs">
+ <div class="col-lg-3 d-lg-block filter "> 
+      <ul class="filter_tabs" :class="{showed: showSidebar, hidden: !showSidebar}">
         <CatalogSidebarSearch />
 
         <CatalogSidebarCategories  />
 
         <CatalogFilters :items="filterItems" v-if="showFilters" />
       </ul>
-    </details>
   </div>
 </template>
 
@@ -28,6 +23,9 @@ export default {
     // }
   },
   computed: {
+    showSidebar() {
+      
+    },
     filterItems() {},
     categories() {},
   },
