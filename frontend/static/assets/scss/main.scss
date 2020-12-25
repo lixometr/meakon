@@ -2297,6 +2297,7 @@ button:focus {
 	margin: 0 75px!important;
 	padding: 30px 150px;
 	position: relative;
+	overflow: hidden;
 	margin-bottom: 230px!important;
 	h3 {
 		background-color: #73869F;
@@ -2313,15 +2314,15 @@ button:focus {
 
 
 	.leaves {
-		background-image: url("/assets/img/Group375.png");
-		width: 100%;
-		height: 100%;
+		background-image: url("/assets/img/Group_375.png");
+		width: 728px;
+		height: 728px;
 		background-repeat: no-repeat;
 		position: absolute;
-		top: 0;
-		right: 0;
-		background-position: right;
+		right: -182px; 
 		z-index: 2;
+		background-size: cover;
+		bottom: -90px;
 	}
 	.btn-center {
 		display: flex;
@@ -3227,7 +3228,14 @@ details {
 	transform: rotate(-45deg) translate(6px, 0px);
 	margin-left: -2px;
 }
+.preFooter .Button_page {
+    height: 100%;
+    align-items: center;
 
+}
+.preFooter  .more-button-title {
+	top: 12px;
+}
 .form_review__footer   {
 	 
 	.Button_page{
@@ -4551,6 +4559,7 @@ details {
 .preFooter .js-open-modal {
 	 position: static;
 }
+.filter_tabs
 .contact_info ul {
 	padding: 0;
 }
