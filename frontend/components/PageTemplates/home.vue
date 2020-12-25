@@ -115,7 +115,7 @@
             <div class="swiper-container">
               <div class="swiper-wrapper">
 
-                <div class="swiper-slide card card-shadow" v-for="(item, idx) in getValue('blok_vivoda_tovarov.kategorii')" :key="idx">
+                <div class="swiper-slide card card-shadow" v-for="(item, idx) in getValue('blok_vivoda_tovarov.vivod_tovarov_na_glavnoi')" :key="idx">
                   <AppImage :img="item.image" />
                   <p>{{$langValue(item, 'name')}}</p>
                   <a class="podrobnee_btn" href="#">
