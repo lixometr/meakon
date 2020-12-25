@@ -15,8 +15,9 @@ const config = {
   mail: {
     login: 'root',
     password: 'Ss_C!QXk7BAwLR',
-    host: 'meakon-med.com'
+    host: 'localhost'
   },
+  globalConfig,
   unitpay: {
     SECRET_KEY: process.env.UNITPAY_SECRET_KEY,
     PUBLIC_KEY: process.env.UNITPAY_PUBLIC_KEY

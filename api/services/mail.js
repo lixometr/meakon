@@ -32,7 +32,7 @@ async function sendMail(options) {
     const to = options.to
     // send mail with defined transport object
     let info = await transporter.sendMail({
-        from: from || 'no-reply@lootchampion.com', // sender address
+        from: from || `no-reply@${config.globalConfig.frontend.baseName}`, // sender address
         to, // list of receivers
         subject: subject, // Subject line
         html: template, // html body
