@@ -9,10 +9,26 @@
           <p>{{ $t(`modal.${type}.subTitle`) }}</p>
         </div>
         <div class="form_review__body">
-          <input type="text" :placeholder="$t('form.name')" v-model="name" />
-          <input type="phone" :placeholder="$t('form.phone')" v-model="phone" />
-          <input type="text" :placeholder="$t('form.email')" v-model="email" />
+          <input
+            type="text"
+            required
+            :placeholder="$t('form.name')"
+            v-model="name"
+          />
+          <input
+            type="phone"
+            required
+            :placeholder="$t('form.phone')"
+            v-model="phone"
+          />
+          <input
+            type="text"
+            required
+            :placeholder="$t('form.email')"
+            v-model="email"
+          />
           <textarea
+            required
             name=""
             id=""
             cols="30"
@@ -27,23 +43,21 @@
           <div class="Button_page">
             <a
               class="more-button-wrap"
-              href="products_card.html"
+              href="#"
               data-main-index=""
               @click.prevent="submit"
             >
               <span class="more-button-background">
                 <span class="more-button-ico"></span>
               </span>
-              <span class="more-button-title">{{
-                $t(`form.btnText`)
-              }}</span>
+              <span class="more-button-title">{{ $t(`form.btnText`) }}</span>
             </a>
           </div>
         </div>
       </div>
       <div class="form_review__callback" v-if="isSubmit">
         <div class="form_review__title thanks">
-          <h3>{{$t(`modal.${type}.successText`)}}</h3>
+          <h3>{{ $t(`modal.${type}.successText`) }}</h3>
         </div>
       </div>
     </div>
@@ -77,6 +91,7 @@ export default {
   },
   methods: {
     submit() {
+      if (!this.name || !this.email || !this.phone) return;
       this.sendForm();
     },
     async sendForm() {

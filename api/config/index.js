@@ -13,8 +13,8 @@ const config = {
   environment: process.env.NODE_ENV || 'development',
   baseName,
   mail: {
-    login: 'root',
-    password: 'Ss_C!QXk7BAwLR',
+    login: '',
+    password: '',
     host: 'localhost'
   },
   globalConfig,
