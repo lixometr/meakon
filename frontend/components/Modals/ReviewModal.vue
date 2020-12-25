@@ -43,7 +43,7 @@
       </div>
       <div class="form_review__callback" v-if="isSubmit">
         <div class="form_review__title thanks">
-          <h3>{{$t(``)}}</h3>
+          <h3>{{$t(`modal.${type}.successText`)}}</h3>
         </div>
       </div>
     </div>

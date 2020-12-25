@@ -53,10 +53,11 @@ export default class Api {
                 }
                 return result;
             } catch (err) {
+                const error = { statusCode: err.response.status, config: err.response.config }
                 if (process.env.NODE_ENV === 'development') {
-                    console.log(`Error from: ${theRoute}`, err)
+                    console.log(`Error from: ${theRoute}`, error)
                 }
-                throw err;
+                throw error
             }
 
         }
@@ -69,7 +70,7 @@ export default class Api {
         if (this.options.region) {
             str += `?region=${this.options.region}`
         }
-    
+
         return str
     }
     _applyQueryString(route) {

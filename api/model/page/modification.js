@@ -2,9 +2,10 @@ const Modification = require('../../lib/modification')
 const facade = require('./facade')
 const _ = require("lodash")
 const categoryFacade = require('../category/facade')
-const { now } = require('lodash')
+const CategoryModification = require('../category/modification')
 module.exports = class ManufacturerModification extends Modification {
     async initValues() {
+        const vm = this
         const initField = async function ini(field, values, path) {
             const type = field.type
             const nowPath = path ? `${path}.${field.var_name}` : field.var_name
@@ -40,10 +41,13 @@ module.exports = class ManufacturerModification extends Modification {
                 if (!_.isArray(value)) return values
                 
                 const resolvers = value.map(async cId => {
-                    return await categoryFacade.findById(cId)
-                })
+                    const category =  await categoryFacade.findById(cId)
+                    if(!category) return false
+                    const instance = new CategoryModification(category, vm.options)
+                    await instance.init()
+                    return instance.toINFO()
+                }).filter(item => !!item)
                 const items = await Promise.all(resolvers)
-                console.log('oh items', items)
                 _.set(values, nowPath, items)
 
             }

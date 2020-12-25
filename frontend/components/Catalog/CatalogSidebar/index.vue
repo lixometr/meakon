@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     showSidebar() {
-      
+      return this.$store.getters.showFiltersSidebar
     },
     filterItems() {},
     categories() {},

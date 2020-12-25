@@ -13,9 +13,9 @@ const config = {
   environment: process.env.NODE_ENV || 'development',
   baseName,
   mail: {
-    login: 'test',
-    password: 'test',
-    host: 'meakon.com'
+    login: 'root',
+    password: 'Ss_C!QXk7BAwLR',
+    host: 'meakon-med.com'
   },
   unitpay: {
     SECRET_KEY: process.env.UNITPAY_SECRET_KEY,

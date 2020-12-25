@@ -2,16 +2,20 @@ import _ from "lodash"
 export const state = () => ({
   isLoading: false,
   passwordLength: 4,
-  showFiltersBtn: true
+  showFiltersBtn: false,
+  showFiltersSidebar: true
 
 })
 export const getters = {
   head(state) {
     return state.head
   },
- 
+
   showFiltersBtn(state) {
     return state.showFiltersBtn
+  },
+  showFiltersSidebar(state) {
+    return state.showFiltersSidebar
   },
 
   pageTitle(state) {
@@ -32,14 +36,19 @@ export const getters = {
   }
 }
 export const mutations = {
-
+  setFiltersSidebar(state, value) {
+    state.showFiltersSidebar = value
+  },
+  setFiltersBtn(state, value) {
+    state.showFiltersBtn = value
+  },
   startLoading(state) {
     state.isLoading = true
-   
+
   },
   stopLoading(state) {
     state.isLoading = false
-    
+
 
   },
 }

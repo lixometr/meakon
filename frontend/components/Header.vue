@@ -7,7 +7,7 @@
       <div class="mswaper">
         <ChangeLanguageMobile />
       </div>
-      <div class="filter_toggler" v-if="showFiltersBtn"></div>
+      <div class="filter_toggler" v-if="showFiltersBtn" @click="toggleFilterSidebar"></div>
 
       <div class="burger">
         <div class="burger__patty"></div>
@@ -83,8 +83,12 @@ export default {
   },
   computed: {
     showFiltersBtn() {
+      return this.$route.path.indexOf('/catalog') > -1
       return this.$store.getters.showFiltersBtn
-    }
+    },
+    showFiltersSidebar() {
+      return this.$store.getters.showFiltersSidebar
+    },
   },
   async fetch() {
     try {
@@ -95,7 +99,11 @@ export default {
     } catch (err) {}
   },
 
-  methods: {},
+  methods: {
+    toggleFilterSidebar() {
+      this.$store.commit('setFiltersSidebar', !this.showFiltersSidebar)
+    }
+  },
 };
 </script>
 

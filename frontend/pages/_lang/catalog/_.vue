@@ -56,8 +56,15 @@ export default {
     };
   },
   watchQuery: true,
+  beforeRouteLeave(to, from, next) {
+    console.log('omg')
+      this.$store.commit('setFiltersBtn', false)
+      next()
+
+  },
   async asyncData({ $api, error, params, query, store }) {
     try {
+      store.commit('setFiltersBtn', true)
       const slug = params.pathMatch;
       const category = await $api.$get("category", { slug });
       if (!category) throw { statusCode: 404 };

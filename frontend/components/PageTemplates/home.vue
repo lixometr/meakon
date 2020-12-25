@@ -17,7 +17,6 @@
           <div class="col-1 d-sm-none d-md-block"></div>
 
           <div class="col-lg-11 col-md-12 col-sm-12 offer_info">
-
             <h1>
               {{ getLangValue("blok_pervogo_ekrana.zagolovok_ofera") }}
             </h1>
@@ -43,8 +42,6 @@
         </div>
 
         <div class="rounded">
-         
-
           <img src="/assets/img/section.png" alt="" />
           <div id="curved1">
             {{ getLangValue("dop_elementi.listaite_vniz") }}
@@ -112,26 +109,33 @@
 
           <div class="col-sm-12 col-md-8 col-lg-8">
             <!-- Swiper -->
+
             <div class="swiper-container">
               <div class="swiper-wrapper">
-
-                <div class="swiper-slide card card-shadow" v-for="(item, idx) in getValue('blok_vivoda_tovarov.vivod_tovarov_na_glavnoi')" :key="idx">
+                <div
+                  class="swiper-slide card card-shadow"
+                  v-for="(item, idx) in getValue(
+                    'blok_vivoda_tovarov.vivod_tovarov_na_glavnoi'
+                  )"
+                  :key="idx"
+                >
                   <AppImage :img="item.image" />
-                  <p>{{$langValue(item, 'name')}}</p>
-                  <a class="podrobnee_btn" href="#">
+                  <p>{{ $langValue(item, "name") }}</p>
+                  {{item.name}}
+                  <nuxt-link
+                    class="podrobnee_btn"
+                    :to="$url.category(item.full_slug) || '#'"
+                  >
                     <div class="btn_wrapper">
                       <button class="learn-more">
                         <span class="circle" aria-hidden="true">
                           <span class="icon arrow"></span>
                         </span>
-                        <span class="button-text">{{$t('more')}}</span>
+                        <span class="button-text">{{ $t("more") }}</span>
                       </button>
                     </div>
-                  </a>
+                  </nuxt-link>
                 </div>
-
-               
-
               </div>
               <!-- Add Arrows -->
               <div class="swiper-button-next"></div>
@@ -321,12 +325,10 @@ export default {
         },
       },
     });
-    await this.$loadScript('/assets/js/circletype.min.js')
+    await this.$loadScript("/assets/js/circletype.min.js");
     const circleType = new CircleType(document.getElementById("curved1"));
   },
-  computed: {
-   
-  },
+  computed: {},
 };
 </script>
 

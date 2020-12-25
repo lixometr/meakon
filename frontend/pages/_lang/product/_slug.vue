@@ -86,9 +86,10 @@ export default {
     };
   },
   mounted() {},
-  async asyncData({ $api, error, params }) {
+  async asyncData({ $api, error, redirect, params }) {
     try {
       const product = await $api.$get("product", { slug: params.slug });
+
       if (!product) throw { statusCode: 404 };
       const productCategory = product.category[0] || {};
       const parentCategories = await $api.$get("categoryParents", {

@@ -14,7 +14,7 @@ export default {
   },
 
   mounted() {
-    console.log(this.error);
+    console.log(this.error)
   },
   head() {
     return {};
