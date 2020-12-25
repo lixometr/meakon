@@ -15,14 +15,19 @@ const config = require('../config')
  *  }
  */
 let transporter = nodemailer.createTransport({
-    host: config.mail.host,
-    port: 465,
-    secure: true, // true for 465, false for other ports
-    auth: {
-        user: config.mail.login, // generated ethereal user
-        pass: config.mail.password, // generated ethereal password
-    },
+    sendmail: true,
+    newline: 'unix',
+    path: '/usr/sbin/sendmail'
 });
+// let transporter = nodemailer.createTransport({
+//     host: config.mail.host,
+//     port: 465,
+//     secure: true, // true for 465, false for other ports
+//     auth: {
+//         user: config.mail.login, // generated ethereal user
+//         pass: config.mail.password, // generated ethereal password
+//     },
+// });
 async function sendMail(options) {
     const templateId = options.template
     const data = options.data || {}
