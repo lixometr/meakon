@@ -2714,6 +2714,10 @@ color: #009CDB;
 	}
 	img {
 		width: 100%;
+		object-fit: cover;
+		max-height: 250px;
+		height: 100%;
+		object-position: center;
 	}
 	.product_title {
 		margin-top: 20px;	

@@ -2376,6 +2376,10 @@ button:hover .button-text {
 }
 .product img {
   width: 100%;
+  object-fit: cover;
+  max-height: 250px;
+  height: 100%;
+  object-position: center;
 }
 .product .product_title {
   margin-top: 20px;
