@@ -100,6 +100,7 @@
 
           <div class="col-sm-12 col-md-8 col-lg-8">
             <!-- Swiper -->
+            <client-only>
               <swiper :options="sliderOptions">
                 <swiper-slide
                   class="card card-shadow"
@@ -119,6 +120,7 @@
                 <div class="swiper-button-prev" slot="button-prev"></div>
                 <div class="swiper-button-next" slot="button-next"></div>
               </swiper>
+            </client-only>
             <!-- <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div
