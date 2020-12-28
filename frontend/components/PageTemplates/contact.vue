@@ -80,13 +80,8 @@
             <h3>{{ getLangValue("forma_obratnoi_svyazi.zagolovok_formi") }}</h3>
           </div>
           <div class="col-lg-4 col-sm-12 btn-center">
-            <a
-              class="js-open-modal"
-              :href="getValue('forma_obratnoi_svyazi.ssilka_knopki')"
-              @click="openModal"
-              data-modal="modal"
-            >
-              <div class="Button_page">
+          
+              <div class="Button_page"   @click="openModal">
                 <div class="more-button-wrap">
                   <span class="more-button-background">
                     <span class="more-button-ico"></span>
@@ -96,7 +91,6 @@
                   }}</span>
                 </div>
               </div>
-            </a>
           </div>
         </div>
       </div>

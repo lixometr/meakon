@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-404" v-if="statusCode === 404" key="404">
-      Page not found
+      {{$t('notFound')}}
     </div>
     <div class="page-500" v-else key="500">Something went wrong...</div>
   </div>
