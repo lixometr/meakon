@@ -56,7 +56,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- Навигация -->
-          <div class="col-1">
+          <div class="col-1 d-none d-md-block">
             <i class="nav-fill">&nbsp;</i>
             <div class="left_nav">
               <img src="/assets/img/section.png" />
@@ -155,7 +155,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- Навигация -->
-          <div class="col-1">
+          <div class="col-1 d-none d-md-block">
             <i class="nav-fill">&nbsp;</i>
             <div class="left_nav">
               <img src="/assets/img/section.png" />
@@ -221,7 +221,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- Навигация -->
-          <div class="col-1">
+          <div class="col-1 d-none d-md-block">
             <i class="nav-fill">&nbsp;</i>
             <div class="left_nav">
               <img src="/assets/img/section.png" />
