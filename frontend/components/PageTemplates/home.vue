@@ -100,8 +100,26 @@
 
           <div class="col-sm-12 col-md-8 col-lg-8">
             <!-- Swiper -->
+            <swiper :options="sliderOptions">
+              <swiper-slide
+                class="card card-shadow"
+                v-for="(item, idx) in getValue(
+                  'blok_vivoda_tovarov.vivod_tovarov_na_glavnoi'
+                )"
+                :key="idx"
+              >
+                <AppImage :img="item.image" />
+                <p>{{ $langValue(item, "name") }}</p>
+                {{ item.name }}
 
-            <div class="swiper-container">
+                <AppButton
+                  :link="$url.category(item.full_slug)"
+                  :text="$t('more')"
+              /></swiper-slide>
+              <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
+            <!-- <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div
                   class="swiper-slide card card-shadow"
@@ -120,10 +138,9 @@
                   />
                 </div>
               </div>
-              <!-- Add Arrows -->
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
-            </div>
+            </div> -->
             <!-- //swiper -->
           </div>
         </div>
@@ -264,7 +281,43 @@ import PageTemplateMixin from "@/mixins/PageTemplateMixin";
 export default {
   mixins: [PageTemplateMixin],
   async mounted() {
-    var swiper = new Swiper(".swiper-container", {
+    // var swiper = new Swiper(".swiper-container", {
+    //   slidesPerView: 4,
+    //   loop: true,
+    //   autoplay: {
+    //     delay: 5000,
+    //   },
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    //   },
+    //   spaceBetween: 5,
+    //   // init: false,
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //   },
+    //   breakpoints: {
+    //     320: {
+    //       slidesPerView: 1,
+    //       spaceBetween: 20,
+    //     },
+    //     768: {
+    //       slidesPerView: 3,
+    //       spaceBetween: 20,
+    //     },
+    //     1024: {
+    //       slidesPerView: 4,
+    //       spaceBetween: 45,
+    //     },
+    //   },
+    // });
+    await this.$loadScript("/assets/js/circletype.min.js");
+    const circleType = new CircleType(document.getElementById("curved1"));
+  },
+  computed: {
+    sliderOptions() {
+      return {
       slidesPerView: 4,
       loop: true,
       autoplay: {
@@ -294,11 +347,9 @@ export default {
           spaceBetween: 45,
         },
       },
-    });
-    await this.$loadScript("/assets/js/circletype.min.js");
-    const circleType = new CircleType(document.getElementById("curved1"));
+    }
+    }
   },
-  computed: {},
 };
 </script>
 
