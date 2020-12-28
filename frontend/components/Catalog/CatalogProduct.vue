@@ -21,16 +21,17 @@
       <template v-if="price">{{ price }} {{ currency }}</template>
     </div>
     <div class="product_button">
-      <nuxt-link class="podrobnee_btn" :to="$url.product(item.slug)">
+      <!-- <nuxt-link class="podrobnee_btn" :to="">
         <div class="btn_wrapper">
           <button class="learn-more">
             <span class="circle" aria-hidden="true">
               <span class="icon arrow"></span>
             </span>
-            <span class="button-text">{{ $t("goToCatalog") }}</span>
+            <span class="button-text">{{ }}</span>
           </button>
         </div>
-      </nuxt-link>
+      </nuxt-link> -->
+      <AppButton :link="$url.product(item.slug)" :text="$t('goToCatalog') "/>
     </div>
   </div>
 </template>
