@@ -1,13 +1,15 @@
 <template>
   <div class="col-sm-12 col-md-12 col-lg-8" v-if="items.length > 0">
     <!-- Swiper -->
-    <swiper :options="sliderOptions">
-      <swiper-slide v-for="(item, idx) in items" :key="idx">
-        <ProductSimilarItem :item="item" />
-      </swiper-slide>
-      <div class="swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button-next" slot="button-next"></div>
-    </swiper>
+    <client-only>
+      <swiper :options="sliderOptions">
+        <swiper-slide v-for="(item, idx) in items" :key="idx">
+          <ProductSimilarItem :item="item" />
+        </swiper-slide>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+      </swiper>
+    </client-only>
     <!-- //swiper -->
   </div>
 </template>
