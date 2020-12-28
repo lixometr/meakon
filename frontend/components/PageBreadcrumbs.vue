@@ -7,7 +7,7 @@
         <component
           :is="item.link ? 'nuxt-link' : 'a'"
           :to="item.link || '#'"
-          class="active"
+          :class="{active: idx === items.length - 1}"
           >{{ item.name }}</component
         >
       </li>

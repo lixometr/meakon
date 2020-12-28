@@ -69,14 +69,6 @@ export default {
           href: "/assets/js/magnific/magnific-popup.css",
         },
       ],
-      script: [
-        {
-          type: "text/javascript",
-          src: "/assets/js/magnific/jquery.magnific-popup.min.js",
-          defer: true,
-          callback: () => (this.isReady = true),
-        },
-      ],
     };
   },
   data() {
@@ -85,7 +77,10 @@ export default {
       isReady: false,
     };
   },
-  mounted() {},
+  async mounted() {
+    await this.$loadScript("/assets/js/magnific/jquery.magnific-popup.min.js");
+    this.isReady = true;
+  },
   async asyncData({ $api, error, redirect, params }) {
     try {
       const product = await $api.$get("product", { slug: params.slug });
