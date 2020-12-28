@@ -185,50 +185,52 @@
           <!-- Описание блока -->
           <div class="col-lg-10 col-md-12 col-sm-12 docs">
             <!-- Swiper -->
-            <swiper class="swiper_docs" :options="slider1Options">
-              <swiper-slide
-                class="doc"
-                v-for="(person, idx) in getValue(
-                  'dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii'
-                )"
-                :key="idx"
-              >
-                <div class="box" v-if="(idx & 1) === 1"></div>
-                <div class="doc_image">
-                  <AppImage
-                    :img="
-                      getValue(
-                        `dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii[${idx}].foto_sotrudnika`
-                      )
-                    "
-                  />
-                </div>
-                <div class="description_title">
-                  <p>
-                    {{
-                      getLangValue(
-                        `dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii[${idx}].fio`
-                      )
-                    }}
-                  </p>
-                  <a href="">{{
-                    getLangValue(
-                      `dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii[${idx}].dolzhnost`
-                    )
-                  }}</a>
-                  <div class="doc_info">
-                    <hr />
-                    <span>{{
-                      getLangValue(
-                        `dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii[${idx}].tekst_ot_sotrudnika`
-                      )
-                    }}</span>
+            <client-only>
+              <swiper class="swiper_docs" :options="slider1Options">
+                <swiper-slide
+                  class="doc"
+                  v-for="(person, idx) in getValue(
+                    'dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii'
+                  )"
+                  :key="idx"
+                >
+                  <div class="box" v-if="(idx & 1) === 1"></div>
+                  <div class="doc_image">
+                    <AppImage
+                      :img="
+                        getValue(
+                          `dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii[${idx}].foto_sotrudnika`
+                        )
+                      "
+                    />
                   </div>
-                </div>
-              </swiper-slide>
-              <div class="swiper-button-prev" slot="button-prev"></div>
-              <div class="swiper-button-next" slot="button-next"></div>
-            </swiper>
+                  <div class="description_title">
+                    <p>
+                      {{
+                        getLangValue(
+                          `dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii[${idx}].fio`
+                        )
+                      }}
+                    </p>
+                    <a href="">{{
+                      getLangValue(
+                        `dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii[${idx}].dolzhnost`
+                      )
+                    }}</a>
+                    <div class="doc_info">
+                      <hr />
+                      <span>{{
+                        getLangValue(
+                          `dopolnitelnii_blok_o_kompanii.sotrudniki_kompanii[${idx}].tekst_ot_sotrudnika`
+                        )
+                      }}</span>
+                    </div>
+                  </div>
+                </swiper-slide>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+              </swiper>
+            </client-only>
           </div>
           <!-- //Описание блока -->
         </div>
@@ -259,20 +261,24 @@
 
           <div class="col-lg-8 col-md-5 col-sm-12">
             <!-- Swiper -->
-            <swiper class="swiper-banks" :options="slider2Options">
-              <swiper-slide
-                class="banks"
-                v-for="(image, idx) in getValue('klientim.logo_klientov')"
-                :key="idx"
-              >
-                <div class="swiper-slide banks">
-                  <AppImage :img="getValue(`klientim.logo_klientov[${idx}]`)" />
-                  <a href="#">&nbsp;</a>
-                </div>
-              </swiper-slide>
-              <div class="swiper-button-prev" slot="button-prev"></div>
-              <div class="swiper-button-next" slot="button-next"></div>
-            </swiper>
+            <client-only>
+              <swiper class="swiper-banks" :options="slider2Options">
+                <swiper-slide
+                  class="banks"
+                  v-for="(image, idx) in getValue('klientim.logo_klientov')"
+                  :key="idx"
+                >
+                  <div class="swiper-slide banks">
+                    <AppImage
+                      :img="getValue(`klientim.logo_klientov[${idx}]`)"
+                    />
+                    <a href="#">&nbsp;</a>
+                  </div>
+                </swiper-slide>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+              </swiper>
+            </client-only>
             <!-- <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide banks">

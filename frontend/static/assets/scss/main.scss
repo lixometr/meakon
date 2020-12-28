@@ -2292,12 +2292,15 @@ button:focus {
 				line-height: 150%;
 			}
 			b{
-				color: #00294C;
+				color: #00294C!important;
 			}
 		}
 	}
 }
-
+.med_contacts .contact_info li b span {
+    color: #00294C!important;
+    line-height: 150%;
+}
  
 
 
@@ -2315,12 +2318,21 @@ button:focus {
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 230px!important;
+	display: inline-flex;
+    align-items: center;
+    align-content: center;
+    width: 93%;
 	h3 {
 		background-color: #73869F;
 		font-size: 50px;
 		line-height: 120%;
 		color: #FFFFFF;
 		max-width: 700px;
+		display: flex;
+		align-items: center;
+		align-content: center;
+		align-self: center;
+		height: 100%;
 	} 
 	a {
 		color: white;
@@ -2534,6 +2546,7 @@ button:hover .button-text {
 	padding-left: 67px;
 	margin: 0px 0;
 	z-index: 12;
+	cursor: pointer;
 }
 .more-button-background {
 	position: absolute;
@@ -4628,6 +4641,7 @@ details {
 .preFooter .more-button-title,
 .product_card .more-button-title{
     color: #00294C!important;
+    cursor: pointer;
 }
 .doc .description_title {
     display: block;
@@ -4679,7 +4693,7 @@ details summary {
 }
 .menu__brand, .menu__list {
 	height: 85vh;
-}
+} 
 .menu__link  {
 	color: #73869F!important;
 }
