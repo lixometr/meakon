@@ -180,6 +180,7 @@ a:hover {
   position: absolute;
   bottom: 27px;
   left: 30px;
+  display: none;
 }
 
 .round {
@@ -1624,7 +1625,6 @@ details[open] summary:before {
 .product_card__images__min {
   display: flex;
   flex-direction: column;
-  margin-left: 7%;
   cursor: pointer;
 }
 
@@ -2037,6 +2037,7 @@ button:focus {
 .med_contacts .contact_info li b span {
   color: #00294C !important;
   line-height: 150%;
+  font-weight: bold !important;
 }
 
 /*-------------------------------
@@ -2433,11 +2434,19 @@ button:hover .button-text {
 }
 
 .grid {
-  grid-template-columns: repeat(4, auto);
   grid-column-gap: 30px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+.grid .grid .product_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex: 0 0 24%;
+  margin-bottom: 15px;
 }
 .grid .product_item {
   display: flex;
@@ -2461,6 +2470,7 @@ button:hover .button-text {
 }
 .list .product_item .product_title {
   max-width: 310px;
+  width: 100%;
 }
 .list .product_item img {
   max-width: 100px;
@@ -4029,10 +4039,12 @@ details[open] summary {
 
   .similar_products .card {
     width: 100%;
+    max-width: 100%;
   }
 
   .similar_products .card img {
     width: 100%;
+    max-width: 100%;
   }
 
   .similar_products .swiper-button-prev::before {
@@ -4500,6 +4512,7 @@ details[open] summary {
     position: fixed;
     right: 0px;
     transition: 1s;
+    z-index: 99;
   }
 
   #filter_page .products .product_filter_header h1 {
@@ -4509,9 +4522,20 @@ details[open] summary {
   .filter_tabs {
     overflow: scroll;
     height: 85vh;
+    width: 100%;
+  }
+
+  .Button_page {
+    display: flex;
+    margin-left: 10px;
   }
 }
 @media (min-width: 769px) and (max-width: 992px) {
+  .Button_page {
+    display: flex;
+    margin-left: 10px;
+  }
+
   .list, .grid {
     grid-template-columns: repeat(2, 1fr) !important;
     grid-gap: 30px;
@@ -4531,6 +4555,7 @@ details[open] summary {
     position: fixed;
     right: 0px;
     transition: 1s;
+    z-index: 99;
   }
 
   .filter_toggler {
@@ -4861,6 +4886,10 @@ details[open] summary {
     overflow: scroll;
     height: 85vh;
   }
+
+  .med_contacts {
+    margin-top: 0;
+  }
 }
 @media (min-width: 992px) and (max-width: 1099px) {
   .showed,
@@ -4869,6 +4898,7 @@ details[open] summary {
     position: unset;
     margin-top: 0;
     padding: 0;
+    z-index: 99;
   }
 
   .filter_tabs ul {
@@ -4889,8 +4919,16 @@ details[open] summary {
 .product_made {
     font-size: 13px;
   }
+
+  .ac-container {
+    min-width: unset;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, auto);
+  }
 }
-@media (min-width: 1100px) and (max-width: 1400px) {
+@media (min-width: 1100px) and (max-width: 1580px) {
   .product_card__desc__column__special {
     width: 100%;
     max-width: 100%;
@@ -4900,9 +4938,29 @@ details[open] summary {
   .filter_tabs ul {
     min-width: unset;
   }
+
+  .product img {
+    max-height: 200px;
+  }
+
+  .ac-container {
+    min-width: unset;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, auto);
+  }
 }
-@media (min-width: 1400px) and (max-width: 1668px) {
+@media (min-width: 1580px) {
   .product_card__desc__column__special {
     width: unset;
   }
+
+  .grid {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+.med_contacts br {
+  display: block;
+  margin: 10px;
 }
