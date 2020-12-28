@@ -80,11 +80,23 @@
             <h3>{{ getLangValue("forma_obratnoi_svyazi.zagolovok_formi") }}</h3>
           </div>
           <div class="col-lg-4 col-sm-12 btn-center">
-            <AppButton
-              :link="getValue('forma_obratnoi_svyazi.ssilka_knopki')"
-              :text="getLangValue('forma_obratnoi_svyazi.tekst_knopki')"
-              @click.native="openModal"
-            />
+            <a
+              class="js-open-modal"
+              :href="getValue('forma_obratnoi_svyazi.ssilka_knopki')"
+              @click="openModal"
+              data-modal="modal"
+            >
+              <div class="Button_page">
+                <div class="more-button-wrap">
+                  <span class="more-button-background">
+                    <span class="more-button-ico"></span>
+                  </span>
+                  <span class="more-button-title">{{
+                    getLangValue("forma_obratnoi_svyazi.tekst_knopki")
+                  }}</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>

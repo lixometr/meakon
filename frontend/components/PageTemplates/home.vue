@@ -318,37 +318,34 @@ export default {
   computed: {
     sliderOptions() {
       return {
-      slidesPerView: 4,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      spaceBetween: 5,
-      // init: false,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20,
+        slidesPerView: 4,
+        loop: true,
+        autoplay: {
+          delay: 5000,
         },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 45,
+        spaceBetween: 5,
+        // init: false,
+
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 45,
+          },
         },
-      },
-    }
-    }
+      };
+    },
   },
 };
 </script>

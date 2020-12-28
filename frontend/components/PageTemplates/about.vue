@@ -304,16 +304,27 @@
             </h3>
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12">
-            <AppButton
-              :text="
-                getLangValue(
-                  'tochka_zakhvata_na_str_kompanii.nazvanie_knopki_tz'
-                )
-              "
-              :link="
+            <a
+              class="js-open-modal"
+              :href="
                 getValue('tochka_zakhvata_na_str_kompanii.ssilka_knopki_tz')
               "
-            />
+              @click="openReviewModal"
+              data-modal="modal"
+            >
+              <div class="Button_page">
+                <div class="more-button-wrap">
+                  <span class="more-button-background">
+                    <span class="more-button-ico"></span>
+                  </span>
+                  <span class="more-button-title">{{
+                    getLangValue(
+                      "tochka_zakhvata_na_str_kompanii.nazvanie_knopki_tz"
+                    )
+                  }}</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>

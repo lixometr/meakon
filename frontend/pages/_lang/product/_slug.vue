@@ -30,7 +30,7 @@
           <div class="col-1 d-sm-none d-md-block">
             <i class="nav-fill">&nbsp;</i>
             <div class="left_nav">
-              <img src="assets/img/section.png" />
+              <img src="/assets/img/section.png" />
               <span>{{ $t("recommend") }}</span>
             </div>
           </div>

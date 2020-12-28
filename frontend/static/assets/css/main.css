@@ -180,7 +180,9 @@ a:hover {
   position: absolute;
   bottom: 27px;
   left: 30px;
+  display: none;
 }
+
 
 .round {
   background-image: url("/assets/img/section.png");
@@ -551,6 +553,7 @@ section .desc {
   font-size: 16px;
   line-height: 150%;
   color: #73869F;
+  max-width: 425px;
 }
 
 /*-------------------------------

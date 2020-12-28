@@ -62,7 +62,7 @@ export default {
     { src: "@/plugins/sticky-directive", mode: 'client' },
     { src: "@/plugins/click-outside", },
     { src: "@/plugins/modal", },
-    { src: "@/plugins/swiper", },
+    { src: "@/plugins/swiper", mode: 'client'},
     { src: "@/plugins/language", },
     { src: "@/plugins/load-script", mode: 'client'},
 

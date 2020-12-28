@@ -5,7 +5,7 @@
         {{ name }}
       </h1>
     </div>
-    <div class="product_card__header" >
+    <div class="product_card__header">
       <span v-if="sku">{{ $t("skuLong") }}: {{ sku }}</span>
     </div>
     <div class="product_card__desc">
@@ -15,16 +15,20 @@
         <div class="product_card__desc__column__special">
           <h2>{{ $t("getPrice") }}</h2>
 
-          <a class="podrobnee_btn" href="#" @click.prevent="openModal">
-            <div class="btn_wrapper">
-              <button class="learn-more">
-                <span class="circle" aria-hidden="true">
-                  <span class="icon arrow"></span>
-                </span>
-                <span class="button-text">{{ $t("getPrice") }}</span>
-              </button>
-            </div>
-          </a>
+          <div class="Button_page">
+            <a
+              class="js-open-modal"
+              @click.prevent="openModal"
+              data-modal="modal"
+            >
+            </a
+            ><a class="more-button-wrap" @click.prevent="openModal">
+              <span class="more-button-background">
+                <span class="more-button-ico"></span>
+              </span>
+              <span class="more-button-title">{{ $t("getPrice") }} </span>
+            </a>
+          </div>
         </div>
 
         <ul class="product_card__price">
@@ -64,13 +68,13 @@ export default {
   },
   methods: {
     openModal() {
-      this.$modal.open('review', {
+      this.$modal.open("review", {
         props: {
-          type: 'product'
-        }
-      })
-    }
-  }
+          type: "product",
+        },
+      });
+    },
+  },
 };
 </script>
 

@@ -17,16 +17,7 @@
       </div>
       <div class="product_price" v-if="price">{{ price }} {{ currency }}</div>
       <div class="product_button">
-        <nuxt-link class="podrobnee_btn" :to="$url.product(item.slug)">
-          <div class="btn_wrapper">
-            <button class="learn-more">
-              <span class="circle" aria-hidden="true">
-                <span class="icon arrow"></span>
-              </span>
-              <span class="button-text">{{ $t("goToCatalog") }}</span>
-            </button>
-          </div>
-        </nuxt-link>
+        <AppButton :text="$t('goToCatalog')" :link="$url.product(item.slug)" />
       </div>
     </div>
   </div>
