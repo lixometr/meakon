@@ -100,25 +100,25 @@
 
           <div class="col-sm-12 col-md-8 col-lg-8">
             <!-- Swiper -->
-            <swiper :options="sliderOptions">
-              <swiper-slide
-                class="card card-shadow"
-                v-for="(item, idx) in getValue(
-                  'blok_vivoda_tovarov.vivod_tovarov_na_glavnoi'
-                )"
-                :key="idx"
-              >
-                <AppImage :img="item.image" />
-                <p>{{ $langValue(item, "name") }}</p>
-                {{ item.name }}
+              <swiper :options="sliderOptions">
+                <swiper-slide
+                  class="card card-shadow"
+                  v-for="(item, idx) in getValue(
+                    'blok_vivoda_tovarov.vivod_tovarov_na_glavnoi'
+                  )"
+                  :key="idx"
+                >
+                  <AppImage :img="item.image" />
+                  <p>{{ $langValue(item, "name") }}</p>
+                  {{ item.name }}
 
-                <AppButton
-                  :link="$url.category(item.full_slug)"
-                  :text="$t('more')"
-              /></swiper-slide>
-              <div class="swiper-button-prev" slot="button-prev"></div>
-              <div class="swiper-button-next" slot="button-next"></div>
-            </swiper>
+                  <AppButton
+                    :link="$url.category(item.full_slug)"
+                    :text="$t('more')"
+                /></swiper-slide>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+              </swiper>
             <!-- <div class="swiper-container">
               <div class="swiper-wrapper">
                 <div
