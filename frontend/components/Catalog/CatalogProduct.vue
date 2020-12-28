@@ -31,7 +31,7 @@
           </button>
         </div>
       </nuxt-link> -->
-      <AppButton :link="$url.product(item.slug)" :text="$t('goToCatalog') "/>
+      <AppButton :link="$url.product(item.slug)" :text="$t('more') "/>
     </div>
   </div>
 </template>
