@@ -322,10 +322,11 @@ export default {
       handler() {
         if (this.product.name && this.noSlug) {
           const name = this.product.name || "";
-          const sValue = cyrillicToTranslit().transform(
+          let sValue = cyrillicToTranslit().transform(
             name.toLowerCase(),
             "-"
           );
+          sValue = sValue.replace(/[^\da-zA-Z\-]/g, '')
           this.$set(this.product, "slug", sValue);
         }
       },

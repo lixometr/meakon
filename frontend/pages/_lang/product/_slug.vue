@@ -92,9 +92,15 @@ export default {
 
       if (!product) throw { statusCode: 404 };
       const productCategory = product.category[0] || {};
-      const parentCategories = await $api.$get("categoryParents", {
-        slug: productCategory.slug,
-      });
+      let parentCategories = [];
+      try {
+        parentCategories = await $api.$get("categoryParents", {
+          slug: productCategory.slug,
+        });
+      } catch (err) {
+        console.log(err);
+      }
+
       return {
         product,
         breadcrumbs: parentCategories || [],
