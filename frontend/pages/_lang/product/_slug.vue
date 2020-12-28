@@ -95,7 +95,7 @@ export default {
       let parentCategories = [];
       try {
         parentCategories = await $api.$get("categoryParents", {
-          slug: productCategory.slug,
+          slug: productCategory.full_slug,
         });
       } catch (err) {
         console.log(err);

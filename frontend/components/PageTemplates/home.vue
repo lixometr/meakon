@@ -83,27 +83,18 @@
               }}
             </p>
 
-            <nuxt-link
-              class="podrobnee_btn"
-              :to="
+            <AppButton
+              :link="
                 getValue(
                   'blok_vivoda_tovarov.ssilka_na_knopke_v_bloke_vivoda_tovara'
-                ) || '#'
+                )
               "
-            >
-              <div class="btn_wrapper">
-                <button class="learn-more">
-                  <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
-                  </span>
-                  <span class="button-text">{{
-                    getLangValue(
-                      "blok_vivoda_tovarov.nazvanie_knopki_v_bloke_vivoda_tovarov"
-                    )
-                  }}</span>
-                </button>
-              </div>
-            </nuxt-link>
+              :text="
+                getLangValue(
+                  'blok_vivoda_tovarov.nazvanie_knopki_v_bloke_vivoda_tovarov'
+                )
+              "
+            />
           </div>
           <!-- //Описание блока -->
 
@@ -121,20 +112,12 @@
                 >
                   <AppImage :img="item.image" />
                   <p>{{ $langValue(item, "name") }}</p>
-                  {{item.name}}
-                  <nuxt-link
-                    class="podrobnee_btn"
-                    :to="$url.category(item.full_slug) || '#'"
-                  >
-                    <div class="btn_wrapper">
-                      <button class="learn-more">
-                        <span class="circle" aria-hidden="true">
-                          <span class="icon arrow"></span>
-                        </span>
-                        <span class="button-text">{{ $t("more") }}</span>
-                      </button>
-                    </div>
-                  </nuxt-link>
+                  {{ item.name }}
+
+                  <AppButton
+                    :link="$url.category(item.full_slug)"
+                    :text="$t('more')"
+                  />
                 </div>
               </div>
               <!-- Add Arrows -->
@@ -262,23 +245,10 @@
               </div>
               <!-- //text2 -->
 
-              <nuxt-link
-                class="podrobnee_btn"
-                :to="
-                  getValue('blok_anonsa_kompanii.ssilka_knopki_anonsa') || '#'
-                "
-              >
-                <div class="btn_wrapper">
-                  <button class="learn-more">
-                    <span class="circle" aria-hidden="true">
-                      <span class="icon arrow"></span>
-                    </span>
-                    <span class="button-text">{{
-                      getLangValue("blok_anonsa_kompanii.tekst_knopki_anonsa")
-                    }}</span>
-                  </button>
-                </div>
-              </nuxt-link>
+              <AppButton
+                :link="getValue('blok_anonsa_kompanii.ssilka_knopki_anonsa')"
+                :text="getLangValue('blok_anonsa_kompanii.tekst_knopki_anonsa')"
+              />
             </div>
           </div>
           <!-- //текст о компании -->

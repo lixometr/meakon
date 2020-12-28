@@ -304,27 +304,16 @@
             </h3>
           </div>
           <div class="col-lg-4 col-md-12 col-sm-12">
-            <a
-              class="podrobnee_btn"
-              @click.prevent="openReviewModal"
-              :to="
-                getValue('tochka_zakhvata_na_str_kompanii.ssilka_knopki_tz') ||
-                '#'
+            <AppButton
+              :text="
+                getLangValue(
+                  'tochka_zakhvata_na_str_kompanii.nazvanie_knopki_tz'
+                )
               "
-            >
-              <div class="btn_wrapper">
-                <button class="learn-more">
-                  <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
-                  </span>
-                  <span class="button-text">{{
-                    getLangValue(
-                      "tochka_zakhvata_na_str_kompanii.nazvanie_knopki_tz"
-                    )
-                  }}</span>
-                </button>
-              </div>
-            </a>
+              :link="
+                getValue('tochka_zakhvata_na_str_kompanii.ssilka_knopki_tz')
+              "
+            />
           </div>
         </div>
       </div>
@@ -408,8 +397,8 @@ export default {
     openReviewModal() {
       this.$modal.open("review", {
         props: {
-          type: 'about'
-        }
+          type: "about",
+        },
       });
     },
   },

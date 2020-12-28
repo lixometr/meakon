@@ -31,7 +31,7 @@ export default {
     link: [
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-grid.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap-reboot.min.css' },
-      { rel: 'stylesheet', href: 'assets/css/swiper-bundle.min.css' },
+      { rel: 'stylesheet', href: '/assets/css/swiper-bundle.min.css' },
       { rel: "preload", href: "/assets/fonts/Federov2.ttf", as: "font" },
       { rel: "preload", href: "https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap", as: 'font' },
       { rel: "stylesheet", href: "/assets/fonts/fonts.css", },

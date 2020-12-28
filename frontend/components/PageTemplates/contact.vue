@@ -11,7 +11,7 @@
           <div class="col-lg-1 col-md-1 col-sm-12">
             <div class="left_nav">
               <img src="/assets/img/section.png" />
-              <span>{{getLangValue('dop_polya.tekst_kontakti')}}</span>
+              <span>{{ getLangValue("dop_polya.tekst_kontakti") }}</span>
             </div>
           </div>
           <!-- //Навигация -->
@@ -33,10 +33,11 @@
             <div class="contact_info">
               <ul>
                 <li>
-                  <span>{{$t('contact.address')}}: </span><b>{{ getLangValue("adres") }}</b>
+                  <span>{{ $t("contact.address") }}: </span
+                  ><b>{{ getLangValue("adres") }}</b>
                 </li>
                 <li>
-                  <span>{{$t('contact.phone')}}: </span
+                  <span>{{ $t("contact.phone") }}: </span
                   ><b>
                     <span v-for="(item, idx) in getValue('telefoni')" :key="idx"
                       >{{ item.telefon }}<br
@@ -48,17 +49,18 @@
                   <span>E-mail: </span><b>{{ getValue("email") }}</b>
                 </li>
                 <li>
-                  <span>{{$t('contact.workTime')}}: </span
+                  <span>{{ $t("contact.workTime") }}: </span
                   ><b>{{ getLangValue("rezhim_raboti") }}</b>
                 </li>
                 <li>
-                  <span>{{$t('contact.warehouse')}}: </span>
+                  <span>{{ $t("contact.warehouse") }}: </span>
                   <b>
                     <span
                       v-for="(item, idx) in getValue('adresa_skladov')"
                       :key="idx"
                     >
-                      {{ getLangValue(`adresa_skladov[${idx}].adres_sklada`) }}<br
+                      {{ getLangValue(`adresa_skladov[${idx}].adres_sklada`)
+                      }}<br
                     /></span>
                   </b>
                 </li>
@@ -78,22 +80,11 @@
             <h3>{{ getLangValue("forma_obratnoi_svyazi.zagolovok_formi") }}</h3>
           </div>
           <div class="col-lg-4 col-sm-12 btn-center">
-            <a
-              class="podrobnee_btn"
-              :href="getValue('forma_obratnoi_svyazi.ssilka_knopki') || '#'"
-              @click.prevent="openModal"
-            >
-              <div class="btn_wrapper">
-                <button class="learn-more">
-                  <span class="circle" aria-hidden="true">
-                    <span class="icon arrow"></span>
-                  </span>
-                  <span class="button-text">{{
-                    getLangValue("forma_obratnoi_svyazi.tekst_knopki")
-                  }}</span>
-                </button>
-              </div>
-            </a>
+            <AppButton
+              :link="getValue('forma_obratnoi_svyazi.ssilka_knopki')"
+              :text="getLangValue('forma_obratnoi_svyazi.tekst_knopki')"
+              @click.native="openModal"
+            />
           </div>
         </div>
       </div>
@@ -109,13 +100,13 @@ export default {
   mixins: [PageTemplateMixin],
   methods: {
     openModal() {
-      this.$modal.open('review', {
+      this.$modal.open("review", {
         props: {
-          type: 'contact'
-        }
-      })
-    }
-  }
+          type: "contact",
+        },
+      });
+    },
+  },
 };
 </script>
 
