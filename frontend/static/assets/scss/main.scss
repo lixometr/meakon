@@ -654,6 +654,7 @@ color: #73869F;
 	.offer {
 		background-image: none;
 		overflow: hidden;
+		max-height: 855px;
 	}
 	.med_about {
 		margin-top: 100px !important;
@@ -676,7 +677,7 @@ color: #73869F;
 		margin-top: 150px;
 		overflow: hidden;
 		div{
-			width: 80%;
+			width: 95%;
 		}
 		ul {
 			padding: 0;
@@ -782,6 +783,11 @@ color: #73869F;
 		width: 100%;
 		margin:0;
 		padding: 0;
+		border-radius: 10px;
+		max-height: 320px;
+		height: max-content;
+		object-fit: cover;
+		object-position: center;
 	}
 	a[href] {
 		color: #B5C7DD; 
@@ -879,6 +885,10 @@ color: #73869F;
 	display: block;
 	background-color: #73869F;
 	margin: -25px -25px 10px -25px ;
+	display: none;
+}
+.doc:nth-child(even) {
+    margin-top: 55px;
 }
 .box2 {
 	width: 100%;
@@ -909,7 +919,7 @@ position: relative;
 		
 	}
 	.banks  img {
-		box-shadow: -5px -5px 10px #d2d2d2, 5px 5px 10px #D1D9E6;
+		box-shadow: -5px -5px 10px #D1D9E6, 5px 5px 10px #D1D9E6;
 		border-radius: 5px;
 		background-color: #fff;
 		display: flex;
@@ -1238,13 +1248,14 @@ z-index: 2;
 .filter_tab__subcat ul {
 	height: auto;
 }
- 
+
 .ac-container input:checked ~ article.ac-small{
-	height: 120px; 
+	height: 95%;
+	margin-top: -20px; 
 }
 .ac-small {
 	.filter_tab__subcat {
-		margin-left: -5px;
+		margin-left: 0px;
 	}	
 }
 .ac-small a,
@@ -2657,7 +2668,7 @@ button:hover .button-text {
 
 .filter_tab__subcat { 
     margin-left: -40px;
-    margin-bottom: -10px!important;
+    margin-bottom: 0px!important;
 }
 .filters_del {
 display: flex;
@@ -2759,7 +2770,6 @@ color: #009CDB;
     grid-column-gap: 0px;
     height: max-content;
     // margin-top: 5px;
-
 	.product_item{
 		display: flex;
 		justify-content: space-between;
@@ -2786,6 +2796,14 @@ color: #009CDB;
 		}
 	}
 }
+.list .product img {
+	width: 100%;
+	object-fit: cover;
+	max-height: 90px;
+	height: auto;
+	object-position: center;
+}
+
 .product button:hover .button-text {
 	color: white;
 }
