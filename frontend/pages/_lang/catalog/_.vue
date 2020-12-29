@@ -16,7 +16,7 @@
         </div>
         <CatalogViewSwitcher v-model="view" />
         <div class="row" v-if="isReady">
-          <CatalogSidebar :filters="products.filters" />
+          <CatalogSidebar :filters="products.filters" :showPrice="category.show_filter_price"/>
           <!-- grid or list -->
           <CatalogProducts :view="view" :items="products.items" />
         </div>

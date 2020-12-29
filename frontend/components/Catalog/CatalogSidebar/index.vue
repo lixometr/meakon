@@ -5,7 +5,7 @@
 
         <CatalogSidebarCategories  />
 
-        <CatalogFilters :items="filterItems" v-if="showFilters" />
+        <CatalogFilters :items="filterItems" v-if="showFilters" :showPrice="showPrice"/>
       </ul>
   </div>
 </template>
@@ -17,6 +17,11 @@ export default {
       type: Boolean,
       default: true,
     },
+    showPrice: {
+      type: Boolean,
+      default: false,
+    },
+
     // filters: {
     //   type: Object,
     //   default: () => ({})

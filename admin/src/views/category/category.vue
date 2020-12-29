@@ -31,10 +31,14 @@
       <CCardHeader>Атрибуты для фильтрации</CCardHeader>
       <CCardBody>
         <AttributeSelect
+          class="mb-3"
           label="Атрибуты"
           v-model="category.filter_attributes"
           :multiple="true"
         />
+        <Label label="Показывать фильтр цены?">
+          <CInputCheckbox custom :checked.sync="category.show_filter_price" />
+        </Label>
       </CCardBody>
     </CCard>
 

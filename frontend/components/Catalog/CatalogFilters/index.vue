@@ -4,6 +4,7 @@
       :value="price"
       @input="updatePrice"
       @apply="updatePage"
+      v-if="showPrice"
     />
     <CatalogFiltersItem
       v-for="(item, idx) in attributes"
@@ -22,10 +23,10 @@
 import _ from "lodash";
 export default {
   props: {
-    // items: {
-    //   type: Array,
-    //   default: () => [],
-    // },
+    showPrice: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -72,7 +73,7 @@ export default {
       const attributes = filters.attributes || {};
       Object.keys(attributes).map((attrSlug) => {
         const attrValues = attributes[attrSlug];
-        console.log(attrValues)
+        console.log(attrValues);
         if (!attrValues || !attrValues.length) return;
         query[attrSlug] = attrValues.join(",");
       });

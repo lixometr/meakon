@@ -20,7 +20,10 @@ const categorySchema = new Schema({
       type: Schema.Types.ObjectId
     }
   ],
-
+  show_filter_price: {
+    type: Boolean,
+    default: false
+  },
   parent: {
     type: Schema.Types.ObjectId,
     ref: "Category",
