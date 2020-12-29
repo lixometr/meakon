@@ -938,7 +938,7 @@ section .desc {
 
 .similar_products .card .product_title {
   overflow: hidden;
-  max-height: 47px;
+  height: 47px;
 }
 
 /*-------------------------------
@@ -2412,8 +2412,9 @@ button:hover .button-text {
 .product img {
   width: 100%;
   object-fit: cover;
-  max-height: 250px;
+  max-height: 200px;
   height: 100%;
+  border-radius: 10px;
   object-position: center;
 }
 .product .product_title {
@@ -3808,6 +3809,11 @@ details {
 .similar_products {
   margin-bottom: 230px;
 }
+.similar_products .Button_page{
+  padding-top: 10px;
+  margin-bottom: 20px;    
+}
+
 .similar_products h2 {
   max-width: 269px;
 }
@@ -3852,6 +3858,7 @@ details {
   height: auto;
   display: block;
   margin: 0 auto;
+  min-height: 200px;
 }
 .similar_products button .circle {
   width: 100%;
@@ -4957,7 +4964,7 @@ details[open] summary {
   }
 
   .grid {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .med_contacts br {
