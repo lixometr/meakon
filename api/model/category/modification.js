@@ -21,6 +21,7 @@ module.exports = class CategoryModification extends Modification {
             name_en: this.item.name_en,
             image: this.item.image,
             filter_attributes: this.item.filter_attributes,
+            show_filter_price: this.item.show_filter_price,
             slug: this.item.slug,
             parent: this.item.parent,
             created_at: this.item.created_at,

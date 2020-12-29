@@ -13,7 +13,7 @@
       @input="onFilterChange($event, item.name.slug)"
       :item="item"
     />
-    <a class="filters_del" @click.prevent="clearFilters" href=""
+    <a class="filters_del" @click.prevent="clearFilters" href="" v-if="attributes.length > 0"
       ><span>+</span> {{ $t("clearFilters") }}</a
     >
   </div>
@@ -38,7 +38,7 @@ export default {
       return this.$store.getters["filters/price"];
     },
     attributes() {
-      return this.$store.getters["filters/attributes"];
+      return this.$store.getters["filters/attributes"] || [];
     },
     activeFilters() {
       return this.$store.getters["filters/active"];
