@@ -7,6 +7,9 @@ export const state = () => ({
 
 })
 export const getters = {
+  defaultImage() {
+    return '/no_image.png'
+  },  
   head(state) {
     return state.head
   },

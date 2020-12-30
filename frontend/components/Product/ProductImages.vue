@@ -11,14 +11,14 @@
             :key="idx"
           >
             <!-- small -->
-            <img :src="image && image.url" />
+            <AppImage :img="image" :holder="true" />
           </a>
         </div>
 
         <div class="product_card__images__big">
           <a :href="imageUrl" :data-source="imageUrl">
             <div class="product_card__images__big__wrapper">
-              <img :src="imageUrl" />
+              <AppImage :img="imageUrl" :holder="true" />
             </div>
           </a>
         </div>
@@ -41,8 +41,8 @@ export default {
       return this.product.default_image && this.product.default_image.url;
     },
     images() {
-        return this.product.images
-    }
+      return this.product.images;
+    },
   },
 };
 </script>

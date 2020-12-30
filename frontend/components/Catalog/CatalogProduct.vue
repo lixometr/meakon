@@ -1,6 +1,6 @@
 <template>
   <div class="product_item">
-    <AppImage :img="image" />
+    <AppImage :img="image" :holder="true" />
     <div class="product_title">
       <nuxt-link :to="$url.product(item.slug)">{{ name }}</nuxt-link>
     </div>
