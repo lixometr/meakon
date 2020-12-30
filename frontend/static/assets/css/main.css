@@ -3,11 +3,11 @@
 body {
   font-weight: 400;
   font-size: 1rem;
-  /* background-color: #EFF4F7; */
-  background-color: red;
+  background-color: #EFF4F7;
   overflow-x: hidden;
 }
 
+  
 h1 {
   font-family: "Federo";
   font-size: 70px;
