@@ -1,7 +1,7 @@
 <template>
   <div class="card card-shadow">
     <div class="product_item">
-      <AppImage :img="image" />
+      <AppImage :img="image" :holder="true"/>
       <div class="product_title">
         {{ name }}
       </div>
