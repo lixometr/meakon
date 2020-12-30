@@ -56,7 +56,7 @@ a:hover {
 }
 
 /*-------------------------------
-				header
+                header
 --------------------------------*/
 .offer {
   position: relative;
@@ -312,10 +312,10 @@ nav a:last-child {
 }
 
 /*-------------------------------
-			end header
+            end header
 --------------------------------*/
 /*-------------------------------
-			breadthums
+            breadthums
 --------------------------------*/
 .breadthums {
   position: absolute;
@@ -351,10 +351,10 @@ nav a:last-child {
 }
 
 /*-------------------------------
-		end	breadthums
+        end	breadthums
 --------------------------------*/
 /*-------------------------------
-			switcher
+            switcher
 --------------------------------*/
 .switcher {
   display: inline-flex;
@@ -450,10 +450,10 @@ nav a:last-child {
 }
 
 /*-------------------------------
-		end	switcher
+        end	switcher
 --------------------------------*/
 /*-------------------------------
-			Расходники
+            Расходники
 --------------------------------*/
 #index section:not(:last-child) {
   margin-top: 220px;
@@ -522,10 +522,10 @@ nav a:last-child {
 }
 
 /*-------------------------------
-		end	Расходники
+        end	Расходники
 --------------------------------*/
 /*-------------------------------
-	Навигация вертикальная
+    Навигация вертикальная
 --------------------------------*/
 .left_nav {
   transform: rotate(-90deg);
@@ -562,10 +562,10 @@ section .desc {
 }
 
 /*-------------------------------
-	end Навигация вертикальная
+    end Навигация вертикальная
 --------------------------------*/
 /*-------------------------------
-	 	Почему мы блок 
+         Почему мы блок 
 --------------------------------*/
 .med_why ul {
   display: grid;
@@ -588,10 +588,10 @@ section .desc {
 }
 
 /*-------------------------------
-	end 	Почему мы блок 
+    end 	Почему мы блок 
 --------------------------------*/
 /*-------------------------------
-	 	совместное фото 
+         совместное фото 
 --------------------------------*/
 .med_photo {
   margin-top: 100px !important;
@@ -601,10 +601,10 @@ section .desc {
 }
 
 /*-------------------------------
-	end 	совместное фото
+    end 	совместное фото
 --------------------------------*/
 /*-------------------------------
-			aboutPage
+            aboutPage
 --------------------------------*/
 #aboutPage .offer {
   background-image: none;
@@ -672,10 +672,10 @@ section .desc {
 }
 
 /*-------------------------------
-			aboutPage
+            aboutPage
 --------------------------------*/
 /*-------------------------------
-			честность
+            честность
 --------------------------------*/
 #aboutPage .med_about {
   margin-top: 100px;
@@ -705,7 +705,7 @@ section .desc {
   grid-template-rows: repeat(2, 1fr);
   grid-row-gap: 10px;
   color: #B5C7DD;
-  margin-bottom: 194px;
+  margin-bottom: 0px;
 }
 #aboutPage section .about_text_col4 p {
   width: 90%;
@@ -854,10 +854,10 @@ section .desc {
 }
 
 /*-------------------------------
-		end	честность
+        end	честность
 --------------------------------*/
 /*-------------------------------
-	 		 Банки
+              Банки
 --------------------------------*/
 .med_banks {
   margin-top: 198px;
@@ -916,10 +916,10 @@ section .desc {
 
 /*------------------
 /*-------------------------------
-	 	end	Банки
+         end	Банки
 --------------------------------*/
 /*-------------------------------
-	 		О компании
+             О компании
 --------------------------------*/
 #index .med_about {
   margin-top: 120px !important;
@@ -950,10 +950,10 @@ section .desc {
 }
 
 /*-------------------------------
-	end 	О компании
+    end 	О компании
 --------------------------------*/
 /*-------------------------------
-		      Фильтр
+              Фильтр
 --------------------------------*/
 #filter_page .products {
   margin-left: 57px;
@@ -1477,7 +1477,7 @@ details[open] summary:before {
 }
 
 /*-------------------------------
-	 end 	  Фильтр
+     end 	  Фильтр
 --------------------------------*/
 .link {
   padding: 10px 20px;
@@ -1569,7 +1569,7 @@ details[open] summary:before {
 }
 
 /*-------------------------------
-		карточка товара
+        карточка товара
 --------------------------------*/
 .product_card {
   margin-top: 288px;
@@ -1640,6 +1640,7 @@ details[open] summary:before {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  min-width: 120px;
 }
 
 .product_card__images__min a:not(:last-child) {
@@ -1648,9 +1649,13 @@ details[open] summary:before {
 }
 
 .product_card__images__min img {
-  width: 100%;
-  max-width: 120px;
-  min-width: 120px;
+    width: 100%;
+    max-width: 120px;
+    min-width: 120px;
+    object-fit: cover;
+    object-position: center;
+    height: 120px;
+    margin-bottom: 15px;
 }
 
 .product_card__images__big {
@@ -1659,10 +1664,13 @@ details[open] summary:before {
 
 .product_card__images__big img {
   display: block;
-  width: 670px;
-  position: relative;
+  width: 540px;
+  height:540px;
+  position: relative; 
   z-index: 0;
   max-width: 100%;
+  object-fit: cover;
+object-position: center;
 }
 
 .product_card__images__big__wrapper img {
@@ -1705,7 +1713,12 @@ button.learn-more .circle {
   z-index: 1;
   opacity: 0;
   transition: 1s;
-  left: 52%;
+  /* left: 52%; */
+  display: block;
+margin: 0 auto;
+    margin-right: auto;
+width: 100%;
+margin-right: -90px;
 }
 
 .product_card__desc__column span {
@@ -1786,10 +1799,10 @@ button:focus {
 }
 
 /*-------------------------------
-	//	карточка товара
+    //	карточка товара
 --------------------------------*/
 /*-------------------------------
-			  табы
+              табы
 --------------------------------*/
 .product_tabs {
   margin-bottom: 230px;
@@ -2025,10 +2038,10 @@ button:focus {
 }
 
 /*-------------------------------
-			 // табы
+             // табы
 --------------------------------*/
 /*-------------------------------
-	end 	contacts
+    end 	contacts
 --------------------------------*/
 .med_contacts {
   margin-top: 320px;
@@ -2064,7 +2077,7 @@ button:focus {
 }
 
 /*-------------------------------
-		 	contacts
+             contacts
 --------------------------------*/
 .preFooter {
   background: #73869F;
@@ -2301,6 +2314,12 @@ button:hover .button-text {
   margin-top: 23px;
   z-index: 12;
   transform: scale(0.7);
+  -ms-transform: scale(0.7); /* IE 9 */
+  -moz-transform: scale(0.7); 
+  -o-transform: scale(0.7);
+  -webkit-transform: scale(0.7);
+  transform: scale(0.7);
+  
 }
 
 .more-button-ico::before, .more-button-ico::after {
@@ -2493,17 +2512,22 @@ button:hover .button-text {
   align-items: center;
 }
 .list .product_item .product_title {
-  max-width: 310px;
+  max-width: 350px;
   width: 100%;
 }
 .list .product_item img {
   max-width: 100px;
+  min-height: 90px;
+  max-height: 90px;
 }
 .list .product_item .product_title {
   margin-top: 0px;
 }
 .list .product_item .product_size {
   margin-top: 0px;
+  width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .list .product_item .product_made {
   margin-bottom: 0px;
@@ -2894,7 +2918,7 @@ div.menu__brand {
 }
 
 /*-------------------------------
-			footer
+            footer
 --------------------------------*/
 footer {
   background-color: #E3E6EC;
@@ -2928,7 +2952,7 @@ details {
 }
 
 /*-------------------------------
-		end	footer
+        end	footer
 --------------------------------*/
 .popup-fade {
   display: none;

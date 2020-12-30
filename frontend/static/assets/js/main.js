@@ -196,11 +196,12 @@ $('.js-modal-overlay').click(function() {
    $(this).removeClass('is-show');
 })
 
+// <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+// <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
 
-
-
-
-
-
-
+if ($('body').hasClass('.tel2')) {
+	$('.tel2').inputmask("+7(999) 999-9999");
+ 
+}
+ 
  
