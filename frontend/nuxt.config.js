@@ -66,6 +66,7 @@ export default {
     { src: "@/plugins/swiper", mode: 'client'},
     { src: "@/plugins/language", },
     { src: "@/plugins/load-script", mode: 'client'},
+    { src: "@/plugins/v-mask",},
 
   ],
   router: {

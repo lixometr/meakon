@@ -21,6 +21,7 @@
             required
             :placeholder="$t('form.phone')"
             v-model="phone"
+            v-mask="'+7(###)###-##-##'"
           />
           <input
             type="text"

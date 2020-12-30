@@ -6,7 +6,7 @@
 export default {
   props: {
     img: {
-      type: Object,
+      type: [Object, String],
       default: () => ({}),
     },
     holder: {
