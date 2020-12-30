@@ -65,7 +65,7 @@
         <div class="row">
           <!-- Навигация -->
           <div class="col-lg-1 col-md-1 col-sm-12">
-            <div class="left_nav"></div>
+       
           </div>
           <!-- //Навигация -->
 

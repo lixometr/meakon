@@ -56,15 +56,15 @@ export default {
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 40,
+            spaceBetween: 30,
           },
           1100: {
             slidesPerView: 3,
-            spaceBetween: 45,
+            spaceBetween: 30,
           },
           1300: {
             slidesPerView: 4,
-            spaceBetween: 45,
+            spaceBetween: 30,
           },
         },
       };
