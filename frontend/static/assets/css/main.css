@@ -3,7 +3,8 @@
 body {
   font-weight: 400;
   font-size: 1rem;
-  background-color: #EFF4F7;
+  /* background-color: #EFF4F7; */
+  background-color: red;
   overflow-x: hidden;
 }
 
