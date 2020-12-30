@@ -7,17 +7,18 @@ body {
   overflow-x: hidden;
 }
 
-  
 h1 {
   font-family: "Federo";
   font-size: 70px;
   line-height: 100%;
+  font-weight: normal;
 }
 
 h2 {
   font-family: "Federo";
   font-size: 50px;
   line-height: 120%;
+  font-weight: normal;
 }
 
 h3 {
@@ -131,6 +132,10 @@ a:hover {
 
 .header {
   display: none;
+}
+
+#aboutPage .med_banks h2 {
+  max-width: 339px;
 }
 
 .offer_info {
@@ -535,6 +540,7 @@ nav a:last-child {
   top: -30px;
   z-index: 1;
   left: 30px;
+  transform: rotate(90deg);
 }
 .left_nav span {
   font-weight: 700;
@@ -662,7 +668,7 @@ section .desc {
   font-size: 20px;
   line-height: 150%;
   color: #00294C;
-  max-width: 300px;
+  max-width: 275px;
 }
 
 /*-------------------------------
@@ -702,7 +708,7 @@ section .desc {
   margin-bottom: 194px;
 }
 #aboutPage section .about_text_col4 p {
-  width: 80%;
+  width: 90%;
 }
 
 .med_work h2 {
@@ -778,7 +784,8 @@ section .desc {
   height: auto;
   overflow: hidden;
   margin-bottom: -50px;
-  width: 100%;
+  width: 101%;
+  margin-left: -1px;
 }
 
 .doc:hover .doc_image:after {
@@ -931,7 +938,7 @@ section .desc {
   margin-top: 35px;
 }
 .about_text div {
-  width: 90%;
+  width: 95%;
 }
 .about_text p {
   margin-left: 5px;
@@ -939,7 +946,7 @@ section .desc {
 
 .similar_products .card .product_title {
   overflow: hidden;
-  height: 47px;
+  max-height: 47px;
 }
 
 /*-------------------------------
@@ -1027,10 +1034,11 @@ section .desc {
 }
 
 .ac-container .have_sub:before {
-  font-size: 20px;
+  font-size: 25px;
   content: "+";
   padding: 0 20px;
   display: inline-block;
+  font-family: ve;
   transform: rotate(0deg);
   transition: 0.5s;
 }
@@ -1116,6 +1124,7 @@ section .desc {
   z-index: 3;
   margin-left: -20px;
   margin-bottom: 15px;
+  display: inline-flex;
 }
 
 .ac-container label:hover {
@@ -1574,6 +1583,9 @@ details[open] summary:before {
 .product_card div {
   border: 0px solid red;
 }
+.product_card .breadthums {
+  left: 3%;
+}
 
 .product_tabs {
   padding: 0 75px;
@@ -1637,6 +1649,7 @@ details[open] summary:before {
 .product_card__images__min img {
   width: 100%;
   max-width: 120px;
+  min-width: 120px;
 }
 
 .product_card__images__big {
@@ -1648,6 +1661,7 @@ details[open] summary:before {
   width: 100%;
   position: relative;
   z-index: 0;
+  max-width: 670px;
 }
 
 .product_card__images__big__wrapper img {
@@ -2021,11 +2035,12 @@ button:focus {
 }
 .med_contacts .contact_info ul li {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 150px auto;
   font-size: 16px;
+  justify-content: start;
 }
 .med_contacts .contact_info li {
-  margin-bottom: 60px;
+  margin-bottom: 55px;
 }
 .med_contacts .contact_info li span {
   color: #73869F;
@@ -2033,12 +2048,18 @@ button:focus {
 }
 .med_contacts .contact_info li b {
   color: #00294C !important;
+  font-weight: 400 !important;
 }
 
 .med_contacts .contact_info li b span {
   color: #00294C !important;
   line-height: 150%;
-  font-weight: bold !important;
+  font-weight: 400 !important;
+}
+
+.contact_info {
+  display: flex;
+  justify-content: center;
 }
 
 /*-------------------------------
@@ -2049,7 +2070,7 @@ button:focus {
   border-radius: 10px;
   margin-left: 0 !important;
   margin: 0 75px !important;
-  padding: 30px 150px;
+  padding: 45px 150px;
   position: relative;
   overflow: hidden;
   margin-bottom: 230px !important;
@@ -2063,12 +2084,13 @@ button:focus {
   font-size: 50px;
   line-height: 120%;
   color: #FFFFFF;
-  max-width: 700px;
+  max-width: 800px;
   display: flex;
   align-items: center;
   align-content: center;
   align-self: center;
   height: 100%;
+  font-weight: 400;
 }
 .preFooter a {
   color: white;
@@ -2376,11 +2398,11 @@ button:hover .button-text {
   justify-content: flex-end;
   align-content: center;
   margin: 0px -40px;
-  padding: 30px 0;
+  padding: 50px 0;
   padding-right: 35px;
 }
 .product_filter_view span {
-  margin-right: 40px;
+  margin-right: 48px;
   color: #73869F;
 }
 .product_filter_view img {
@@ -2413,9 +2435,8 @@ button:hover .button-text {
 .product img {
   width: 100%;
   object-fit: cover;
-  max-height: 200px;
+  max-height: 250px;
   height: 100%;
-  border-radius: 10px;
   object-position: center;
 }
 .product .product_title {
@@ -2735,7 +2756,7 @@ button:hover .button-text {
   padding: 0;
   list-style-type: none;
   transform: translate3d(0, -100%, 0);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .menu__list--active {
@@ -2744,7 +2765,7 @@ button:hover .button-text {
 
 .menu__brand {
   background: none;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
   transform: translate3d(0, 100%, 0);
 }
 
@@ -2754,7 +2775,7 @@ button:hover .button-text {
 
 .menu__item {
   transform: translate3d(500px, 0, 0);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .menu__item--active {
@@ -2769,7 +2790,7 @@ button:hover .button-text {
   font-weight: 300;
   text-decoration: none;
   color: white;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .menu__link:before {
@@ -2780,7 +2801,7 @@ button:hover .button-text {
   width: 10px;
   height: 2px;
   transform: translateX(-50%);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .menu__link:hover:before {
@@ -2792,27 +2813,27 @@ button:hover .button-text {
 }
 
 .menu .menu__item:nth-child(1) {
-  transition-delay: 0.1s;
+  transition-delay: 0.0s;
 }
 
 .menu .menu__item:nth-child(2) {
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 
 .menu .menu__item:nth-child(3) {
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 }
 
 .menu .menu__item:nth-child(4) {
-  transition-delay: 0.4s;
+  transition-delay: 0.3s;
 }
 
 .menu .menu__item:nth-child(5) {
-  transition-delay: 0.5s;
+  transition-delay: 0.4s;
 }
 
 .menu .menu__item:nth-child(6) {
-  transition-delay: 0.6s;
+  transition-delay: 0.5s;
 }
 
 .nav-fill {
@@ -2898,6 +2919,11 @@ footer .footer_info {
 
 details {
   top: unset;
+}
+
+.footer_info span,
+.footer_info a {
+  font-size: 14px !important;
 }
 
 /*-------------------------------
@@ -3775,7 +3801,7 @@ details {
 }
 
 .pagination {
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 100px;
   display: flex;
   justify-content: center;
@@ -3810,11 +3836,6 @@ details {
 .similar_products {
   margin-bottom: 230px;
 }
-.similar_products .Button_page{
-  padding-top: 10px;
-  margin-bottom: 20px;    
-}
-
 .similar_products h2 {
   max-width: 269px;
 }
@@ -3832,10 +3853,12 @@ details {
   margin-top: 20px;
   margin-bottom: 5px;
   font-size: 16px;
+  padding: 0 5px;
 }
 .similar_products .card .product_size {
   font-size: 14px;
   margin-top: 10px;
+  padding: 0 5px;
 }
 .similar_products .card .product_size span {
   font-size: 14px;
@@ -3851,6 +3874,7 @@ details {
 .similar_products .card .product_price {
   margin: 20px 0;
   font-size: 18px;
+  padding: 0 5px;
 }
 .similar_products .card img {
   border-radius: 10px;
@@ -3859,7 +3883,6 @@ details {
   height: auto;
   display: block;
   margin: 0 auto;
-  min-height: 200px;
 }
 .similar_products button .circle {
   width: 100%;
@@ -3886,7 +3909,7 @@ details {
 .left_nav::before {
   content: "";
   position: absolute;
-  width: 280%;
+  width: 270%;
   height: 2px;
   top: -10px;
   right: 0;
@@ -3907,6 +3930,27 @@ details[open] summary {
 
 .preFooter button.learn-more .circle {
   box-shadow: 5px 5px 5px #677992, -5px -5px 5px #93A6BF;
+}
+
+.similar_products .card img {
+  border-radius: 10px;
+  max-width: 280px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  max-height: 250px;
+  object-fit: cover;
+  object-position: center;
+  min-height: 250px;
+}
+
+.similar_products .card .product_size span {
+  font-size: 14px !important;
+}
+
+.similar_products .card .product_made {
+  font-size: 12px !important;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -3949,6 +3993,7 @@ details[open] summary {
 
   .list .product_item img {
     max-width: 100%;
+    max-height: 100px;
   }
 
   .list .product_item {
@@ -4965,7 +5010,7 @@ details[open] summary {
   }
 
   .grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
   }
 }
 .med_contacts br {

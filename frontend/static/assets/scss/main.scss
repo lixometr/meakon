@@ -10,11 +10,13 @@ h1 {
 	font-family: 'Federo';
 	font-size: 70px;
 	line-height: 100%;
+	font-weight: normal;
 } 
 h2 {
 	font-family: 'Federo';
 	font-size: 50px;
 	line-height: 120%;
+	font-weight: normal;
 }
 h3{
 	font-family: 'Federo';
@@ -130,7 +132,9 @@ a:hover {
 .header {
 	display: none;
 }
-
+#aboutPage .med_banks h2 {
+	max-width: 339px;
+}
 .offer_info {
 	padding: 340px 0 360px 0; 
 	// height: 1069px;
@@ -345,6 +349,7 @@ nav a:last-child {
 	top: 125px;
 	display: block;
 	left: 34px;
+	
 	li{
 		display: inline-block;
 		font-family: "NotoSans",sans-serif;
@@ -575,6 +580,7 @@ border-radius: 50px;
 		top: -30px;
 		z-index: 1;
 		left: 30px;
+		transform: rotate(90deg);
 	}
 	span {
 		font-weight: 700;
@@ -712,7 +718,7 @@ color: #73869F;
 				font-size: 20px;
 				line-height: 150%;
 				color: #00294C;
-				max-width: 300px;
+				max-width: 275px;
 			}
 		}
 	}
@@ -836,7 +842,8 @@ color: #73869F;
 	height: auto;
 	overflow: hidden;
 	margin-bottom: -50px;
-	width: 100%;
+	width: 101%;
+	margin-left: -1px;
 }
 
 .doc:hover .doc_image:after {
@@ -1088,10 +1095,11 @@ position: relative;
   	transition: 0.5s;
 }
 .ac-container .have_sub:before { 
-	font-size: 20px;
+	font-size: 25px;
 	content: "+";
 	padding:0 20px;
 	display: inline-block;
+	font-family: ve;
   // -webkit-transform: rotate(45deg);
   // -moz-transform: rotate(45deg);
   // -o-transform: rotate(45deg);
@@ -1179,6 +1187,7 @@ z-index: 2;
 		z-index: 3;
 		margin-left: -20px;
 		margin-bottom: 15px;
+		display: inline-flex;
 }
 .ac-container label:hover{
 	background: #fff;
@@ -1723,6 +1732,9 @@ cursor: pointer;
 	div{
 		border: 0px solid red;
 	}
+	.breadthums{
+		left: 3%;
+	}
 
 }
 .product_tabs {
@@ -1780,6 +1792,7 @@ span{
 .product_card__images__min img {
 	width: 100%;
 	max-width: 120px;
+	min-width: 120px;
 }
 .product_card__images__big {
 	margin-left: 30px;
@@ -2281,11 +2294,12 @@ button:focus {
 	.contact_info{ 
 		ul li{
 			display: grid;
-			grid-template-columns: repeat(2,1fr);
+			grid-template-columns: 150px auto;
 			font-size: 16px;
+			justify-content: start;
 		}
 		li{
-			margin-bottom: 60px;
+			margin-bottom: 55px;
 			span{
 				color: #73869F;
 				
@@ -2293,6 +2307,7 @@ button:focus {
 			}
 			b{
 				color: #00294C!important;
+				    font-weight: 400!important;
 			}
 		}
 	}
@@ -2300,10 +2315,13 @@ button:focus {
 .med_contacts .contact_info li b span {
     color: #00294C!important;
     line-height: 150%;
-    font-weight: bold!important;
+    font-weight: 400!important;
 }
  
-
+.contact_info {
+	display: flex;
+	justify-content: center;
+}
 
 /*-------------------------------
 		 	contacts
@@ -2315,7 +2333,7 @@ button:focus {
 	border-radius: 10px;
 	margin-left: 0 !important;
 	margin: 0 75px!important;
-	padding: 30px 150px;
+	padding: 45px 150px;
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 230px!important;
@@ -2328,7 +2346,7 @@ button:focus {
 		font-size: 50px;
 		line-height: 120%;
 		color: #FFFFFF;
-		max-width: 700px;
+		max-width: 800px;
 		display: flex;
 		align-items: center;
 		align-content: center;
@@ -2706,10 +2724,10 @@ color: #009CDB;
     align-content: center;
     margin: 0px -40px;
 
-    padding: 30px 0;
+    padding: 50px 0;
     padding-right: 35px;
     span {
-    	margin-right: 40px;
+    	margin-right: 48px;
     	color: #73869F;
     }
     img{
@@ -3229,6 +3247,11 @@ footer .footer_info {
 }
 details {
 	top: unset;
+}
+
+.footer_info span,
+.footer_info a {
+	font-size: 14px!important;
 }
 
 /*-------------------------------
@@ -4070,7 +4093,7 @@ details {
 // pagination
 
 .pagination {
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-bottom: 100px;
 	display: flex;
 	justify-content: center;
@@ -4105,6 +4128,7 @@ details {
 // //pagination
 
 
+
 .similar_products {
 	margin-bottom: 230px; 
 	h2 {
@@ -4124,10 +4148,12 @@ details {
 			margin-top: 20px;
 			margin-bottom: 5px;
 			font-size: 16px;
+			padding: 0 5px;
 		}
 		.product_size {
 			font-size: 14px;
 			margin-top: 10px;
+			padding: 0 5px;
 			span{
 				font-size: 14px;
 				color: #73869F;
@@ -4143,6 +4169,7 @@ details {
 		.product_price {
 			margin: 20px 0;
 			font-size: 18px;
+			padding: 0 5px;
 		}
 		img{
 			border-radius: 10px;
@@ -4179,7 +4206,7 @@ details {
 		.left_nav::before {
 			content: "";
 			position: absolute;
-			width: 280%;
+			width: 270%;
 			height: 2px; 
 			top: -10px;
 			right: 0; 
@@ -4207,6 +4234,24 @@ details[open] summary{
 	box-shadow: 5px 5px 5px #677992, -5px -5px 5px #93A6BF;
 }
 
+.similar_products .card img {
+	border-radius: 10px;
+	max-width: 280px;
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+	max-height: 250px;
+	object-fit: cover;
+	object-position: center;
+	min-height: 250px;
+}
+.similar_products .card .product_size span {
+	font-size: 14px!important;
+}
+.similar_products .card .product_made {
+    font-size: 12px!important;
+}
 
 @media (min-width: 320px) and (max-width:767px) {
 
@@ -4250,6 +4295,7 @@ details[open] summary{
 
 	.list .product_item img {
 		max-width: 100%;
+		max-height: 100px;
 	}
 	.list .product_item {
 		align-items: unset;

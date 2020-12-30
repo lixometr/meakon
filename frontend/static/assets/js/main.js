@@ -1,13 +1,4 @@
-$(function() {
-  $(".p2").typed({
-    strings: ["Designer", "Developer", "Maker"],
-    typeSpeed: 50,
-    backSpeed: 10,
-    backDelay: 2000,
-    showCursor: false,
-    loop: false
-  });
-});
+
 
 // smooth scroll to div
 $('a[href*=#]:not([href=#])').click(function() {
@@ -61,7 +52,12 @@ $('a[href*=#]:not([href=#])').click(function() {
     };
     
     var bindActions = function() {
-      burger.addEventListener('click', toggleMenu, false); 
+	  burger.addEventListener('click', toggleMenu, false); 
+	  for (var i = 0, ii = menuItems.length; i < ii; i++) {
+		menuItems[i].addEventListener('click', function () {
+			toggleMenu()
+		})
+	  }
     };
     
     var init = function() {
