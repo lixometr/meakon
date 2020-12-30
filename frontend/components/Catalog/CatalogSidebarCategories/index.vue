@@ -26,11 +26,15 @@ export default {
       try {
         const primaryCategories = await this.$api.$get("categoriesPrimary");
         const resolvers = primaryCategories.map(async (category) => {
-          const children = await this.$api.$get("categoryChildrenAll", {
-            slug: category.full_slug,
-          });
+          let children = [];
+          try {
+            children = await this.$api.$get("categoryChildrenAll", {
+              slug: category.full_slug,
+            });
+          } catch (err) {}
+
           // console.log(category, children)
-          return children;
+          return children || [];
         });
         const categories = await Promise.all(resolvers);
         this.items = categories;

@@ -15,8 +15,8 @@
             :placeholder="$t('form.name')"
             v-model="name"
           />
-          <input 
-		    class="tel2"
+          <input
+            class="tel2"
             type="tel"
             required
             :placeholder="$t('form.phone')"

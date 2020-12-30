@@ -16,7 +16,10 @@
         </div>
         <CatalogViewSwitcher v-model="view" />
         <div class="row" v-if="isReady">
-          <CatalogSidebar :filters="products.filters" :showPrice="category.show_filter_price"/>
+          <CatalogSidebar
+            :filters="products.filters"
+            :showPrice="category.show_filter_price"
+          />
           <!-- grid or list -->
           <CatalogProducts :view="view" :items="products.items" />
         </div>
@@ -57,14 +60,12 @@ export default {
   },
   watchQuery: true,
   beforeRouteLeave(to, from, next) {
-    console.log('omg')
-      this.$store.commit('setFiltersBtn', false)
-      next()
-
+    this.$store.commit("setFiltersBtn", false);
+    next();
   },
   async asyncData({ $api, error, params, query, store }) {
     try {
-      store.commit('setFiltersBtn', true)
+      store.commit("setFiltersBtn", true);
       const slug = params.pathMatch;
       const category = await $api.$get("category", { slug });
       if (!category) throw { statusCode: 404 };
