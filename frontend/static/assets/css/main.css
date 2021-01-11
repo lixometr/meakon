@@ -4408,11 +4408,17 @@ details[open] summary {
   #index section:not(:last-child) .card {
 	  margin: 50px 0px;
   }
+  #index .swiper-container p, .similar_products .swiper-container p {
+	padding: 20px 0 0 20px; 
+}
 
   .wrapper2 {
-    margin-left: 0;
+	margin-left: 0;
+	width: 116px;
   }
-
+  .wrapper2::after { 
+	  right: 0;
+  }
   .product_filter_view {
     padding-right: 0;
   }
