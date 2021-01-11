@@ -1284,7 +1284,7 @@
 			}
 
 			maxWidth_  = viewport.w - wMargin;
-			maxHeight_ = viewport.h - hMargin;
+			maxHeight_ = .h - hMargin;
 
 			if (current.aspectRatio) {
 				if (width > maxWidth) {

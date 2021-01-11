@@ -5,11 +5,11 @@ export default {
     title: 'Meakon',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no' },
 	  { hid: 'description', name: 'description', content: '' },
 	  // закрытие от индексации удалить, когда сайт будет готов Да когда запустим проект на хосте
       { name: "robots", content: "noindex, nofollow" }
-    ],
+    ], 
     script: [
       {
         type: 'text/javascript',
