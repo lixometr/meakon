@@ -922,6 +922,10 @@ section .desc {
   padding-top: 15px !important;
   padding-left: 15px !important;
 }
+.grid .product_title {
+    max-height: 77px;
+    overflow: hidden;
+}
 
 /*------------------
 /*-------------------------------
@@ -5014,7 +5018,7 @@ details[open] summary {
   }
 
   .grid {
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1100px) and (max-width: 1580px) {
@@ -5037,7 +5041,7 @@ details[open] summary {
   }
 
   .grid {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1580px) {
@@ -5046,7 +5050,7 @@ details[open] summary {
   }
 
   .grid {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .med_contacts br {
