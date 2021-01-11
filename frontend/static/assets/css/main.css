@@ -3115,8 +3115,9 @@ details {
     color: #73869F;
   }
   #curved1 {
-	  font-size: 12px;
+	  font-size: 11px;
   }
+  
   .offer_place {
     display: none;
   }
@@ -4382,11 +4383,12 @@ details[open] summary {
   }
 
   .offer_info {
-    width: 80%;
+    width: 100%;
   }
 
   #index section:not(:last-child) {
-    margin-left: 0;
+	margin-left: 0;
+	margin-top: 150px;
   }
 
   #index .btn_wrapper {
@@ -4400,7 +4402,8 @@ details[open] summary {
   }
 
   #index section .card {
-    max-width: 100% !important;
+	max-width: 100% !important;
+	margin: 50px 0!important;
   }
 
   .wrapper2 {
