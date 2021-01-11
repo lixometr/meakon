@@ -4737,6 +4737,15 @@ details[open] summary {
     margin-left: 10px;
   }
 }
+@media (min-width: 768px) and (max-width: 799px) {
+	section h2 {
+		text-align: left!important;
+	}
+	.list, .grid {
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 30px;
+	}
+}
 @media (min-width: 769px) and (max-width: 992px) {
   .Button_page {
     display: flex;
