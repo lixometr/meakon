@@ -2464,6 +2464,7 @@ button:hover .button-text {
 }
 .product .product_item span {
   color: #73869F;
+  font-size: 0.9rem;
 }
 .product img {
   width: 100%;
