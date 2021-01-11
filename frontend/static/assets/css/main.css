@@ -4043,10 +4043,13 @@ details[open] summary {
   font-size: 12px !important;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 799px) {
   .modal {
     width: 95%;
   }
+  .header {
+    display: block;
+}
   .modal .podrobnee_btn {
     text-align: center;
   }
