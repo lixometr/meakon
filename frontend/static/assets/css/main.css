@@ -3332,8 +3332,14 @@ details {
     z-index: 99;
     right: 0;
     top: 70px;
-    background: #B5C7DD;
-    padding: 15px;
+    background: #F9F9F9;
+	padding: 15px;
+	-webkit-box-shadow: 0px 10px 19px -8px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 10px 19px -8px rgba(0,0,0,0.44);
+box-shadow: 0px 10px 19px -8px rgba(0,0,0,0.44);
+  }
+  .form_review__title h3 {
+	max-width: 290px;
   }
 }
 @media (min-width: 768px) and (max-width: 1100px) {
@@ -4079,7 +4085,10 @@ details[open] summary {
 
   .list .product_item img {
     max-width: 100%;
-    max-height: 100px;
+	max-height: 100px;
+	max-height: 200px;
+	object-fit: cover;
+	object-position: center;
   }
 
   .list .product_item {
