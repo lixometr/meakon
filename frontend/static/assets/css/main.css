@@ -3066,6 +3066,12 @@ details {
   .form_review__footer .more-button-ico::before, .form_review__footer .more-button-ico::after, .form_review__footer .more-button-ico {
     background-color: white;
   }
+  .burger--close .burger__patty:nth-child(3) {
+	  margin-left: -6px;	
+  }
+  .burger--close .burger__patty:nth-child(1) {
+	margin-left: -3px;
+  }
   .product_card__images__min {
 	display: none;
 }
