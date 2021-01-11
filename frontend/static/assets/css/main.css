@@ -4081,9 +4081,16 @@ details[open] summary {
   .similar_products h2 {
     max-width: unset;
 }
+.product_card__images__min {
+    display: none !important;
+}
   .item ol span {
 	text-align: right;
   }
+  .product_card__images__big__wrapper::after { 
+	width: 100%;
+  }
+
   .product_card__images__min img,
 .product_card__images__min img:not(:last-child) {
     display: none;
