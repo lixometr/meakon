@@ -3101,7 +3101,7 @@ details {
   }
 
   .offer_info {
-    padding: 160px 0 0 0;
+    padding: 50px 0 0 0;
   }
   .offer_info h1 {
     margin: 0 0 25px 60px;
@@ -3114,7 +3114,9 @@ details {
     line-height: 150%;
     color: #73869F;
   }
-
+  #curved1 {
+	  font-size: 12px;
+  }
   .offer_place {
     display: none;
   }
@@ -3586,9 +3588,18 @@ details {
   }
 
   .med_contacts {
-    margin-top: 150px;
+    margin-top: 50px;
     margin-bottom: 150px;
   }
+
+  .mainscreen-video {
+    position: absolute;
+    max-width: 100%;
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+}
 
   #contacts section h2 {
     text-align: center;
@@ -4389,7 +4400,7 @@ details[open] summary {
   }
 
   #index section .card {
-    max-width: 98% !important;
+    max-width: 100% !important;
   }
 
   .wrapper2 {
