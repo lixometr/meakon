@@ -1,6 +1,6 @@
 <template>
  <div class="col-lg-3 d-lg-block filter "> 
-      <ul class="filter_tabs" :class="{showed: showSidebar, hidden: !showSidebar}">
+      <ul class="filter_tabs" :class="{hidden: !showSidebar, showed: showSidebar}">
         <CatalogSidebarSearch />
 
         <CatalogSidebarCategories  />
