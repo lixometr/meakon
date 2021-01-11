@@ -4508,6 +4508,12 @@ details[open] summary {
   .contact_info ul {
     padding: 5px;
 }
+.modal {
+	padding: 40px 20px;
+}
+.form_review__body input {
+	padding: 8px 20px;
+}
   .med_why ul {
     margin-left: 0;
   }
