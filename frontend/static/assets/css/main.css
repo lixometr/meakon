@@ -4095,6 +4095,9 @@ details[open] summary {
 .product_card__images__min img:not(:last-child) {
     display: none;
   }
+  .med_contacts .contact_info li b span:nth-child(2n) {
+    padding-top: 45px;
+}
 
   .product_card__title h1 {
     font-size: 30px;
