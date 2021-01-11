@@ -1726,12 +1726,21 @@ button.learn-more .circle {
   z-index: 1;
   opacity: 0;
   transition: 1s;
-  /* left: 52%; */
+  left: 13%;
   display: block;
 margin: 0 auto;
     margin-right: auto;
 width: 100%;
-margin-right: -90px;
+/* margin-right: -90px; */
+}
+
+.product_card__images__big__wrapper:after {
+    content: "";
+    width: 74%;
+    height: 98.5%;
+    position: absolute;
+    background: rgba(239, 244, 247, 0.3);
+    border-radius: 10px;
 }
 
 .product_card__desc__column span {
