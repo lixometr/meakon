@@ -2589,6 +2589,7 @@ button:hover .button-text {
     padding-left: 15px;
     padding-right: 15px;
   }
+
 }
 @media only screen and (min-width: 400px) {
   .inner-text {
@@ -3059,6 +3060,10 @@ details {
   .form_review__footer .more-button-ico::before, .form_review__footer .more-button-ico::after, .form_review__footer .more-button-ico {
     background-color: white;
   }
+  .product_card__images__min {
+	display: none;
+}
+ 
 
   .form .form_review__callback {
     padding: 60px 20px;
@@ -4066,11 +4071,19 @@ details[open] summary {
   }
 
   .product_card__images__big__wrapper img {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     margin-top: 100px;
   }
-
+  .item ol li {
+	grid-template-columns: repeat(2, 1fr);
+  }
+  .similar_products h2 {
+    max-width: unset;
+}
+  .item ol span {
+	text-align: right;
+  }
   .product_card__images__min img,
 .product_card__images__min img:not(:last-child) {
     display: none;
