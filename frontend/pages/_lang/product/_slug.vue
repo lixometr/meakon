@@ -37,7 +37,7 @@
           <!-- //Навигация -->
 
           <!-- Описание блока -->
-          <div class="col-sm-12 col-md-3 col-lg-2">
+          <div class="col-sm-12 col-md-12 col-lg-2">
             <h2>{{ $t("similarItems") }}</h2>
             <p class="desc"></p>
           </div>
