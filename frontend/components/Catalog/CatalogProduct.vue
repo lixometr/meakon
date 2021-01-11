@@ -1,4 +1,5 @@
 <template>
+<nuxt-link :to="$url.product(item.slug)">
   <div class="product_item">
     <AppImage :img="image" :holder="true" />
     <div class="product_title">
@@ -34,6 +35,7 @@
       <AppButton :link="$url.product(item.slug)" :text="$t('more') "/>
     </div>
   </div>
+  </nuxt-link>
 </template>
 
 <script>

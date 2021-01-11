@@ -4458,7 +4458,7 @@ details[open] summary {
     position: relative;
   }
 
-  .filter_tabs ul{
+  .filter_tabs > ul{
 	-webkit-box-shadow: 0px 10px 19px -8px rgba(0,0,0,0.44);
 	-moz-box-shadow: 0px 10px 19px -8px rgba(0,0,0,0.44);
 	box-shadow: 0px 10px 19px -8px rgba(0,0,0,0.44);
