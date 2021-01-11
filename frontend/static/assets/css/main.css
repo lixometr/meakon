@@ -4515,11 +4515,6 @@ details[open] summary {
     margin: 0;
   }
 
-  #aboutPage .med_banks .swiper-container {
-    padding-top: 15px !important;
-    padding-left: 7px !important;
-  }
-
   .preFooter button.learn-more .circle .icon.arrow {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     left: 0;
