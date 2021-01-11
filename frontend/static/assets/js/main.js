@@ -138,7 +138,7 @@ $(document).ready(function($) {
 });
 
 $('.filter_tab__subcat a').click(function(event) {
-	$(.filter_tabs).addClass('hidden');
+	$(".filter_tabs").addClass('hidden').removeClass("showed");
   });
 
 
