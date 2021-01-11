@@ -4418,6 +4418,7 @@ details[open] summary {
   }
   .wrapper2::after { 
 	  right: 0;
+	  border-radius: 0;
   }
   .product_filter_view {
     padding-right: 0;
