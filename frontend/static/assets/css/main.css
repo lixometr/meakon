@@ -2908,7 +2908,7 @@ button:hover .button-text {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   header nav {
     margin: 0;
   }
@@ -3062,7 +3062,7 @@ details {
   color: #00294C;
 }
 
-@media (min-width: 300px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 799px) {
   .form_review__footer .more-button-ico::before, .form_review__footer .more-button-ico::after, .form_review__footer .more-button-ico {
     background-color: white;
   }
@@ -3340,7 +3340,7 @@ details {
 	max-width: 290px;
   }
 }
-@media (min-width: 768px) and (max-width: 1100px) {
+@media (min-width: 799px) and (max-width: 1100px) {
   .filter_tabs {
     margin-top: 20px;
     position: fixed;
@@ -3757,7 +3757,7 @@ details {
     padding: 20px;
   }
 }
-@media (min-width: 768px) and (max-width: 1100px) {
+@media (min-width: 799px) and (max-width: 1100px) {
   .mainscreen-video {
     position: absolute;
     max-width: 2250px;
