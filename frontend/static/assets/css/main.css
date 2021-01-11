@@ -878,14 +878,14 @@ section .desc {
   box-shadow: -5px -5px 10px #D1D9E6, 5px 5px 10px #D1D9E6;
   border-radius: 5px;
   background-color: #fff;
-  display: flex;
+  display: flex; 
   justify-content: center;
   align-items: center;
   align-content: center;
   align-self: center;
   width: 100%;
   object-fit: contain;
-    height: 118px;
+    height: 117px; 
 	padding: 20px;
 }
 
