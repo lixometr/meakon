@@ -111,8 +111,6 @@
                 >
                   <AppImage :img="item.image" />
                   <p>{{ $langValue(item, "name") }}</p>
-                  {{ item.name }}
-
                   <AppButton
                     :link="$url.category(item.full_slug)"
                     :text="$t('more')"
