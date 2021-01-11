@@ -4422,7 +4422,10 @@ details[open] summary {
   .product_filter_view {
     padding-right: 0;
   }
-
+  #aboutPage .med_banks .swiper-container {
+    padding-top: 15px !important;
+    padding-left: 3px !important;
+}
   .product {
     padding-right: 15px;
   }

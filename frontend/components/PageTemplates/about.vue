@@ -387,11 +387,11 @@ export default {
         breakpoints: {
           320: {
             slidesPerView: 1,
-            spaceBetween: 40,
+            spaceBetween: 10,
           },
           668: {
             slidesPerView: 2,
-            spaceBetween: 40,
+            spaceBetween: 20,
           },
           1024: {
             slidesPerView: 5,
