@@ -865,8 +865,14 @@ section .desc {
   position: relative;
 }
 .med_banks .banks {
-  max-width: 228px;
-  height: 118px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    max-width: 228px;
+    max-height: 118px;
+    object-fit: cover;
+	object-position: center;
+	box-shadow: -5px -5px 10px #D1D9E6, 5px 5px 10px #D1D9E6;
 }
 .med_banks .banks img {
   box-shadow: -5px -5px 10px #D1D9E6, 5px 5px 10px #D1D9E6;
@@ -878,6 +884,9 @@ section .desc {
   align-content: center;
   align-self: center;
   width: 100%;
+  object-fit: contain;
+    height: 118px;
+	padding: 20px;
 }
 
 #aboutPage .swiper-button-next, #aboutPage .swiper-button-prev {
