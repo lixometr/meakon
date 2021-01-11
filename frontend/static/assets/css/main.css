@@ -4704,7 +4704,9 @@ details[open] summary {
   }
 
   #filter_page .products .product_filter_header h1 {
-    margin-bottom: 50px;
+	margin-bottom: 50px;
+	font-size: 30px;
+	text-align: center;
   }
 
   .filter_tabs {
