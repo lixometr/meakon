@@ -4584,6 +4584,20 @@ details[open] summary {
 .med_banks .banks img {
     box-shadow: unset;
   }
+  .doc:nth-child(2n) {
+	  margin-top: 0;
+  }
+  .commrads .doc img {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-radius: 10px;
+	max-height: 320px;
+	height: -webkit-max-content;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+  }
 
   #aboutPage .swiper-button-next {
     bottom: 209px;
