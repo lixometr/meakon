@@ -4505,7 +4505,9 @@ details[open] summary {
   .preFooter .leaves {
     /* display: none; */
   }
-
+  .contact_info ul {
+    padding: 5px;
+}
   .med_why ul {
     margin-left: 0;
   }
