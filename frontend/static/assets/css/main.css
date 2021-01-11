@@ -4503,7 +4503,7 @@ details[open] summary {
   }
 
   .preFooter .leaves {
-    display: none;
+    /* display: none; */
   }
 
   .med_why ul {
