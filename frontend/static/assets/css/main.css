@@ -4405,7 +4405,9 @@ details[open] summary {
 	max-width: 100% !important;
 	 
   }
- 
+  #index section:not(:last-child) .card {
+	  margin: 50px 0px;
+  }
 
   .wrapper2 {
     margin-left: 0;
