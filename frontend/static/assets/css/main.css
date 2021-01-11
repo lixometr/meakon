@@ -3620,11 +3620,12 @@ details {
     width: 100%;
     transform: rotate(90deg);
     bottom: -123px;
-    top: unset;
+    top: -60px;
     left: unset;
-    right: -112px;
+    right: -115px;
     border-radius: 10px;
-    background-image: url(/assets/img/Group_375.png);
+	background-image: url(/assets/img/Group_375.png);
+	transform: scale(0.5);
   }
 
   #contacts .offer {
@@ -4096,7 +4097,8 @@ details[open] summary {
     display: none;
   }
   .med_contacts .contact_info li b span:nth-child(2n) {
-    padding-top: 45px;
+	  display: block;
+    padding-top: 25px;
 }
 
   .product_card__title h1 {
