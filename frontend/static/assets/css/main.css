@@ -932,7 +932,7 @@ section .desc {
   padding-left: 15px !important;
 }
 .grid .product_title {
-    max-height: 77px;
+    height: 77px;
     overflow: hidden;
 }
 
@@ -2488,8 +2488,8 @@ button:hover .button-text {
 .product img {
   width: 100%;
   object-fit: cover;
-  max-height: 250px;
-  height: 100%;
+  /* max-height: 250px; */
+  height: 250px;
   object-position: center;
 }
 .product .product_title {
@@ -2507,6 +2507,8 @@ button:hover .button-text {
 }
 .product .product_button {
   margin-top: 20px;
+  height: 20px;
+  overflow: hidden;
 }
 
 .grid {
@@ -2531,6 +2533,7 @@ button:hover .button-text {
   align-content: flex-start;
   align-items: flex-start;
 }
+
 
 .list {
   grid-template-columns: repeat(1, auto);
