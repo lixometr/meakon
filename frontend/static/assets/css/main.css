@@ -4889,7 +4889,7 @@ max-width: 200px;
     transform: rotate(180deg);
     right: unset;
     left: 95px;
-    bottom: 35px;
+    /* bottom: 35px; */
     background: #6D8099;
     box-shadow: 3px 3px 5px #8597AF, -3px -3px 5px #64768E;
     border-radius: 30px;
@@ -5410,4 +5410,9 @@ max-width: 200px;
 .med_contacts br {
   display: block;
   margin: 10px;
+}
+
+
+.swiper-button-prev:focus, .swiper-button-next:focus {
+    outline: none!important;
 }
