@@ -121,7 +121,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- Навигация -->
-          <div class="col-lg-1 col-md-1 col-sm-1">
+          <div class="col-lg-1  col-sm-1">
             <div class="left_nav">
               <img src="/assets/img/section_black.png" />
               <span>{{
@@ -132,7 +132,7 @@
           <!-- //Навигация -->
 
           <!-- Описание блока -->
-          <div class="col-lg-3 col-md-5 col-sm-12">
+          <div class="col-lg-3   col-sm-12">
             <h2>
               {{
                 getLangValue("dopolnitelnii_blok_o_kompanii.zagolovok_dopbloka")
@@ -143,7 +143,7 @@
           <!-- //Описание блока -->
 
           <!-- Описание блока -->
-          <div class="col-lg-8 col-md-6 col-sm-12">
+          <div class="col-lg-8   col-sm-12">
             <div class="about_text_col4">
               <!-- text1 -->
               <div>
