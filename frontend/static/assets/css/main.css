@@ -463,7 +463,7 @@ nav a:last-child {
 --------------------------------*/
 #index section:not(:last-child) {
   margin-top: 220px;
-  margin-left: 49px;
+  /* margin-left: 49px; */
   border-radius: 10px;
 }
 #index section:not(:last-child) .card {
@@ -706,7 +706,7 @@ section .desc {
 }
 
 #aboutPage section {
-  margin-left: 49px;
+  /* margin-left: 49px; */
 }
 #aboutPage section .about_text_col4 {
   display: grid;
@@ -3954,7 +3954,7 @@ details {
 	margin-bottom: 20px;
 }
 .similar_products .card .product_size span {
-  font-size: 14px;
+ 
   color: #73869F;
 }
 .similar_products .card .product_made {
