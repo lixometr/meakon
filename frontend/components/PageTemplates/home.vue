@@ -66,7 +66,7 @@
           <!-- //Навигация -->
 
           <!-- Описание блока -->
-          <div class="col-lg-3 col-md-11 col-sm-11">
+          <div class="col-lg-3 col-md-12 col-sm-11">
             <h2>
               {{
                 getLangValue(
@@ -98,7 +98,7 @@
           </div>
           <!-- //Описание блока -->
 
-          <div class="col-sm-12 col-md-8 col-lg-8">
+          <div class="col-sm-12 col-md-12 col-lg-8">
             <!-- Swiper -->
             <client-only>
               <swiper :options="sliderOptions">

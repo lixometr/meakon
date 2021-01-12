@@ -4777,6 +4777,10 @@ details[open] summary {
 		position: absolute!important;
 		max-width: 100%!important;
 		width: 344%!important;
+		height: auto;
+	}
+	#curved1 {
+		display: none;
 	}
 }
 @media (min-width: 769px) and (max-width: 992px) {
