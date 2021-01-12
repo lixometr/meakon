@@ -4859,8 +4859,14 @@ details[open] summary {
   .box, .box2 {
     display: none;
   }
-
- 
+  .doc_image {
+    width: 100%;
+    position: relative;
+    height: 375px;
+}
+.commrads .doc p {
+max-width: 200px;
+}
 
   #aboutPage .swiper-button-next::after, #aboutPage .swiper-button-prev::after {
     content: "";
