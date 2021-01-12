@@ -243,7 +243,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- Навигация -->
-          <div class="col-lg-1 col-md-1 col-sm-1">
+          <div class="col-lg-1 col-sm-1">
             <div class="left_nav">
               <img src="/assets/img/section.png" />
               <span>{{ getLangValue("dopolnitelnie_elementi.partneri") }}</span>
@@ -252,14 +252,14 @@
           <!-- //Навигация -->
 
           <!-- Описание блока -->
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3   col-sm-12">
             <h2>
               {{ getLangValue("klientim.zagolovok_bloka_klienti") }}
             </h2>
           </div>
           <!-- //Описание блока -->
 
-          <div class="col-lg-8 col-md-5 col-sm-12">
+          <div class="col-lg-8   col-sm-12">
             <!-- Swiper -->
             <client-only>
               <swiper class="swiper-banks" :options="slider2Options">
