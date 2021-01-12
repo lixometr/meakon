@@ -4878,7 +4878,12 @@ max-width: 200px;
     background-position: center;
   }
 
- 
+  #aboutPage .swiper-button-prev {
+    background: #6D8099;
+    box-shadow: 3px 3px 5px #64768E, -3px -3px 5px #8597AF;
+    border-radius: 30px;
+    padding: 20px;
+  }
 
   #aboutPage .swiper-button-next {
     transform: rotate(180deg);
