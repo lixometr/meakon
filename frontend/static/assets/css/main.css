@@ -4740,7 +4740,7 @@ details[open] summary {
     margin-left: 10px;
   }
 }
-@media (min-width: 768px) and (max-width: 799px) {
+@media (min-width: 768px) and (max-width: 991px) {
 	section h2 {
 		text-align: left!important;
 	}
@@ -4778,6 +4778,10 @@ details[open] summary {
 		max-width: 100%!important;
 		width: 344%!important;
 		height: auto;
+	}
+	#index .swiper-container p, .similar_products .swiper-container p {
+		padding: 20px 0 0 20px;
+		height: 68px;
 	}
 	#curved1 {
 		display: none;
