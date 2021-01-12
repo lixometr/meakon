@@ -163,7 +163,7 @@
           <!-- //Навигация -->
 
           <!-- Описание блока -->
-          <div class="col-sm-11 col-md-3 col-lg-3">
+          <div class="col-sm-11 col-md-12 col-lg-3">
             <h2>{{ getLangValue("blok_plyusov.zagolovok_bloka_plyusov") }}</h2>
             <p class="desc">
               {{ getLangValue("blok_plyusov.podzagolovok_bloka_plyusov") }}
@@ -173,7 +173,7 @@
 
           <!-- Описание блока -->
 
-          <div class="col-sm-12 col-md-8 col-lg-8">
+          <div class="col-sm-12 col-md-12 col-lg-8">
             <ul>
               <li
                 v-for="(item, idx) in getValue('blok_plyusov.plyusi_kompanii')"
