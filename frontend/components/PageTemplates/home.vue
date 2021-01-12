@@ -4,7 +4,7 @@
     <!-- header -->
     <header class="offer">
       <div class="wrapper">
-        <video class="mainscreen-video" playsinline autoplay="" muted="" loop="">
+        <video class="mainscreen-video" autoplay loop muted playsinline>
           <source
             :src="getValue('blok_pervogo_ekrana.fonovoe_video_ofera')"
             type="video/mp4"
@@ -201,7 +201,7 @@
           <div class="col-lg-11 col-md-12 col-sm-12 col-xs-12">
             <!--  <img src="assets/img/img_main.png" alt=""> -->
             <div class="wrapper2">
-              <video class="mainscreen-video2"  playsinline autoplay="" muted="" loop="">
+              <video class="mainscreen-video2"  autoplay loop muted playsinline>
                 <source
                   :src="getValue('blok_anonsa_kompanii.video_prezentatsiya')"
                   type="video/mp4"
