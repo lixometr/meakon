@@ -4928,8 +4928,21 @@ details[open] summary {
 	#curved1 {
 		display: none;
 	}
-
-
+	.preFooter .leaves {
+		width: 100%;
+		transform: rotate(90deg);
+		bottom: -123px;
+		top: -116px; 
+		right: 0px;
+		border-radius: 10px;
+		background-image: url(/assets/img/Group_375.png);
+		transform: scale(0.5);
+		position: absolute;
+		right: -300px;
+	}
+	.about_offer_img {
+		margin-top: 0;
+	}
 
 
 

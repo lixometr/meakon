@@ -33,7 +33,7 @@
           <!-- //Навигация -->
 
           <!-- Описание блока -->
-          <div class="col-lg-3 col-md-5 col-sm-12">
+          <div class="col-lg-3 col-sm-12">
             <h2>
               {{ getLangValue("blok_o_kompanii.zagolovok_bloka_o_kompanii") }}
             </h2>
@@ -41,7 +41,7 @@
           <!-- //Описание блока -->
 
           <!-- текст о компании -->
-          <div class="col-lg-8 col-md-6 col-sm-12">
+          <div class="col-lg-8 col-sm-12">
             <div class="about_text">
               <!-- text1 -->
               <div>
@@ -70,11 +70,11 @@
           <!-- //Навигация -->
 
           <!-- Описание блока -->
-          <div class="col-lg-3 col-md-5 col-sm-12"></div>
+          <div class="col-lg-3   col-sm-12"></div>
           <!-- //Описание блока -->
 
           <!-- текст о компании -->
-          <div class="col-lg-8 col-md-6 col-sm-12">
+          <div class="col-lg-8 col-sm-12">
             <div class="about_text_col3">
               <!-- text1 -->
               <div
