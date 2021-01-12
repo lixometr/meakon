@@ -4859,9 +4859,7 @@ details[open] summary {
     display: none;
   }
 
-  .med_work {
-    margin-left: -100px !important;
-  }
+ 
 
   #aboutPage .swiper-button-next::after, #aboutPage .swiper-button-prev::after {
     content: "";
