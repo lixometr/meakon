@@ -4774,9 +4774,9 @@ details[open] summary {
 		text-align: unset!important;
 	}
 	.mainscreen-video {
-		position: absolute;
-		max-width: 100%;
-		width: 344%;
+		position: absolute!important;
+		max-width: 100%!important;
+		width: 344%!important;
 	}
 }
 @media (min-width: 769px) and (max-width: 992px) {
