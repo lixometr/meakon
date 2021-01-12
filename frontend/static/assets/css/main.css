@@ -4773,6 +4773,11 @@ details[open] summary {
 	.product_card__desc__column span {
 		text-align: unset!important;
 	}
+	.mainscreen-video {
+		position: absolute;
+		max-width: 100%;
+		width: 344%;
+	}
 }
 @media (min-width: 769px) and (max-width: 992px) {
   .Button_page {
