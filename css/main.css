@@ -5381,7 +5381,7 @@ details[open] summary {
   }
   #aboutPage .about_text_col3 {
     display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr!important;
 }
 
 
