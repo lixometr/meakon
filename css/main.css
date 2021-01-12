@@ -5379,6 +5379,13 @@ details[open] summary {
   .med_contacts {
     margin-top: 0;
   }
+  #aboutPage .about_text_col3 {
+    display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
 }
 
 @media (min-width: 992px) and (max-width: 1099px) {
