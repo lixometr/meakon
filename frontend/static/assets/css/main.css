@@ -4853,9 +4853,9 @@ details[open] summary {
   #aboutPage section .about_text_col4 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* grid-template-rows: repeat(2, 1fr); */
+     grid-template-rows: unset; 
     gap: 20px;
-
+  }
   .box, .box2 {
     display: none;
   }
