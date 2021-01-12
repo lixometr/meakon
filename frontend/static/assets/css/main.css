@@ -4778,7 +4778,149 @@ details[open] summary {
 		max-width: 100%!important;
 		width: 344%!important;
 		height: auto;
-	}
+		object-fit: cover;
+    object-position: center;
+}
+
+  #contacts section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .med_contacts .contact_info ul li {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 14px;
+  }
+
+  .med_contacts .contact_info li {
+    margin-bottom: 30px;
+  }
+
+  .preFooter {
+    width: 100%;
+    margin: 0 !important;
+    padding: 40px 15px;
+  }
+
+  .preFooter h3 {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .preFooter .leaves {
+    width: 100%;
+    transform: rotate(90deg);
+    bottom: -123px;
+    top: -60px;
+    left: unset;
+    right: -115px;
+    border-radius: 10px;
+	background-image: url(/assets/img/Group_375.png);
+	transform: scale(0.5);
+  }
+
+  #contacts .offer {
+    padding-bottom: 0;
+  }
+
+  .preFooter {
+    width: 100%;
+    margin: 0 !important;
+    padding: 40px 15px;
+    margin-bottom: 150px !important;
+  }
+
+  #aboutPage .about_text_col3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 16px;
+    line-height: 150%;
+    color: #73869F;
+    margin-top: 50px;
+    overflow: hidden;
+  }
+
+  li.cifra_desc {
+    margin-bottom: 50px;
+    font-family: "Federo";
+  }
+
+  #aboutPage .med_work {
+    margin-top: 0;
+  }
+
+  #aboutPage section .about_text_col4 {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 0;
+  }
+
+  .box, .box2 {
+    display: none;
+  }
+
+  .med_work {
+    margin-left: -100px !important;
+  }
+
+  #aboutPage .swiper-button-next::after, #aboutPage .swiper-button-prev::after {
+    content: "";
+    background-image: url("/assets/img/arrow_white.svg");
+    width: 70px;
+    height: 40px;
+    padding: 20px;
+    background-repeat: no-repeat !important;
+    background-position: center;
+  }
+
+  #aboutPage .swiper-button-prev {
+    top: 65px;
+    background: #6D8099;
+    box-shadow: 3px 3px 5px #64768E, -3px -3px 5px #8597AF;
+    border-radius: 30px;
+    padding: 20px;
+  }
+
+  #aboutPage .swiper-button-next {
+    transform: rotate(180deg);
+    right: unset;
+    left: 95px;
+    bottom: 35px;
+    background: #6D8099;
+    box-shadow: 3px 3px 5px #8597AF, -3px -3px 5px #64768E;
+    border-radius: 30px;
+    padding: 20px;
+  }
+
+  .swiper-banks .swiper-button-next::after, .swiper-banks .swiper-button-prev::after {
+    content: "";
+    background-image: url("/assets/img/arrow.svg") !important;
+    width: 70px;
+    height: 40px;
+    padding: 20px;
+    background-repeat: no-repeat !important;
+    background-position: center;
+  }
+
+  .swiper-banks .swiper-button-prev {
+    top: 65px;
+    background: #E3E6EC !important;
+    box-shadow: 3px 3px 5px #D1D9E6, -3px -3px 5px #FFFFFF !important;
+    border-radius: 30px;
+    padding: 20px;
+  }
+
+  .swiper-banks .swiper-button-next {
+    transform: rotate(180deg);
+    right: unset;
+    left: 95px;
+    bottom: 35px;
+    background: #E3E6EC !important;
+    box-shadow: 3px 3px 5px #FFFFFF, -3px -3px 5px #D1D9E6 !important;
+    border-radius: 30px;
+    padding: 20px;
+  }
+
 	#index .swiper-container p, .similar_products .swiper-container p {
 		padding: 20px 0 0 20px;
 		height: 68px;
@@ -4786,6 +4928,37 @@ details[open] summary {
 	#curved1 {
 		display: none;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 @media (min-width: 769px) and (max-width: 992px) {
   .Button_page {
