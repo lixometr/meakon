@@ -4833,7 +4833,7 @@ details[open] summary {
 
   #aboutPage .about_text_col3 {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     font-size: 16px;
     line-height: 150%;
     color: #73869F;
