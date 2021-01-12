@@ -3078,7 +3078,12 @@ details {
   .product_card__images__min {
 	display: none;
 }
- 
+#aboutPage section .about_text_col4 {
+	grid-template-rows: unset; 
+}
+.commrads .doc img {
+	height: 300px;
+}
 
   .form .form_review__callback {
     padding: 60px 20px;
