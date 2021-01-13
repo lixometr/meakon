@@ -541,8 +541,8 @@ nav a:last-child {
   color: #73869F;
   font-size: 14px;
   font-weight: bold;
-  margin-top: -7px;
-  margin-left: -40px;
+  margin-top: 0px;
+  margin-left: -10px;
 }
 .left_nav img {
   position: relative;
