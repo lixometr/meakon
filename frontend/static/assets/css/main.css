@@ -4477,7 +4477,8 @@ details[open] summary {
 
   .product .product_button {
     margin-top: 20px;
-    width: 100%;
+	width: 100%;
+	height: auto;
   }
 
   .product_filter_view {
