@@ -2097,6 +2097,15 @@ button:focus {
   display: flex;
   flex-direction: column;
 }
+
+ 
+.form_review__body	input::placeholder {
+		color: red;
+		font-size: 1.2em;
+		font-style: italic;
+	  }
+ 
+
 .form_review__body input {
   width: 100%;
   padding: 12px 20px;
