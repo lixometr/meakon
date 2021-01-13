@@ -1966,6 +1966,7 @@ button:focus {
   line-height: 150%;
 }
 .content p,
+.content span,
 .content strong {
 	color: #73869F !important;
 }
