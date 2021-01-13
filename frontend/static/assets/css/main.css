@@ -747,8 +747,8 @@ section .desc {
   margin-top: 120px;
   background: #73869F;
   border-radius: 10px;
-  margin-left: -49px;
-  padding-left: 105px;
+  /* margin-left: -49px;
+  padding-left: 105px; */
   padding-top: 150px;
   color: white !important;
 }
@@ -3022,6 +3022,9 @@ footer {
   line-height: 150%;
   color: #73869F;
   padding: 23.5px 0px;
+  background: linear-gradient(0deg, #E3E6EC, #E3E6EC), linear-gradient(90deg, #0E1235 0%, #04204F 10.94%, #002653 31.25%, #013564 53.12%, #003E6F 68.75%, #01497B 83.33%, #003B63 100%);
+box-shadow: -5px -5px 20px #FFFFFF;
+border-radius: 10px 10px 0px 0px;
 }
 footer .footer_info {
   display: flex;
