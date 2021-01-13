@@ -2099,10 +2099,10 @@ button:focus {
 }
 
  
-.form_review__body	input::placeholder {
+.form_review__body	input::placeholder,
+textarea:-moz-placeholder,
+textarea::-webkit-input-placeholder {
 		color: fff!important;
-		font-size: 1.2em;
-		font-style: italic;
 	  }
  
 
