@@ -2100,7 +2100,7 @@ button:focus {
 
  
 .form_review__body	input::placeholder {
-		color: red;
+		color: fff!important;
 		font-size: 1.2em;
 		font-style: italic;
 	  }
