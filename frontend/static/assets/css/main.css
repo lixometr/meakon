@@ -512,6 +512,8 @@ nav a:last-child {
   width: 70px;
   height: 40px;
   padding: 20px;
+  background-position: center;
+    background-repeat: no-repeat;
 }
 
 #index .swiper-button-next,
@@ -531,17 +533,14 @@ nav a:last-child {
 }
 
 
-#index .swiper-button-prev:hover .swiper-button-prev::before {
-    content: "";
+#index .swiper-button-prev:hover {
+    display: flex;
+    padding: 25px;
     background: #E3E6EC;
-    box-shadow: 3px 3px 5px #D1D9E6, -3px -3px 5px #FFFFFF;
     border-radius: 30px;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-	z-index: -1;
-	bottom: -6px;
-    left: -7px;
+    box-shadow: 3px 3px 5px #D1D9E6, -3px -3px 5px #FFFFFF;
+    justify-content: center;
+    align-items: center;
 }
 /*-------------------------------
         end	Расходники
