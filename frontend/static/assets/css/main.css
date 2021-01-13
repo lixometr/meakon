@@ -2099,16 +2099,7 @@ button:focus {
 }
 
  
-.form_review__body	input::-webkit-input-placeholder,
-.form_review__body  input::-moz-placeholder {
-	color: fff!important;
-}
-	  
-.form_review__body textarea::-moz-placeholder,
-.form_review__body textarea::-webkit-input-placeholder {
-	color: fff!important;
-}
- 
+
 
 .form_review__body input {
   width: 100%;
@@ -5521,3 +5512,14 @@ max-width: 200px;
 .swiper-button-prev:focus, .swiper-button-next:focus {
 	outline: none!important;
 }
+
+.form_review__body	input::-webkit-input-placeholder,
+.form_review__body  input::-moz-placeholder {
+	color: fff!important;
+}
+	  
+.form_review__body textarea::-moz-placeholder,
+.form_review__body textarea::-webkit-input-placeholder {
+	color: fff!important;
+}
+ 
