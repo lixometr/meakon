@@ -2099,9 +2099,11 @@ button:focus {
 }
 
  
-.form_review__body	input::placeholder,
-textarea:-moz-placeholder,
-textarea::-webkit-input-placeholder {
+.form_review__body	input::placeholder {
+		color: fff!important;
+	  }
+	  textarea:-moz-placeholder,
+	  textarea::-webkit-input-placeholder {
 		color: fff!important;
 	  }
  
