@@ -545,7 +545,8 @@ nav a:last-child {
 }
 
 
-#index .swiper-button-prev:hover  {
+#index .swiper-button-prev:hover,
+.similar_products .swiper-button-prev:hover {
     display: flex;
     padding: 25px;
     background: #E3E6EC;
@@ -554,7 +555,8 @@ nav a:last-child {
     justify-content: center;
     align-items: center;
 }
-#index .swiper-button-next:hover {
+#index .swiper-button-next:hover,
+.similar_products .swiper-button-next:hover {
 	display: flex;
     padding: 25px;
     background: #E3E6EC;

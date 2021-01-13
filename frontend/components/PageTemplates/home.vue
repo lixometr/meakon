@@ -341,11 +341,11 @@ export default {
           },
           1400: {
             slidesPerView: 3,
-            spaceBetween: 29,
+            spaceBetween: 30,
 		  },
 		  1500: {
             slidesPerView: 4,
-            spaceBetween: 29,
+            spaceBetween: 30,
           },
         },
       };
