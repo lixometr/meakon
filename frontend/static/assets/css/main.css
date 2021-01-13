@@ -546,7 +546,8 @@ nav a:last-child {
 
 
 #index .swiper-button-prev:hover,
-.similar_products .swiper-button-prev:hover {
+.similar_products .swiper-button-prev:hover,
+.med_banks .swiper-button-prev:hover {
     display: flex;
     padding: 25px;
     background: #E3E6EC;
@@ -556,7 +557,8 @@ nav a:last-child {
     align-items: center;
 }
 #index .swiper-button-next:hover,
-.similar_products .swiper-button-next:hover {
+.similar_products .swiper-button-next:hover,
+.med_banks .swiper-button-next:hover  {
 	display: flex;
     padding: 25px;
     background: #E3E6EC;
@@ -772,6 +774,8 @@ section .desc {
 }
 #aboutPage section .about_text_col4 p {
   width: 90%;
+  padding-bottom: 20px;
+    margin: 0;
 }
 
 .med_work h2 {
@@ -782,6 +786,7 @@ section .desc {
   background-color: #6D8099;
   width: 300px;
   padding: 10px;
+  padding-bottom: 20px;
   border-radius: 8px;
   box-shadow: -5px -5px 10px #889AB3, 5px 5px 10px #5E7087;
   position: relative;
@@ -883,7 +888,7 @@ section .desc {
 #aboutPage .swiper-container {
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 20px;
+  padding-left: 10px;
   margin-right: -30px;
 }
 
