@@ -4,7 +4,7 @@
       <span class="lang2">RU</span>
       <input type="checkbox" id="cbx2" :checked="isEng" @change="changeLanguage" style="display: none" />
       <label for="cbx2" class="toggle2"><span></span></label>
-      <span class="lang2">ENG</span>
+      <span class="lang2">EN</span>
     </div>
   </div>
 </template>
