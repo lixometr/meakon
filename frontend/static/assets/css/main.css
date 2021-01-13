@@ -522,6 +522,12 @@ nav a:last-child {
   right: unset;
   left: 90px;
   bottom: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  padding: 25px;
+  transition: 0.3s;
 }
 
 #index .swiper-button-prev,
