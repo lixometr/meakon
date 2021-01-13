@@ -531,7 +531,7 @@ nav a:last-child {
 }
 
 
-#index .swiper-button-prev:hover #index .swiper-button-prev::before {
+#index .swiper-button-prev:hover .swiper-button-prev::before {
     content: "";
     background: #E3E6EC;
     box-shadow: 3px 3px 5px #D1D9E6, -3px -3px 5px #FFFFFF;
