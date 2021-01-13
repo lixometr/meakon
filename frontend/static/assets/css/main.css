@@ -622,7 +622,22 @@ section .desc {
   padding: 5px;
   margin: 0 0 60px 0;
   list-style-image: url("/assets/img/change_lang.png");
+  position: relative;
 }
+
+.med_why li:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 200%;
+    left: -21.8px;
+    background: white;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 60%, rgba(255, 255, 255, 0) 100%);
+    top: -63px;
+}
+
+
 .med_why li span {
   font-family: "Federo" !important;
   position: relative;
@@ -631,7 +646,9 @@ section .desc {
   color: #00294C;
   font-size: 24px;
 }
-
+.med_rashodniki .swiper-container {
+	margin-right: -25px;
+}
 /*-------------------------------
     end 	Почему мы блок 
 --------------------------------*/
@@ -640,6 +657,7 @@ section .desc {
 --------------------------------*/
 .med_photo {
   margin-top: 100px !important;
+  margin-right: -15px;
 }
 .med_photo img {
   width: 100%;
