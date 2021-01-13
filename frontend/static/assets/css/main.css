@@ -467,14 +467,14 @@ nav a:last-child {
   border-radius: 10px;
 }
 #index section:not(:last-child) .card {
-  max-width: 300px;
+  /* max-width: 300px; */
   max-height: 533px;
   padding: 10px;
   margin: 50px auto;
-  margin-left: 3px;
+  margin-left: 1px;
   border-radius: 10px;
   background-color: #EFF4F7;
-  box-shadow: -5px -5px 10px #fff, 5px 5px 10px #D1D9E6;
+  box-shadow: -5px -5px 8px #fff, 5px 5px 8px #D1D9E6;
 }
 #index section:not(:last-child) .card img {
   border-radius: 10px;
