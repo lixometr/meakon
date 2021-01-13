@@ -4536,6 +4536,7 @@ details[open] summary {
 
   #index section:not(:last-child) .card {
 	  margin: 50px 0px;
+	  box-shadow: unset;
   }
   #index .swiper-container p, .similar_products .swiper-container p {
 	padding: 20px 0 0 20px; 
@@ -5537,13 +5538,13 @@ max-width: 200px;
 	outline: none!important;
 }
 
-.form_review__body	input::-webkit-input-placeholder,
-.form_review__body  input::-moz-placeholder {
+.modal	input::-webkit-input-placeholder,
+.modal  input::-moz-placeholder {
 	color: fff!important;
 }
 	  
-.form_review__body textarea::-moz-placeholder,
-.form_review__body textarea::-webkit-input-placeholder {
+.modal textarea::-moz-placeholder,
+.modal textarea::-webkit-input-placeholder {
 	color: fff!important;
 }
- 
+  
