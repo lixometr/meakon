@@ -40,9 +40,8 @@
                   <span>{{ $t("contact.phone") }}: </span
                   ><b>
                     <span v-for="(item, idx) in getValue('telefoni')" :key="idx"
-                      >{{ item.telefon }}<br
-                    /></span>
-                    <br />
+                      >{{ item.telefon }} 
+					</span>
                   </b>
                 </li>
                 <li>
