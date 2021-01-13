@@ -3591,7 +3591,7 @@ details {
   display: block;
   background:#73869F;
   border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
+  box-shadow: 3px 3px 3px #AABCD3, -3px -3px 3px #FFFFFF;
   transition: all 0.2s ease;
 }
 
@@ -3617,7 +3617,7 @@ details {
   background: #73869F;
   transform: translateX(20px);
   transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
-  box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
+  box-shadow: 3px 3px 3px #AABCD3, -3px -3px 3px #FFFFFF;
 }
 
 #cbx2:checked + .toggle2 span:before {
