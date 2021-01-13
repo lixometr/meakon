@@ -517,7 +517,8 @@ nav a:last-child {
 }
 
 #index .swiper-button-next,
-.similar_products .swiper-button-next {
+.similar_products .swiper-button-next,
+.med_banks .swiper-button-next {
   transform: rotate(180deg);
   right: unset;
   left: 90px;
@@ -531,7 +532,8 @@ nav a:last-child {
 }
 
 #index .swiper-button-prev,
-.similar_products .swiper-button-prev {
+.similar_products .swiper-button-prev,
+.med_banks .swiper-button-prev {
   transform: rotate(0deg);
   right: unset;
   left: 20px;
