@@ -1965,6 +1965,11 @@ button:focus {
   color: #73869F !important;
   line-height: 150%;
 }
+.item.active p,
+.item.active strong, {
+	color: #73869F !important;
+}
+
 
 .tabs-widget > .content > .item {
   background-color: #ffffff;
@@ -2569,8 +2574,6 @@ button:hover .button-text {
 }
 .product .product_button {
   margin-top: 20px;
-  height: 20px;
-  overflow: hidden;
 }
 
 .grid {
