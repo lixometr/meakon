@@ -517,8 +517,7 @@ nav a:last-child {
 }
 
 #index .swiper-button-next,
-.similar_products .swiper-button-next,
-.med_banks .swiper-button-next {
+.similar_products .swiper-button-next {
   transform: rotate(180deg);
   right: unset;
   left: 90px;
@@ -532,8 +531,7 @@ nav a:last-child {
 }
 
 #index .swiper-button-prev,
-.similar_products .swiper-button-prev,
-.med_banks .swiper-button-prev {
+.similar_products .swiper-button-prev {
   transform: rotate(0deg);
   right: unset;
   left: 20px;
@@ -548,8 +546,7 @@ nav a:last-child {
 
 
 #index .swiper-button-prev:hover,
-.similar_products .swiper-button-prev:hover,
-.med_banks .swiper-button-prev:hover {
+.similar_products .swiper-button-prev:hover {
     display: flex;
     padding: 25px;
     background: #E3E6EC;
@@ -559,8 +556,7 @@ nav a:last-child {
     align-items: center;
 }
 #index .swiper-button-next:hover,
-.similar_products .swiper-button-next:hover,
-.med_banks .swiper-button-next:hover  {
+.similar_products .swiper-button-next:hover {
 	display: flex;
     padding: 25px;
     background: #E3E6EC;
