@@ -470,7 +470,8 @@ nav a:last-child {
   max-width: 300px;
   max-height: 533px;
   padding: 10px;
-  margin: 50px 3px;
+  margin: 50px auto;
+  margin-left: 3px;
   border-radius: 10px;
   background-color: #EFF4F7;
   box-shadow: -5px -5px 10px #fff, 5px 5px 10px #D1D9E6;
