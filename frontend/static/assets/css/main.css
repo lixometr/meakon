@@ -553,7 +553,8 @@ nav a:last-child {
     border-radius: 30px;
     box-shadow: 3px 3px 5px #D1D9E6, -3px -3px 5px #FFFFFF;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	margin-left: -18px;
 }
 #index .swiper-button-next:hover,
 .similar_products .swiper-button-next:hover {
@@ -563,7 +564,8 @@ nav a:last-child {
     border-radius: 30px;
     box-shadow: 3px 3px 5px #FFFFFF, -3px -3px 5px #D1D9E6;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	margin-left: -18px;
 }
 /*-------------------------------
         end	Расходники
@@ -1734,7 +1736,8 @@ details[open] summary:before {
     object-fit: cover;
     object-position: center;
     height: 120px;
-    margin-bottom: 15px;
+	margin-bottom: 15px;
+	border-radius: 10px;
 }
 
 .product_card__images__big {
