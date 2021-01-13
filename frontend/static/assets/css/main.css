@@ -521,7 +521,7 @@ nav a:last-child {
   transform: rotate(180deg);
   right: unset;
   left: 90px;
-  bottom: 6px;
+  bottom: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -545,13 +545,21 @@ nav a:last-child {
 }
 
 
-#index .swiper-button-prev:hover, 
-#index .swiper-button-next:hover {
+#index .swiper-button-prev:hover  {
     display: flex;
     padding: 25px;
     background: #E3E6EC;
     border-radius: 30px;
     box-shadow: 3px 3px 5px #D1D9E6, -3px -3px 5px #FFFFFF;
+    justify-content: center;
+    align-items: center;
+}
+#index .swiper-button-next:hover {
+	display: flex;
+    padding: 25px;
+    background: #E3E6EC;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px #FFFFFF, -3px -3px 5px #D1D9E6;
     justify-content: center;
     align-items: center;
 }
