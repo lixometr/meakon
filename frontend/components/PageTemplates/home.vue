@@ -319,7 +319,10 @@ export default {
     sliderOptions() {
       return {
         slidesPerView: 4,
-        loop: true,
+		loop: true,
+		updateOnWindowResize: true,
+		observer: true,
+		observeParents: true,
         autoplay: {
           delay: 5000,
         },
