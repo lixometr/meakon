@@ -528,6 +528,7 @@ nav a:last-child {
   transition: 0.3s;
   padding: 25px;
   transition: 0.3s;
+  margin-left: -18px;
 }
 
 #index .swiper-button-prev,
@@ -542,6 +543,7 @@ nav a:last-child {
     transition: 0.3s;
 	padding: 25px;
 	transition: 0.3s;
+	margin-left: -18px;
 }
 
 
@@ -554,7 +556,7 @@ nav a:last-child {
     box-shadow: 3px 3px 5px #D1D9E6, -3px -3px 5px #FFFFFF;
     justify-content: center;
 	align-items: center;
-	margin-left: -18px;
+	
 }
 #index .swiper-button-next:hover,
 .similar_products .swiper-button-next:hover {
@@ -565,7 +567,7 @@ nav a:last-child {
     box-shadow: 3px 3px 5px #FFFFFF, -3px -3px 5px #D1D9E6;
     justify-content: center;
 	align-items: center;
-	margin-left: -18px;
+	 
 }
 /*-------------------------------
         end	Расходники
