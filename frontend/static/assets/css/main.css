@@ -3139,6 +3139,9 @@ details {
 }
 
 @media (min-width: 300px) and (max-width: 799px) {
+#curved1 {
+	display:none;
+}
   .form_review__footer .more-button-ico::before, .form_review__footer .more-button-ico::after, .form_review__footer .more-button-ico {
 	background-color: white;
   }
@@ -4508,8 +4511,10 @@ details[open] summary {
 
   #index section .card {
 	max-width: 100% !important;
-	 
+	border: 2px solid #D1D9E6;
+	box-shadow: unset;	 
   }
+  
   #index section:not(:last-child) .card {
 	  margin: 50px 0px;
   }
