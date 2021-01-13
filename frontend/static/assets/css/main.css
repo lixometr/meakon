@@ -521,7 +521,7 @@ nav a:last-child {
   transform: rotate(180deg);
   right: unset;
   left: 90px;
-  bottom: 17px;
+  bottom: 6px;
 }
 
 #index .swiper-button-prev,
@@ -529,7 +529,13 @@ nav a:last-child {
   transform: rotate(0deg);
   right: unset;
   left: 20px;
-  bottom: 26px;
+  bottom: 3px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+	padding: 25px;
+	transition: 0.3s;
 }
 
 
