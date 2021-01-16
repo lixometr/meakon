@@ -2,7 +2,7 @@
   <div>
     <!-- mobileMenu -->
     <header class="header">
-      <div class="mlogo"><img src="/assets/img/mobile_logo.png" alt="" /></div>
+      <nuxt-link to="/" class="mlogo"><img src="/assets/img/mobile_logo.png" alt="" /></nuxt-link>
 
       <div class="mswaper">
         <ChangeLanguageMobile />
