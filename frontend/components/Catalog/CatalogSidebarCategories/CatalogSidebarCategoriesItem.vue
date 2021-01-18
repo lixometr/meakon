@@ -7,7 +7,7 @@
         <ul class="filter_tab__subcat">
           <!-- <li><a href="#" class="active">Подкатегория 1</a></li> -->
           <li v-for="(subItem, idx) in item.children" :key="idx">
-            <nuxt-link :to="$url.category(subItem.category.full_slug)" active-class="active">{{
+            <nuxt-link :to="$url.category(subItem.category.full_slug)" active-class="active" @click.native="hideSidebar">{{
               $langValue(subItem.category, "name")
             }}</nuxt-link>
           </li>
@@ -16,7 +16,7 @@
     </template>
     <template v-else>
       <label class="not_sub" :for="thisId">
-        <nuxt-link :to="$url.category(item.category.full_slug)" active-class="active">{{ name }}</nuxt-link>
+        <nuxt-link :to="$url.category(item.category.full_slug)" active-class="active" @click.native="hideSidebar">{{ name }}</nuxt-link>
       </label>
     </template>
     
@@ -30,6 +30,11 @@ export default {
       type: Object,
       default: () => ({})
     },
+  },
+  methods: {
+    hideSidebar() {
+      this.$store.commit('setFiltersSidebar', false)
+    }
   },
   computed: {
     name() {

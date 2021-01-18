@@ -23,10 +23,11 @@
             <p>{{ getLangValue("blok_pervogo_ekrana.podzagolovok_ofera") }}</p>
 
             <div class="Button_page">
-              <nuxt-link
+              <a
                 class="more-button-wrap"
-                :to="getValue('blok_pervogo_ekrana.ssilka_knopki_ofera') || '#'"
+                :href="getValue('blok_pervogo_ekrana.ssilka_knopki_ofera') || '#'"
                 data-main-index=""
+                @click.prevent="openModal"
               >
                 <span class="more-button-background">
                   <span class="more-button-ico"></span>
@@ -36,7 +37,7 @@
                     getLangValue("blok_pervogo_ekrana.nazvanie_knopki_ofera")
                   }}
                 </span>
-              </nuxt-link>
+              </a>
             </div>
           </div>
         </div>
@@ -201,7 +202,7 @@
           <div class="col-lg-11 col-md-12 col-sm-12 col-xs-12">
             <!--  <img src="assets/img/img_main.png" alt=""> -->
             <div class="wrapper2">
-              <video class="mainscreen-video2"  autoplay loop muted playsinline>
+              <video class="mainscreen-video2" autoplay loop muted playsinline>
                 <source
                   :src="getValue('blok_anonsa_kompanii.video_prezentatsiya')"
                   type="video/mp4"
@@ -281,37 +282,6 @@ import PageTemplateMixin from "@/mixins/PageTemplateMixin";
 export default {
   mixins: [PageTemplateMixin],
   async mounted() {
-    // var swiper = new Swiper(".swiper-container", {
-    //   slidesPerView: 4,
-    //   loop: true,
-    //   autoplay: {
-    //     delay: 5000,
-    //   },
-    //   navigation: {
-    //     nextEl: ".swiper-button-next",
-    //     prevEl: ".swiper-button-prev",
-    //   },
-    //   spaceBetween: 5,
-    //   // init: false,
-    //   pagination: {
-    //     el: ".swiper-pagination",
-    //     clickable: true,
-    //   },
-    //   breakpoints: {
-    //     320: {
-    //       slidesPerView: 1,
-    //       spaceBetween: 20,
-    //     },
-    //     768: {
-    //       slidesPerView: 3,
-    //       spaceBetween: 20,
-    //     },
-    //     1024: {
-    //       slidesPerView: 4,
-    //       spaceBetween: 45,
-    //     },
-    //   },
-    // });
     await this.$loadScript("/assets/js/circletype.min.js");
     const circleType = new CircleType(document.getElementById("curved1"));
   },
@@ -319,10 +289,10 @@ export default {
     sliderOptions() {
       return {
         slidesPerView: 4,
-		loop: true,
-		updateOnWindowResize: true,
-		observer: true,
-		observeParents: true,
+        loop: true,
+        updateOnWindowResize: true,
+        observer: true,
+        observeParents: true,
         autoplay: {
           delay: 5000,
         },
@@ -345,8 +315,8 @@ export default {
           1400: {
             slidesPerView: 3,
             spaceBetween: 30,
-		  },
-		  1500: {
+          },
+          1500: {
             slidesPerView: 4,
             spaceBetween: 30,
           },
@@ -354,6 +324,15 @@ export default {
       };
     },
   },
+  methods: {
+    openModal() {
+      this.$modal.open("review", {
+        props: {
+          type: "contact",
+        },
+      });
+    }
+  }
 };
 </script>
 

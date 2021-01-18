@@ -3,7 +3,7 @@ export const state = () => ({
   isLoading: false,
   passwordLength: 4,
   showFiltersBtn: false,
-  showFiltersSidebar: true
+  showFiltersSidebar: false
 
 })
 export const getters = {
