@@ -75,7 +75,7 @@
     <CollapseCard :open="false" v-if="product.product_type === 'simple'">
       <div slot="header">Цена</div>
       <div>
-        <Label label="Цена"><NInput v-model="product.price"/></Label>
+        <Label label="Цена"><NInput v-model="product.price" :float="true"/></Label>
         <!-- <ProductPrice
           :price="product.price"
           @update:price="$set(product, 'price', $event)"
