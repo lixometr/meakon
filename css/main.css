@@ -5453,3 +5453,7 @@ details[open] summary {
   display: block;
   margin: 10px;
 }
+.modal input::-webkit-input-placeholder {
+    color: white;
+}
+.modal  textarea::-webkit-input-placeholder {color: white;} 
