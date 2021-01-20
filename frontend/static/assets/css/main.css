@@ -5547,4 +5547,20 @@ max-width: 200px;
 .modal textarea::-webkit-input-placeholder {
 	color: fff!important;
 }
-  
+.not_sub {
+  position: relative;
+  height: auto;
+  cursor: pointer;
+  z-index: 3;
+  margin-left: -15px;
+  margin-bottom: 15px;
+  display: inline-flex;
+}
+.not_sub a:hover {
+  color: #73869F;
+  transition: 0.5s;
+}
+.have_sub:hover {
+  color: #73869F;
+  transition: 0.5s;
+}

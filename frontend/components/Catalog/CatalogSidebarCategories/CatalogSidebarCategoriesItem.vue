@@ -15,9 +15,9 @@
       </article>
     </template>
     <template v-else>
-      <label class="not_sub" >
+      <div class="not_sub" >
         <nuxt-link :to="$url.category(item.category.full_slug)" active-class="active" @click.native="hideSidebar">{{ name }}</nuxt-link>
-      </label>
+      </div>
     </template>
     
   </div>
