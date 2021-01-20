@@ -52,16 +52,6 @@
           </td>
         </template>
 
-        <!-- <template #check="{item}">
-          <td>
-            <CInputCheckbox custom :checked.sync="selectedItems[item._id]" />
-          </td>
-        </template>
-        <template #check-header>
-          <td>
-            <CInputCheckbox custom :checked.sync="selectedItems['all']" />
-          </td>
-        </template>-->
         <template #default_image="{ item }">
           <td>
             <CImg :src="item.default_image.url" width="80px" />
@@ -70,18 +60,12 @@
 
         <template #old_price="{ item }">
           <td>
-            <div v-for="(priceItem, idx) in item.old_price" :key="idx">
-              {{ getRegionById(priceItem.region).currency
-              }}{{ priceItem.value }}
-            </div>
+            {{item.old_price}}
           </td>
         </template>
         <template #price="{ item }">
           <td>
-            <div v-for="(priceItem, idx) in item.price" :key="idx">
-              {{ getRegionById(priceItem.region).currency
-              }}{{ priceItem.value }}
-            </div>
+            {{item.price}}
           </td>
         </template>
         <template #category="{ item }">
