@@ -8,7 +8,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no' },
 	  { hid: 'description', name: 'description', content: '' },
 	  // закрытие от индексации удалить, когда сайт будет готов Да когда запустим проект на хосте
-      { name: "robots", content: "noindex, nofollow" }
+      // { name: "robots", content: "noindex, nofollow" }
     ], 
     script: [
       {
