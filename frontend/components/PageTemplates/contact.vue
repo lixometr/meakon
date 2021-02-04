@@ -57,14 +57,14 @@
                   <span>{{ $t("contact.warehouse") }}: </span>
 
                   <b>
-                    <span
+                    <a :href="getValue(`adresa_skladov[${idx}].ssilka_na_geopozitsiyu`)"
                       class="locate"
                       v-for="(item, idx) in getValue('adresa_skladov')"
                       :key="idx"
                     >
                       {{ getLangValue(`adresa_skladov[${idx}].adres_sklada`)
                       }}<br
-                    /></span>
+                    /></a>
                   </b>
                 </li>
               </ul>
