@@ -5536,6 +5536,9 @@ details[open] summary {
 	color: white;
 }
 
+.contact_info {
+	flex-direction: row;
+}
 .adress_col {
 	display: flex !important;
 	flex-direction: column;
