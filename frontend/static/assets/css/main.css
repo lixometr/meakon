@@ -5599,13 +5599,20 @@ details[open] summary {
 }
 .adress_col span {
 	display: grid;
-	grid-template-columns: 200px;
 	float: left;
+	grid-template-columns: 250px;
 }
 .locate {
-	padding: 30px;
+	padding: 15px 50px;
+	position: relative;
 }
 .locate::before {
 	content: "";
 	background-image: url("/assets/img/locate.png");
+	width: 41px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	background-size: contain;
+	top: 18px;
 }
