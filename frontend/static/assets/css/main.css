@@ -5602,3 +5602,10 @@ details[open] summary {
 	grid-template-columns: 200px;
 	float: left;
 }
+.locate {
+	padding: 30px;
+}
+.locate::before {
+	content: "";
+	background-image: url("/assets/img/locate.png");
+}
