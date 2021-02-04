@@ -51,7 +51,9 @@
                   <span>{{ $t("contact.workTime") }}: </span
                   ><b>{{ getLangValue("rezhim_raboti") }}</b>
                 </li>
-                <li>
+              </ul>
+              <ul>
+                <li class="adress_col">
                   <span>{{ $t("contact.warehouse") }}: </span>
 
                   <b>
