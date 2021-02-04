@@ -40,8 +40,8 @@
                   <span>{{ $t("contact.phone") }}: </span
                   ><b>
                     <span v-for="(item, idx) in getValue('telefoni')" :key="idx"
-                      >{{ item.telefon }} 
-					</span>
+                      >{{ item.telefon }}
+                    </span>
                   </b>
                 </li>
                 <li>
@@ -53,8 +53,10 @@
                 </li>
                 <li>
                   <span>{{ $t("contact.warehouse") }}: </span>
+
                   <b>
                     <span
+                      class="locate"
                       v-for="(item, idx) in getValue('adresa_skladov')"
                       :key="idx"
                     >
@@ -79,17 +81,16 @@
             <h3>{{ getLangValue("forma_obratnoi_svyazi.zagolovok_formi") }}</h3>
           </div>
           <div class="col-lg-4 col-sm-12 btn-center">
-          
-              <div class="Button_page"   @click="openModal">
-                <div class="more-button-wrap">
-                  <span class="more-button-background">
-                    <span class="more-button-ico"></span>
-                  </span>
-                  <span class="more-button-title">{{
-                    getLangValue("forma_obratnoi_svyazi.tekst_knopki")
-                  }}</span>
-                </div>
+            <div class="Button_page" @click="openModal">
+              <div class="more-button-wrap">
+                <span class="more-button-background">
+                  <span class="more-button-ico"></span>
+                </span>
+                <span class="more-button-title">{{
+                  getLangValue("forma_obratnoi_svyazi.tekst_knopki")
+                }}</span>
               </div>
+            </div>
           </div>
         </div>
       </div>
