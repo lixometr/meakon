@@ -57,7 +57,13 @@
                   <span>{{ $t("contact.warehouse") }}: </span>
 
                   <b>
-                    <a :href="getValue(`adresa_skladov[${idx}].ssilka_na_geopozitsiyu`)"
+                    <a
+                      target="_blank"
+                      :href="
+                        getValue(
+                          `adresa_skladov[${idx}].ssilka_na_geopozitsiyu`
+                        ) || '#'
+                      "
                       class="locate"
                       v-for="(item, idx) in getValue('adresa_skladov')"
                       :key="idx"
