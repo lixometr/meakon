@@ -5619,3 +5619,8 @@ details[open] summary {
 .adress_col span:nth-child(2) {
 	padding: 25px 50px;
 }
+.adress_col b {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
