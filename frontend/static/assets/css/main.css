@@ -5621,6 +5621,5 @@ details[open] summary {
 }
 .adress_col b {
 	display: flex;
-	align-items: center;
 	flex-direction: row;
 }
